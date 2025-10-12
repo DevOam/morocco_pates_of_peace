@@ -8,7 +8,7 @@ interface Message {
   text: string;
   sender: 'user' | 'ai';
   timestamp: Date;
-  type?: 'text' | 'booking' | 'recommendation' | 'safety' | 'history';
+  type?: 'booking' | 'city' | 'recommendation' | 'safety' | 'pricing' | 'menu' | 'history' | 'culture' | 'weather' | 'logistics';
 }
 
 interface SuperAIAssistantProps {
@@ -223,7 +223,7 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const addAIMessage = (text: string, type: IntentType = 'text') => {
+  const addAIMessage = (text: string, type: IntentType = 'recommendation') => {
     setIsTyping(true);
     setTimeout(() => {
       setMessages(prev => [...prev, {
