@@ -1,0 +1,494 @@
+{
+  "specializedTours": {
+    "craft-workshop": {
+      "id": "craft-workshop",
+      "name": {
+        "fr": "Atelier Artisanat Traditionnel - Immersion Créative",
+        "ar": "ورشة الحرف التقليدية - انغماس إبداعي"
+      },
+      "subtitle": {
+        "fr": "Poterie, zellige et cuir - Créez vos propres œuvres",
+        "ar": "الفخار والزليج والجلد - اصنع أعمالك الخاصة"
+      },
+      "duration": {
+        "fr": "Demi-journée (4h)",
+        "ar": "نصف يوم (4 ساعات)"
+      },
+      "price": {
+        "group": 380,
+        "private": 750,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 38,
+        "private": 75
+      },
+      "difficulty": "facile",
+      "category": "artisanat",
+      "highlights": {
+        "fr": [
+          "3 ateliers authentiques (poterie, zellige, maroquinerie)",
+          "Maîtres artisans avec 20+ ans d'expérience",
+          "Création d'une pièce personnalisée à emporter",
+          "Thé à la menthe et pâtisseries traditionnelles",
+          "Certificat d'apprentissage artisanal"
+        ],
+        "ar": [
+          "3 ورش أصيلة (فخار، زليج، جلد)",
+          "معلمون حرفيون بخبرة 20+ سنة",
+          "صنع قطعة شخصية للأخذ معك",
+          "أتاي وحلويات تقليدية",
+          "شهادة تعلم حرفي"
+        ]
+      },
+      "itinerary": {
+        "fr": [
+          {
+            "time": "09:00",
+            "activity": "Accueil dans l'atelier de poterie - Quartier des potiers",
+            "duration": "15min"
+          },
+          {
+            "time": "09:15",
+            "activity": "Atelier poterie : modelage d'un bol ou tajine miniature",
+            "duration": "1h15"
+          },
+          {
+            "time": "10:30",
+            "activity": "Pause thé + visite atelier zellige",
+            "duration": "30min"
+          },
+          {
+            "time": "11:00",
+            "activity": "Atelier zellige : découpe et assemblage mosaïque",
+            "duration": "1h"
+          },
+          {
+            "time": "12:00",
+            "activity": "Atelier maroquinerie : gravure sur cuir",
+            "duration": "45min"
+          },
+          {
+            "time": "12:45",
+            "activity": "Emballage créations + certificat + photos",
+            "duration": "15min"
+          }
+        ],
+        "ar": [
+          {
+            "time": "09:00",
+            "activity": "الاستقبال في ورشة الفخار - حي الفخارين",
+            "duration": "15 دقيقة"
+          },
+          {
+            "time": "09:15",
+            "activity": "ورشة الفخار: تشكيل وعاء أو طاجين مصغر",
+            "duration": "ساعة و15 دقيقة"
+          },
+          {
+            "time": "10:30",
+            "activity": "استراحة أتاي + زيارة ورشة الزليج",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "11:00",
+            "activity": "ورشة الزليج: قطع وتجميع الفسيفساء",
+            "duration": "ساعة"
+          },
+          {
+            "time": "12:00",
+            "activity": "ورشة الجلد: النقش على الجلد",
+            "duration": "45 دقيقة"
+          },
+          {
+            "time": "12:45",
+            "activity": "تغليف الإبداعات + شهادة + صور",
+            "duration": "15 دقيقة"
+          }
+        ]
+      },
+      "included": {
+        "fr": [
+          "3 ateliers avec maîtres artisans",
+          "Matériaux et outils fournis",
+          "Pièces créées à emporter",
+          "Thé à la menthe et pâtisseries",
+          "Certificat personnalisé",
+          "Photos souvenir"
+        ],
+        "ar": [
+          "3 ورش مع معلمين حرفيين",
+          "المواد والأدوات مقدمة",
+          "القطع المصنوعة للأخذ معك",
+          "أتاي وحلويات",
+          "شهادة شخصية",
+          "صور تذكارية"
+        ]
+      },
+      "notIncluded": {
+        "fr": [
+          "Transport (disponible +50 MAD)",
+          "Déjeuner",
+          "Achats supplémentaires"
+        ],
+        "ar": [
+          "النقل (متوفر +50 درهم)",
+          "الغداء",
+          "المشتريات الإضافية"
+        ]
+      }
+    },
+    "photo-sunset": {
+      "id": "photo-sunset",
+      "name": {
+        "fr": "Safari Photo Coucher de Soleil - Agafay & Atlas",
+        "ar": "سفاري التصوير عند الغروب - أڭافاي والأطلس"
+      },
+      "subtitle": {
+        "fr": "Session photo professionnelle dans le désert de pierres",
+        "ar": "جلسة تصوير احترافية في صحراء الحجارة"
+      },
+      "duration": {
+        "fr": "Soirée (5h)",
+        "ar": "مساء (5 ساعات)"
+      },
+      "price": {
+        "group": 650,
+        "private": 1200,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 65,
+        "private": 120
+      },
+      "difficulty": "facile",
+      "category": "photographie",
+      "highlights": {
+        "fr": [
+          "Photographe professionnel inclus",
+          "3 spots iconiques (désert, Atlas, oasis)",
+          "Golden hour et blue hour optimisés",
+          "50+ photos retouchées livrées",
+          "Champagne ou thé berbère au coucher",
+          "Drone autorisé pour vues aériennes"
+        ],
+        "ar": [
+          "مصور محترف مشمول",
+          "3 مواقع أيقونية (صحراء، أطلس، واحة)",
+          "الساعة الذهبية والزرقاء محسنة",
+          "50+ صورة معدلة مسلمة",
+          "شامبانيا أو أتاي بربري عند الغروب",
+          "طائرة مسيرة مسموحة للمناظر الجوية"
+        ]
+      },
+      "itinerary": {
+        "fr": [
+          {
+            "time": "15:00",
+            "activity": "Départ Marrakech - Briefing photo en route",
+            "duration": "45min"
+          },
+          {
+            "time": "15:45",
+            "activity": "Spot 1 : Oasis de palmiers - Photos portrait/lifestyle",
+            "duration": "45min"
+          },
+          {
+            "time": "16:30",
+            "activity": "Spot 2 : Panorama Atlas - Photos paysage",
+            "duration": "45min"
+          },
+          {
+            "time": "17:15",
+            "activity": "Spot 3 : Désert Agafay - Golden hour",
+            "duration": "1h15"
+          },
+          {
+            "time": "18:30",
+            "activity": "Coucher de soleil + champagne/thé",
+            "duration": "30min"
+          },
+          {
+            "time": "19:00",
+            "activity": "Blue hour + photos drone (si autorisé)",
+            "duration": "30min"
+          },
+          {
+            "time": "19:30",
+            "activity": "Retour Marrakech",
+            "duration": "45min"
+          }
+        ],
+        "ar": [
+          {
+            "time": "15:00",
+            "activity": "المغادرة من مراكش - إحاطة التصوير في الطريق",
+            "duration": "45 دقيقة"
+          },
+          {
+            "time": "15:45",
+            "activity": "الموقع 1: واحة النخيل - صور شخصية/حياتية",
+            "duration": "45 دقيقة"
+          },
+          {
+            "time": "16:30",
+            "activity": "الموقع 2: بانوراما الأطلس - صور المناظر",
+            "duration": "45 دقيقة"
+          },
+          {
+            "time": "17:15",
+            "activity": "الموقع 3: صحراء أڭافاي - الساعة الذهبية",
+            "duration": "ساعة و15 دقيقة"
+          },
+          {
+            "time": "18:30",
+            "activity": "غروب الشمس + شامبانيا/أتاي",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "19:00",
+            "activity": "الساعة الزرقاء + صور الطائرة المسيرة",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "19:30",
+            "activity": "العودة إلى مراكش",
+            "duration": "45 دقيقة"
+          }
+        ]
+      }
+    },
+    "cooking-medina": {
+      "id": "cooking-medina",
+      "name": {
+        "fr": "Cours de Cuisine & Marché Nocturne",
+        "ar": "درس الطبخ والسوق الليلي"
+      },
+      "subtitle": {
+        "fr": "Du marché à l'assiette - Tajine, couscous et pâtisseries",
+        "ar": "من السوق إلى الطبق - طاجين وكسكس وحلويات"
+      },
+      "duration": {
+        "fr": "Soirée (4h30)",
+        "ar": "مساء (4 ساعات ونصف)"
+      },
+      "price": {
+        "group": 420,
+        "private": 850,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 42,
+        "private": 85
+      },
+      "difficulty": "facile",
+      "category": "gastronomie",
+      "highlights": {
+        "fr": [
+          "Marché nocturne avec chef local",
+          "Achat d'épices et ingrédients frais",
+          "Cuisine dans riad traditionnel",
+          "3 plats : tajine, couscous, pâtisserie",
+          "Dîner de vos créations",
+          "Livret recettes bilingue"
+        ],
+        "ar": [
+          "السوق الليلي مع طاهٍ محلي",
+          "شراء التوابل والمكونات الطازجة",
+          "الطبخ في رياض تقليدي",
+          "3 أطباق: طاجين وكسكس وحلويات",
+          "عشاء من إبداعاتك",
+          "كتيب وصفات ثنائي اللغة"
+        ]
+      }
+    },
+    "argan-cooperative": {
+      "id": "argan-cooperative",
+      "name": {
+        "fr": "Route de l'Argan - Coopératives Féminines",
+        "ar": "طريق الأركان - التعاونيات النسائية"
+      },
+      "subtitle": {
+        "fr": "De l'arbre à l'huile - Rencontre avec les femmes berbères",
+        "ar": "من الشجرة إلى الزيت - لقاء مع النساء البربريات"
+      },
+      "duration": {
+        "fr": "Journée complète (8h)",
+        "ar": "يوم كامل (8 ساعات)"
+      },
+      "price": {
+        "group": 450,
+        "private": 1100,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 45,
+        "private": 110
+      },
+      "difficulty": "facile",
+      "category": "culture",
+      "highlights": {
+        "fr": [
+          "Visite de 3 coopératives féminines",
+          "Processus complet de l'huile d'argan",
+          "Dégustation huiles et cosmétiques",
+          "Déjeuner chez l'habitant berbère",
+          "Forêt d'arganiers millénaires",
+          "Chèvres dans les arbres (photo)"
+        ],
+        "ar": [
+          "زيارة 3 تعاونيات نسائية",
+          "العملية الكاملة لزيت الأركان",
+          "تذوق الزيوت ومستحضرات التجميل",
+          "غداء عند عائلة بربرية",
+          "غابة أشجار الأركان الألفية",
+          "الماعز في الأشجار (صورة)"
+        ]
+      }
+    }
+  },
+  "categories": {
+    "artisanat": {
+      "fr": "Artisanat & Ateliers",
+      "ar": "الحرف والورش",
+      "color": "amber",
+      "icon": "🎨"
+    },
+    "photographie": {
+      "fr": "Photographie & Création",
+      "ar": "التصوير والإبداع",
+      "color": "purple",
+      "icon": "📸"
+    },
+    "gastronomie": {
+      "fr": "Gastronomie & Saveurs",
+      "ar": "فن الطبخ والنكهات",
+      "color": "orange",
+      "icon": "🍽️"
+    },
+    "culture": {
+      "fr": "Culture & Traditions",
+      "ar": "الثقافة والتقاليد",
+      "color": "green",
+      "icon": "🏛️"
+    }
+  },
+  "packages": {
+    "artisan-immersion": {
+      "name": {
+        "fr": "Pack Immersion Artisanale (3 jours)",
+        "ar": "باقة الانغماس الحرفي (3 أيام)"
+      },
+      "tours": ["craft-workshop", "argan-cooperative"],
+      "price": {
+        "group": 1200,
+        "private": 2400,
+        "currency": "MAD"
+      },
+      "discount": "20%",
+      "includes": {
+        "fr": [
+          "2 nuits en riad traditionnel",
+          "Tous les ateliers et visites",
+          "Repas authentiques inclus",
+          "Transport privé",
+          "Guide spécialisé artisanat"
+        ],
+        "ar": [
+          "ليلتان في رياض تقليدي",
+          "جميع الورش والزيارات",
+          "وجبات أصيلة مشمولة",
+          "نقل خاص",
+          "مرشد متخصص في الحرف"
+        ]
+      }
+    },
+    "creative-weekend": {
+      "name": {
+        "fr": "Week-end Créatif (2 jours)",
+        "ar": "عطلة نهاية أسبوع إبداعية (يومان)"
+      },
+      "tours": ["craft-workshop", "photo-sunset", "cooking-medina"],
+      "price": {
+        "group": 950,
+        "private": 1800,
+        "currency": "MAD"
+      },
+      "discount": "15%"
+    }
+  },
+  "workshopDetails": {
+    "pottery": {
+      "name": {
+        "fr": "Atelier Poterie Traditionnelle",
+        "ar": "ورشة الفخار التقليدي"
+      },
+      "master": {
+        "fr": "Maître Hassan - 25 ans d'expérience",
+        "ar": "المعلم حسان - 25 سنة خبرة"
+      },
+      "techniques": {
+        "fr": [
+          "Modelage au tour de potier",
+          "Techniques de glaçure berbère",
+          "Motifs géométriques traditionnels",
+          "Cuisson au four à bois"
+        ],
+        "ar": [
+          "التشكيل على عجلة الفخار",
+          "تقنيات الطلاء البربري",
+          "الأنماط الهندسية التقليدية",
+          "الحرق في فرن الخشب"
+        ]
+      }
+    },
+    "zellige": {
+      "name": {
+        "fr": "Atelier Zellige & Mosaïque",
+        "ar": "ورشة الزليج والفسيفساء"
+      },
+      "master": {
+        "fr": "Maître Abdellah - Artisan certifié Fès",
+        "ar": "المعلم عبد الله - حرفي معتمد من فاس"
+      },
+      "techniques": {
+        "fr": [
+          "Découpe précise au menqach",
+          "Assemblage géométrique complexe",
+          "Couleurs traditionnelles naturelles",
+          "Finitions à la chaux"
+        ],
+        "ar": [
+          "القطع الدقيق بالمنقاش",
+          "التجميع الهندسي المعقد",
+          "الألوان التقليدية الطبيعية",
+          "اللمسات الأخيرة بالجير"
+        ]
+      }
+    },
+    "leather": {
+      "name": {
+        "fr": "Atelier Maroquinerie Artisanale",
+        "ar": "ورشة الجلد الحرفي"
+      },
+      "master": {
+        "fr": "Maître Youssef - Spécialiste cuir de chèvre",
+        "ar": "المعلم يوسف - متخصص جلد الماعز"
+      },
+      "techniques": {
+        "fr": [
+          "Gravure au fer chaud",
+          "Teinture naturelle au henné",
+          "Couture traditionnelle à la main",
+          "Finitions à la cire d'abeille"
+        ],
+        "ar": [
+          "النقش بالحديد الساخن",
+          "الصبغ الطبيعي بالحناء",
+          "الخياطة التقليدية باليد",
+          "اللمسات الأخيرة بشمع النحل"
+        ]
+      }
+    }
+  }
+}

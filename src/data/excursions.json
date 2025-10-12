@@ -1,0 +1,631 @@
+{
+  "excursions": {
+    "ourika": {
+      "id": "ourika",
+      "name": {
+        "fr": "Vallée d'Ourika & Atelier Artisanal",
+        "ar": "وادي أوريكا وورشة الحرف التقليدية"
+      },
+      "subtitle": {
+        "fr": "Nature, cascades et savoir-faire berbère",
+        "ar": "الطبيعة والشلالات والحرف البربرية"
+      },
+      "duration": {
+        "fr": "Demi-journée (5h)",
+        "ar": "نصف يوم (5 ساعات)"
+      },
+      "price": {
+        "group": 280,
+        "private": 800,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 28,
+        "private": 80
+      },
+      "difficulty": "facile",
+      "category": "nature",
+      "highlights": {
+        "fr": [
+          "Paysages spectaculaires du Haut Atlas",
+          "Visite d'atelier de poterie traditionnelle",
+          "Cascades et rivières de montagne",
+          "Déjeuner berbère authentique",
+          "Villages traditionnels"
+        ],
+        "ar": [
+          "مناظر خلابة للأطلس الكبير",
+          "زيارة ورشة الفخار التقليدي",
+          "الشلالات وأنهار الجبال",
+          "غداء بربري أصيل",
+          "القرى التقليدية"
+        ]
+      },
+      "itinerary": {
+        "fr": [
+          {
+            "time": "08:00",
+            "activity": "Départ de votre riad/hôtel",
+            "duration": "30min"
+          },
+          {
+            "time": "09:30",
+            "activity": "Arrivée vallée d'Ourika - Première cascade",
+            "duration": "1h30"
+          },
+          {
+            "time": "11:00",
+            "activity": "Visite atelier poterie + démonstration",
+            "duration": "45min"
+          },
+          {
+            "time": "12:00",
+            "activity": "Déjeuner traditionnel au bord de la rivière",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Temps libre et exploration",
+            "duration": "1h"
+          },
+          {
+            "time": "15:00",
+            "activity": "Retour vers Marrakech",
+            "duration": "1h30"
+          }
+        ],
+        "ar": [
+          {
+            "time": "08:00",
+            "activity": "المغادرة من الرياض/الفندق",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "09:30",
+            "activity": "الوصول لوادي أوريكا - الشلال الأول",
+            "duration": "ساعة ونصف"
+          },
+          {
+            "time": "11:00",
+            "activity": "زيارة ورشة الفخار + عرض توضيحي",
+            "duration": "45 دقيقة"
+          },
+          {
+            "time": "12:00",
+            "activity": "غداء تقليدي على ضفة النهر",
+            "duration": "ساعة"
+          },
+          {
+            "time": "13:30",
+            "activity": "وقت حر واستكشاف",
+            "duration": "ساعة"
+          },
+          {
+            "time": "15:00",
+            "activity": "العودة إلى مراكش",
+            "duration": "ساعة ونصف"
+          }
+        ]
+      },
+      "included": {
+        "fr": [
+          "Transport climatisé aller-retour",
+          "Guide local berbère francophone",
+          "Visite d'atelier artisanal",
+          "Thé à la menthe de bienvenue",
+          "Assurance voyage"
+        ],
+        "ar": [
+          "النقل المكيف ذهاباً وإياباً",
+          "مرشد محلي بربري ناطق بالفرنسية",
+          "زيارة ورشة حرفية",
+          "أتاي الترحيب",
+          "تأمين السفر"
+        ]
+      },
+      "notIncluded": {
+        "fr": [
+          "Déjeuner (15-25 MAD)",
+          "Boissons personnelles",
+          "Pourboires",
+          "Achats personnels"
+        ],
+        "ar": [
+          "الغداء (15-25 درهم)",
+          "المشروبات الشخصية",
+          "الإكراميات",
+          "المشتريات الشخصية"
+        ]
+      }
+    },
+    "essaouira": {
+      "id": "essaouira",
+      "name": {
+        "fr": "Essaouira - Perle de l'Atlantique",
+        "ar": "الصويرة - لؤلؤة الأطلسي"
+      },
+      "subtitle": {
+        "fr": "Médina UNESCO, port de pêche et artisanat",
+        "ar": "المدينة العتيقة المصنفة واليونسكو وميناء الصيد"
+      },
+      "duration": {
+        "fr": "Journée complète (10h)",
+        "ar": "يوم كامل (10 ساعات)"
+      },
+      "price": {
+        "group": 350,
+        "private": 1200,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 35,
+        "private": 120
+      },
+      "difficulty": "facile",
+      "category": "culture",
+      "highlights": {
+        "fr": [
+          "Médina classée UNESCO",
+          "Port de pêche traditionnel",
+          "Ateliers de marqueterie thuya",
+          "Remparts et fortifications portugaises",
+          "Plage et sports nautiques"
+        ],
+        "ar": [
+          "المدينة العتيقة المصنفة من اليونسكو",
+          "ميناء الصيد التقليدي",
+          "ورش خشب العرعار",
+          "الأسوار والحصون البرتغالية",
+          "الشاطئ والرياضات المائية"
+        ]
+      },
+      "itinerary": {
+        "fr": [
+          {
+            "time": "08:00",
+            "activity": "Départ de Marrakech",
+            "duration": "2h30"
+          },
+          {
+            "time": "10:30",
+            "activity": "Arrivée Essaouira - Tour des remparts",
+            "duration": "1h"
+          },
+          {
+            "time": "11:30",
+            "activity": "Visite médina et souks",
+            "duration": "2h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Déjeuner poisson frais au port",
+            "duration": "1h30"
+          },
+          {
+            "time": "15:00",
+            "activity": "Atelier marqueterie + temps libre",
+            "duration": "2h"
+          },
+          {
+            "time": "17:00",
+            "activity": "Retour vers Marrakech",
+            "duration": "2h30"
+          }
+        ],
+        "ar": [
+          {
+            "time": "08:00",
+            "activity": "المغادرة من مراكش",
+            "duration": "ساعتان ونصف"
+          },
+          {
+            "time": "10:30",
+            "activity": "الوصول للصويرة - جولة الأسوار",
+            "duration": "ساعة"
+          },
+          {
+            "time": "11:30",
+            "activity": "زيارة المدينة العتيقة والأسواق",
+            "duration": "ساعتان"
+          },
+          {
+            "time": "13:30",
+            "activity": "غداء السمك الطازج في الميناء",
+            "duration": "ساعة ونصف"
+          },
+          {
+            "time": "15:00",
+            "activity": "ورشة الخشب المطعم + وقت حر",
+            "duration": "ساعتان"
+          },
+          {
+            "time": "17:00",
+            "activity": "العودة إلى مراكش",
+            "duration": "ساعتان ونصف"
+          }
+        ]
+      }
+    },
+    "agafay": {
+      "id": "agafay",
+      "name": {
+        "fr": "Agafay Desert - Coucher de Soleil & Dîner",
+        "ar": "صحراء أڭافاي - غروب الشمس والعشاء"
+      },
+      "subtitle": {
+        "fr": "Désert de pierres, quad et soirée berbère",
+        "ar": "صحراء الحجارة والكواد والسهرة البربرية"
+      },
+      "duration": {
+        "fr": "Soirée (6h)",
+        "ar": "مساء (6 ساعات)"
+      },
+      "price": {
+        "group": 450,
+        "private": 900,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 45,
+        "private": 90
+      },
+      "difficulty": "modéré",
+      "category": "aventure",
+      "highlights": {
+        "fr": [
+          "Balade en quad dans le désert",
+          "Promenade à dos de chameau",
+          "Coucher de soleil spectaculaire",
+          "Dîner traditionnel sous les étoiles",
+          "Spectacle de musique gnawa"
+        ],
+        "ar": [
+          "جولة بالكواد في الصحراء",
+          "نزهة على ظهر الجمل",
+          "غروب شمس رائع",
+          "عشاء تقليدي تحت النجوم",
+          "عرض موسيقى كناوة"
+        ]
+      },
+      "itinerary": {
+        "fr": [
+          {
+            "time": "15:00",
+            "activity": "Départ de Marrakech vers Agafay",
+            "duration": "45min"
+          },
+          {
+            "time": "16:00",
+            "activity": "Briefing sécurité + balade quad",
+            "duration": "1h30"
+          },
+          {
+            "time": "17:30",
+            "activity": "Promenade chameau + thé berbère",
+            "duration": "1h"
+          },
+          {
+            "time": "18:30",
+            "activity": "Coucher de soleil panoramique",
+            "duration": "30min"
+          },
+          {
+            "time": "19:30",
+            "activity": "Dîner traditionnel + spectacle",
+            "duration": "2h"
+          },
+          {
+            "time": "21:30",
+            "activity": "Retour à Marrakech",
+            "duration": "45min"
+          }
+        ],
+        "ar": [
+          {
+            "time": "15:00",
+            "activity": "المغادرة من مراكش إلى أڭافاي",
+            "duration": "45 دقيقة"
+          },
+          {
+            "time": "16:00",
+            "activity": "إحاطة أمنية + جولة كواد",
+            "duration": "ساعة ونصف"
+          },
+          {
+            "time": "17:30",
+            "activity": "نزهة الجمل + أتاي بربري",
+            "duration": "ساعة"
+          },
+          {
+            "time": "18:30",
+            "activity": "غروب الشمس البانورامي",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "19:30",
+            "activity": "عشاء تقليدي + عرض",
+            "duration": "ساعتان"
+          },
+          {
+            "time": "21:30",
+            "activity": "العودة إلى مراكش",
+            "duration": "45 دقيقة"
+          }
+        ]
+      }
+    },
+    "ouzoud": {
+      "id": "ouzoud",
+      "name": {
+        "fr": "Cascades d'Ouzoud - Merveille Naturelle",
+        "ar": "شلالات أوزود - العجيبة الطبيعية"
+      },
+      "subtitle": {
+        "fr": "Plus hautes chutes du Maroc et singes magots",
+        "ar": "أعلى شلالات المغرب وقرود المكاك"
+      },
+      "duration": {
+        "fr": "Journée complète (9h)",
+        "ar": "يوم كامل (9 ساعات)"
+      },
+      "price": {
+        "group": 320,
+        "private": 1000,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 32,
+        "private": 100
+      },
+      "difficulty": "modéré",
+      "category": "nature",
+      "highlights": {
+        "fr": [
+          "Chutes d'eau de 110 mètres",
+          "Observation des singes magots",
+          "Promenade en barque traditionnelle",
+          "Randonnée dans l'oliveraie",
+          "Déjeuner vue panoramique"
+        ],
+        "ar": [
+          "شلالات بارتفاع 110 متر",
+          "مراقبة قرود المكاك",
+          "نزهة بالقارب التقليدي",
+          "المشي في بستان الزيتون",
+          "غداء بإطلالة بانورامية"
+        ]
+      },
+      "itinerary": {
+        "fr": [
+          {
+            "time": "08:00",
+            "activity": "Départ de Marrakech",
+            "duration": "2h30"
+          },
+          {
+            "time": "10:30",
+            "activity": "Arrivée aux cascades - Première vue",
+            "duration": "30min"
+          },
+          {
+            "time": "11:00",
+            "activity": "Randonnée vers le bas des chutes",
+            "duration": "1h30"
+          },
+          {
+            "time": "12:30",
+            "activity": "Promenade en barque + observation singes",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Déjeuner restaurant panoramique",
+            "duration": "1h30"
+          },
+          {
+            "time": "15:00",
+            "activity": "Temps libre et exploration",
+            "duration": "1h"
+          },
+          {
+            "time": "16:00",
+            "activity": "Retour vers Marrakech",
+            "duration": "2h30"
+          }
+        ],
+        "ar": [
+          {
+            "time": "08:00",
+            "activity": "المغادرة من مراكش",
+            "duration": "ساعتان ونصف"
+          },
+          {
+            "time": "10:30",
+            "activity": "الوصول للشلالات - الإطلالة الأولى",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "11:00",
+            "activity": "المشي نحو أسفل الشلالات",
+            "duration": "ساعة ونصف"
+          },
+          {
+            "time": "12:30",
+            "activity": "نزهة بالقارب + مراقبة القرود",
+            "duration": "ساعة"
+          },
+          {
+            "time": "13:30",
+            "activity": "غداء في مطعم بانورامي",
+            "duration": "ساعة ونصف"
+          },
+          {
+            "time": "15:00",
+            "activity": "وقت حر واستكشاف",
+            "duration": "ساعة"
+          },
+          {
+            "time": "16:00",
+            "activity": "العودة إلى مراكش",
+            "duration": "ساعتان ونصف"
+          }
+        ]
+      },
+      "included": {
+        "fr": [
+          "Transport climatisé aller-retour",
+          "Guide local expérimenté",
+          "Promenade en barque traditionnelle",
+          "Assurance voyage",
+          "Eau minérale"
+        ],
+        "ar": [
+          "النقل المكيف ذهاباً وإياباً",
+          "مرشد محلي خبير",
+          "نزهة بالقارب التقليدي",
+          "تأمين السفر",
+          "مياه معدنية"
+        ]
+      },
+      "notIncluded": {
+        "fr": [
+          "Déjeuner (25-35 MAD)",
+          "Boissons au restaurant",
+          "Pourboires guide",
+          "Achats souvenirs"
+        ],
+        "ar": [
+          "الغداء (25-35 درهم)",
+          "المشروبات في المطعم",
+          "إكرامية المرشد",
+          "شراء الهدايا التذكارية"
+        ]
+      }
+    },
+    "atlas-imlil": {
+      "id": "atlas-imlil",
+      "name": {
+        "fr": "Haut Atlas & Imlil - Villages Berbères",
+        "ar": "الأطلس الكبير وإمليل - القرى البربرية"
+      },
+      "subtitle": {
+        "fr": "Trekking, culture berbère et panoramas",
+        "ar": "المشي والثقافة البربرية والمناظر"
+      },
+      "duration": {
+        "fr": "Journée complète (8h)",
+        "ar": "يوم كامل (8 ساعات)"
+      },
+      "price": {
+        "group": 380,
+        "private": 1100,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 38,
+        "private": 110
+      },
+      "difficulty": "modéré à difficile",
+      "category": "trekking",
+      "highlights": {
+        "fr": [
+          "Vue sur le Toubkal (4167m)",
+          "Villages berbères authentiques",
+          "Randonnée dans les terrasses",
+          "Déjeuner chez l'habitant",
+          "Artisanat local et coopératives"
+        ],
+        "ar": [
+          "إطلالة على توبقال (4167م)",
+          "قرى بربرية أصيلة",
+          "المشي في المدرجات",
+          "غداء عند السكان المحليين",
+          "الحرف المحلية والتعاونيات"
+        ]
+      }
+    },
+    "balloon": {
+      "id": "balloon",
+      "name": {
+        "fr": "Vol en Montgolfière - Lever de Soleil",
+        "ar": "رحلة المنطاد - شروق الشمس"
+      },
+      "subtitle": {
+        "fr": "Survol magique de la palmeraie",
+        "ar": "تحليق سحري فوق النخيل"
+      },
+      "duration": {
+        "fr": "Matinée (4h)",
+        "ar": "صباح (4 ساعات)"
+      },
+      "price": {
+        "group": 1450,
+        "private": 1450,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 145,
+        "private": 145
+      },
+      "difficulty": "facile",
+      "category": "luxe",
+      "highlights": {
+        "fr": [
+          "Vol au lever du soleil",
+          "Vue panoramique sur l'Atlas",
+          "Petit-déjeuner berbère traditionnel",
+          "Certificat de vol personnalisé",
+          "Transport de luxe inclus"
+        ],
+        "ar": [
+          "طيران عند شروق الشمس",
+          "إطلالة بانورامية على الأطلس",
+          "إفطار بربري تقليدي",
+          "شهادة طيران شخصية",
+          "نقل فاخر مشمول"
+        ]
+      }
+    }
+  },
+  "categories": {
+    "nature": {
+      "fr": "Nature & Paysages",
+      "ar": "الطبيعة والمناظر",
+      "color": "emerald"
+    },
+    "culture": {
+      "fr": "Culture & Patrimoine", 
+      "ar": "الثقافة والتراث",
+      "color": "amber"
+    },
+    "aventure": {
+      "fr": "Aventure & Sport",
+      "ar": "المغامرة والرياضة", 
+      "color": "red"
+    },
+    "trekking": {
+      "fr": "Randonnée & Trekking",
+      "ar": "المشي والتسلق",
+      "color": "orange"
+    },
+    "luxe": {
+      "fr": "Expériences de Luxe",
+      "ar": "تجارب فاخرة",
+      "color": "purple"
+    }
+  },
+  "specialOffers": {
+    "groupDiscount": {
+      "fr": "Réduction groupe (6+ personnes): -15%",
+      "ar": "خصم المجموعة (6+ أشخاص): -15%"
+    },
+    "multiDay": {
+      "fr": "Forfait 3 excursions: -20%",
+      "ar": "باقة 3 رحلات: -20%"
+    },
+    "familyPackage": {
+      "fr": "Pack famille (2 adultes + 2 enfants): Prix spécial",
+      "ar": "باقة العائلة (2 بالغ + 2 طفل): سعر خاص"
+    }
+  }
+}

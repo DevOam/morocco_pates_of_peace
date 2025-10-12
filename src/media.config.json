@@ -1,0 +1,43 @@
+{
+  "_notes": "Remplacez ces URLs par des liens directs et vérifiés (Wikimedia Commons: upload.wikimedia.org, Internet Archive, etc.).",
+  "images": {
+    "hero1": "https://i.pinimg.com/1200x/3b/c6/d5/3bc6d55e7779815c88f02dc2301c05f1.jpg",
+    "hero2": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Erg_Chebbi_Dunes_Camel_LL.JPG",
+    "hero3": "https://i.pinimg.com/1200x/cd/dd/c0/cdddc08d3b5d3737342516a822a315b5.jpg",
+
+    "marrakech": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Koutoubia_Mosque_tower%2C_Marrakech%2C_Morocco_-_panoramio.jpg",
+    "fes": "https://upload.wikimedia.org/wikipedia/commons/4/42/Bab_boujloud_fes.jpg",
+    "casablanca": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hassan_II_Mosque_Casablanca_Morocco.jpg",
+    "rabat": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Hassan_Tower_and_columns_%28Rabat%2C_Morocco%29_%2815126547404%29.jpg",
+    "chefchaouen": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Chefchaouen_Bab_el_Souk.JPG",
+    "essaouira": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Ramparts_of_Essaouira.JPG",
+    "merzouga": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Erg_Chebbi_Dunes_Camel_LL.JPG",
+
+    "gallery1": "https://upload.wikimedia.org/wikipedia/commons/5/56/Jemaa_el-Fna_Marrakech_2019.jpg",
+    "gallery2": "https://upload.wikimedia.org/wikipedia/commons/6/69/Erg_Chebbi_in_Morocco.jpg",
+    "gallery3": "https://upload.wikimedia.org/wikipedia/commons/9/92/Chefchaouen_street_%282017%29.jpg",
+    "gallery4": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Ramparts_of_Essaouira.JPG",
+    "gallery5": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hassan_II_Mosque_Casablanca_Morocco.jpg",
+    "gallery6": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Hassan_Tower_and_columns_%28Rabat%2C_Morocco%29_%2815126547404%29.jpg",
+    "gallery7": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Ouzoud_Falls%2C_Morocco.jpg",
+    "gallery8": "https://upload.wikimedia.org/wikipedia/commons/2/21/A%C3%AFt_Benhaddou_Overlook.jpg",
+
+    "tour1": "https://upload.wikimedia.org/wikipedia/commons/2/21/A%C3%AFt_Benhaddou_Overlook.jpg",
+    "tour2": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Ouzoud_Falls%2C_Morocco.jpg",
+    "tour3": "https://upload.wikimedia.org/wikipedia/commons/6/69/Erg_Chebbi_in_Morocco.jpg",
+
+    "client1": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    "client2": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    "client3": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+  },
+  "audio": {
+    "marrakech": "https://archive.org/download/aporee_39525_45178/RiadHelen.mp3",
+    "sahara": "https://archive.org/download/DesertWinds/Desert%20Winds.mp3",
+    "gnawa": "https://archive.org/download/08-gnaoua-the-song-of-needs/08%20Gnaoua%20-%20The%20Song%20Of%20Needs.mp3",
+    "fes": "https://archive.org/download/aporee_18567_21566/Bnnekald2Fes.mp3",
+    "ouzoud": "https://archive.org/download/relaxingsounds/Falls%203%203h%20%28Lowest%20pitch%2BHighOvertones%29RumbleRoaring-LargeWaterfall.ogg"
+  },
+  "videos": {
+    "hero": "https://www.youtube.com/embed/SbVjY45vlLM?rel=0&modestbranding=1"
+  }
+}
