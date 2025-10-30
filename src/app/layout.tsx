@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Marrakech Tours - Agence de Voyage Authentique",
+  title: "Morocco Plant Peace - Agence de Voyage Authentique",
   description: "Découvrez le Maroc authentique avec nos circuits personnalisés. Marrakech, Fès, Sahara et plus encore.",
-  keywords: "Marrakech, tours, voyage Maroc, circuits, Sahara, Fès, agence voyage",
+  keywords: "Morocco Plant Peace, tours, voyage Maroc, circuits, Sahara, Fès, agence voyage",
 };
 
 export default function RootLayout({

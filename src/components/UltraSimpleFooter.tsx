@@ -3,7 +3,7 @@
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Youtube, Star, Shield, Award } from 'lucide-react';
 
 interface UltraSimpleFooterProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function UltraSimpleFooter({ language }: UltraSimpleFooterProps) {
@@ -76,6 +76,76 @@ export default function UltraSimpleFooter({ language }: UltraSimpleFooterProps) 
         rating: "4.9/5 على 2,847 تقييم",
         experience: "15 سنة من الخبرة",
         clients: "50,000+ عميل راضٍ"
+      }
+    },
+    en: {
+      company: {
+        name: "Morocco Desert Tours",
+        description: "Your trusted partner to discover Morocco's wonders since 2009. Authentic experiences, certified guides, satisfaction guaranteed.",
+        address: "123 Avenue Mohammed V, Marrakech 40000, Morocco",
+        phone: "+212 772321613",
+        email: "contact@moroccotours.com",
+        hours: "Mon-Sun: 8:00-20:00"
+      },
+      destinations: {
+        title: "Destinations",
+        items: ["Marrakech", "Fez", "Sahara", "Chefchaouen", "Essaouira", "Casablanca"]
+      },
+      services: {
+        title: "Services",
+        items: ["Private Tours", "Groups", "Transport", "Accommodation", "Guides", "Day Trips"]
+      },
+      support: {
+        title: "Support",
+        items: ["Help Center", "FAQ", "Cancellation Policy", "Terms & Conditions", "Privacy", "Complaints"]
+      },
+      newsletter: {
+        title: "Newsletter",
+        description: "Receive our exclusive offers",
+        placeholder: "Your email",
+        button: "Subscribe"
+      },
+      social: "Follow us",
+      copyright: "© 2024 Morocco Desert Tours. All rights reserved.",
+      trust: {
+        rating: "4.9/5 from 2,847 reviews",
+        experience: "15 years of experience",
+        clients: "50,000+ happy clients"
+      }
+    },
+    es: {
+      company: {
+        name: "Tours del Desierto de Marruecos",
+        description: "Tu socio de confianza para descubrir las maravillas de Marruecos desde 2009. Experiencias auténticas, guías certificados, satisfacción garantizada.",
+        address: "123 Avenida Mohammed V, Marrakech 40000, Marruecos",
+        phone: "+212 772321613",
+        email: "contact@moroccotours.com",
+        hours: "Lun-Dom: 8:00-20:00"
+      },
+      destinations: {
+        title: "Destinos",
+        items: ["Marrakech", "Fez", "Sáhara", "Chefchaouen", "Esauira", "Casablanca"]
+      },
+      services: {
+        title: "Servicios",
+        items: ["Tours Privados", "Grupos", "Transporte", "Alojamiento", "Guías", "Excursiones de un día"]
+      },
+      support: {
+        title: "Soporte",
+        items: ["Centro de ayuda", "FAQ", "Política de cancelación", "Términos y Condiciones", "Privacidad", "Reclamaciones"]
+      },
+      newsletter: {
+        title: "Boletín",
+        description: "Recibe nuestras ofertas exclusivas",
+        placeholder: "Tu email",
+        button: "Suscribirse"
+      },
+      social: "Síguenos",
+      copyright: "© 2024 Tours del Desierto de Marruecos. Todos los derechos reservados.",
+      trust: {
+        rating: "4.9/5 sobre 2.847 reseñas",
+        experience: "15 años de experiencia",
+        clients: "50,000+ clientes satisfechos"
       }
     }
   };
@@ -231,7 +301,7 @@ export default function UltraSimpleFooter({ language }: UltraSimpleFooterProps) 
                 <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
                   <Facebook className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
+                <a href="https://www.instagram.com/morocco_plant_peace?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-500 transition-colors">
                   <Instagram className="h-6 w-6" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">

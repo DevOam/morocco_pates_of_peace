@@ -7,7 +7,7 @@ import { BookNowCTA, GetQuoteCTA } from './OptimizedCTA';
 import { imageUrls } from './ImageManager';
 
 interface ExcursionsShowcaseProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
   onBookingClick: (excursionId: string) => void;
 }
 
@@ -32,6 +32,8 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
     'atlas-imlil': 'https://i.pinimg.com/1200x/c6/5b/21/c65b21594674925b58abb3f5167fefa9.jpg',
     // Hot Air Balloon Marrakech – user-provided Pinterest image
     balloon: 'https://i.pinimg.com/736x/bc/0e/67/bc0e67740410e0ab871be4628f15e5ef.jpg',
+    // Traditional Moroccan Cooking Class – user-provided image
+    'cooking-class': 'https://i.pinimg.com/736x/91/5a/de/915ade6f9f4f32b744f9cefb6904bdf1.jpg',
   };
 
   const filteredExcursions = selectedCategory === 'all' 
@@ -44,7 +46,8 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
       culture: 'bg-amber-500', 
       aventure: 'bg-red-500',
       trekking: 'bg-orange-500',
-      luxe: 'bg-purple-500'
+      luxe: 'bg-purple-500',
+      gastronomie: 'bg-rose-500'
     };
     return colorMap[category as keyof typeof colorMap] || 'bg-gray-500';
   };
@@ -59,12 +62,17 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            {language === 'fr' ? 'Nos Excursions Authentiques' : 'رحلاتنا الأصيلة'}
+            {language === 'fr' ? 'Nos Excursions Authentiques' : 
+             language === 'ar' ? 'رحلاتنا الأصيلة' :
+             language === 'en' ? 'Our Authentic Excursions' : 
+             'Nuestras Excursiones Auténticas'}
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             {language === 'fr' 
               ? 'Découvrez le Maroc authentique avec nos circuits soigneusement conçus, des prix transparents et des expériences inoubliables.'
-              : 'اكتشف المغرب الأصيل مع رحلاتنا المصممة بعناية وأسعار شفافة وتجارب لا تُنسى.'
+              : language === 'ar' ? 'اكتشف المغرب الأصيل مع رحلاتنا المصممة بعناية وأسعار شفافة وتجارب لا تُنسى.'
+              : language === 'en' ? 'Discover authentic Morocco with our carefully designed tours, transparent prices and unforgettable experiences.'
+              : 'Descubre el Marruecos auténtico con nuestros tours cuidadosamente diseñados, precios transparentes y experiencias inolvidables.'
             }
           </p>
         </div>
@@ -79,7 +87,10 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
                 : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
             }`}
           >
-            {language === 'fr' ? 'Toutes' : 'الكل'}
+            {language === 'fr' ? 'Toutes' : 
+             language === 'ar' ? 'الكل' :
+             language === 'en' ? 'All' : 
+             'Todas'}
           </button>
           {Object.entries(categories).map(([key, category]) => (
             <button
@@ -142,7 +153,10 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
                 {(excursion as any).highlights && (
                   <div className="mb-6">
                     <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">
-                      {language === 'fr' ? 'Points forts :' : 'النقاط المميزة:'}
+                      {language === 'fr' ? 'Points forts :' : 
+                       language === 'ar' ? 'النقاط المميزة:' :
+                       language === 'en' ? 'Highlights:' : 
+                       'Puntos destacados:'}
                     </h4>
                     <ul className="space-y-1">
                       {(excursion as any).highlights[language].slice(0, 3).map((highlight: string, index: number) => (
@@ -159,18 +173,30 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
                 <div className="bg-gray-50 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm text-gray-600">
-                      {language === 'fr' ? 'Groupe' : 'مجموعة'}
+                      {language === 'fr' ? 'Groupe' : 
+                       language === 'ar' ? 'مجموعة' :
+                       language === 'en' ? 'Group' : 
+                       'Grupo'}
                     </span>
                     <span className="font-bold text-morocco-red">
-                      {excursion.priceUSD.group}$ {language === 'fr' ? '/pers' : '/شخص'}
+                      {excursion.priceUSD.group}$ {language === 'fr' ? '/pers' : 
+                                                        language === 'ar' ? '/شخص' :
+                                                        language === 'en' ? '/person' : 
+                                                        '/persona'}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">
-                      {language === 'fr' ? 'Privé' : 'خاص'}
+                      {language === 'fr' ? 'Privé' : 
+                       language === 'ar' ? 'خاص' :
+                       language === 'en' ? 'Private' : 
+                       'Privado'}
                     </span>
                     <span className="font-bold text-morocco-gold">
-                      {excursion.priceUSD.private}$ {language === 'fr' ? '/groupe' : '/مجموعة'}
+                      {excursion.priceUSD.private}$ {language === 'fr' ? '/groupe' : 
+                                                          language === 'ar' ? '/مجموعة' :
+                                                          language === 'en' ? '/group' : 
+                                                          '/grupo'}
                     </span>
                   </div>
                 </div>
@@ -186,7 +212,10 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
                     onClick={() => setSelectedExcursion(excursion.id)}
                     className="px-3 sm:px-4 py-2 border-2 border-morocco-gold text-morocco-gold hover:bg-morocco-gold hover:text-black rounded-lg transition-colors text-xs sm:text-sm font-medium"
                   >
-                    {language === 'fr' ? 'Détails' : 'التفاصيل'}
+                    {language === 'fr' ? 'Détails' : 
+                     language === 'ar' ? 'التفاصيل' :
+                     language === 'en' ? 'Details' : 
+                     'Detalles'}
                   </button>
                 </div>
               </div>
@@ -198,7 +227,7 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
         <div className="mt-16 bg-gradient-to-r from-morocco-red to-morocco-gold rounded-2xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">
-              {language === 'fr' ? 'Offres Spéciales' : 'عروض خاصة'}
+              {language === 'fr' ? 'Offres Spéciales' : language === 'ar' ? 'عروض خاصة' : language === 'en' ? 'Special Offers' : 'Ofertas Especiales'}
             </h3>
           </div>
           
@@ -230,19 +259,19 @@ export default function ExcursionsShowcase({ language, onBookingClick }: Excursi
             <div className="flex items-center gap-2">
               <Award className="h-5 w-5 text-morocco-gold" />
               <span className="text-sm text-gray-600">
-                {language === 'fr' ? 'Guides Certifiés' : 'مرشدون معتمدون'}
+                {language === 'fr' ? 'Guides Certifiés' : language === 'ar' ? 'مرشدون معتمدون' : language === 'en' ? 'Certified Guides' : 'Guías Certificados'}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="h-5 w-5 text-green-500" />
               <span className="text-sm text-gray-600">
-                {language === 'fr' ? 'Assurance Incluse' : 'التأمين مشمول'}
+                {language === 'fr' ? 'Assurance Incluse' : language === 'ar' ? 'التأمين مشمول' : language === 'en' ? 'Insurance Included' : 'Seguro Incluido'}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <Star className="h-5 w-5 text-yellow-500" />
               <span className="text-sm text-gray-600">
-                {language === 'fr' ? 'Note 4.9/5' : 'تقييم 4.9/5'}
+                {language === 'fr' ? 'Note 4.9/5' : language === 'ar' ? 'تقييم 4.9/5' : language === 'en' ? 'Rating 4.9/5' : 'Calificación 4.9/5'}
               </span>
             </div>
           </div>
@@ -273,7 +302,7 @@ function ExcursionDetailModal({
   onBooking 
 }: {
   excursion: any;
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
   onClose: () => void;
   onBooking: () => void;
 }) {
@@ -302,7 +331,13 @@ function ExcursionDetailModal({
           {excursion.itinerary && (
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                {language === 'fr' ? 'Programme détaillé' : 'البرنامج المفصل'}
+                {language === 'fr' 
+                  ? 'Programme détaillé' 
+                  : language === 'ar' 
+                    ? 'البرنامج المفصل' 
+                    : language === 'en' 
+                      ? 'Detailed itinerary' 
+                      : 'Itinerario detallado'}
               </h3>
               <div className="space-y-4">
                 {excursion.itinerary[language].map((item: any, index: number) => (
@@ -325,7 +360,7 @@ function ExcursionDetailModal({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
                 <h4 className="font-bold text-green-600 mb-3">
-                  {language === 'fr' ? 'Inclus' : 'مشمول'}
+                  {language === 'fr' ? 'Inclus' : language === 'ar' ? 'مشمول' : language === 'en' ? 'Included' : 'Incluido'}
                 </h4>
                 <ul className="space-y-2">
                   {excursion.included[language].map((item: string, index: number) => (
@@ -340,7 +375,7 @@ function ExcursionDetailModal({
               {excursion.notIncluded && (
                 <div>
                   <h4 className="font-bold text-red-600 mb-3">
-                    {language === 'fr' ? 'Non inclus' : 'غير مشمول'}
+                    {language === 'fr' ? 'Non inclus' : language === 'ar' ? 'غير مشمول' : language === 'en' ? 'Not included' : 'No incluido'}
                   </h4>
                   <ul className="space-y-2">
                     {excursion.notIncluded[language].map((item: string, index: number) => (
@@ -359,7 +394,13 @@ function ExcursionDetailModal({
         {/* Footer */}
         <div className="bg-gray-50 px-6 py-4 flex items-center justify-between">
           <div className="text-sm text-gray-600">
-            {language === 'fr' ? 'À partir de' : 'ابتداءً من'} <span className="font-bold text-morocco-red">{excursion.priceUSD.group}$</span>
+            {language === 'fr' 
+              ? 'À partir de' 
+              : language === 'ar' 
+                ? 'ابتداءً من' 
+                : language === 'en' 
+                  ? 'From' 
+                  : 'Desde'} <span className="font-bold text-morocco-red">{excursion.priceUSD.group}$</span>
           </div>
           <BookNowCTA
             language={language}

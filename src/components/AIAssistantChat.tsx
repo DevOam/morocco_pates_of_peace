@@ -12,7 +12,7 @@ interface Message {
 }
 
 interface AIAssistantChatProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function AIAssistantChat({ language }: AIAssistantChatProps) {
@@ -88,6 +88,67 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
         "التحدث مع مستشار"
       ]
     }
+    ,
+    en: {
+      welcome: "Hello! I'm Aicha, your AI assistant specialized in trips to Morocco. How can I help you today? 🌟",
+      responses: [
+        {
+          keywords: ['circuit', 'tour', 'trip', 'visit'],
+          reply: "Great! We offer several authentic tours:\n\n🏛️ **Imperial Circuit** (7 days) - Marrakech, Fez, Meknes, Rabat\n🏜️ **Sahara Adventure** (4 days) - Merzouga, night under the stars\n🏔️ **Atlas & Valleys** (5 days) - Mountains and Berber villages\n\nWhich experience interests you most?"
+        },
+        {
+          keywords: ['price', 'cost', 'budget', 'tariff'],
+          reply: "Our prices vary by season and group size:\n\n💰 **Imperial Circuit**: 450-650€/person\n💰 **Sahara Express**: 280-380€/person\n💰 **Atlas Discovery**: 320-450€/person\n\n*Includes: transport, accommodation, guides, meals*\n\nHow many people are traveling with you?"
+        },
+        {
+          keywords: ['availability', 'date', 'booking', 'free'],
+          reply: "I can check availability in real time! 📅\n\n✅ **Upcoming available dates:**\n• 15-22 March 2024\n• 5-12 April 2024\n• 20-27 May 2024\n\nWhat period suits you best? I can propose tailored slots."
+        },
+        {
+          keywords: ['sahara', 'desert', 'dune', 'camel'],
+          reply: "The Sahara is calling! 🐪✨\n\n🌟 **Our Sahara experience includes:**\n• Sunset camel ride\n• Night in a traditional Berber camp\n• Stargazing with an astronomy guide\n• Breakfast facing the Erg Chebbi dunes\n\nShall I prepare a tailored quote for you?"
+        },
+        {
+          keywords: ['marrakech', 'fez', 'casablanca', 'rabat'],
+          reply: "Excellent choice! Imperial cities are full of treasures:\n\n🕌 **Marrakech**: Medina, Koutoubia, Majorelle Gardens\n🎨 **Fez**: Oldest medina in the world, crafts\n🏛️ **Rabat**: Modern capital, Hassan Tower\n🌊 **Casablanca**: Hassan II Mosque, corniche\n\nWhich city fascinates you most?"
+        }
+      ],
+      fallback: "Great question! To give you the most accurate answer, may I connect you with our specialized team? They can advise you personally. 📞",
+      quickReplies: [
+        'See popular tours',
+        'Request a quote',
+        'Check availability',
+        'Talk to an advisor'
+      ]
+    },
+    es: {
+      welcome: "¡Hola! Soy Aicha, tu asistente IA especializada en viajes a Marruecos. ¿Cómo puedo ayudarte hoy? 🌟",
+      responses: [
+        {
+          keywords: ['circuito', 'tour', 'viaje', 'visita'],
+          reply: "¡Excelente! Ofrecemos varios tours auténticos:\n\n🏛️ **Circuito Imperial** (7 días) - Marrakech, Fez, Meknes, Rabat\n🏜️ **Aventura en el Sáhara** (4 días) - Merzouga, noche bajo las estrellas\n🏔️ **Atlas y Valles** (5 días) - Montañas y pueblos bereberes\n\n¿Qué experiencia te interesa más?"
+        },
+        {
+          keywords: ['precio', 'costo', 'presupuesto', 'tarifa'],
+          reply: "Nuestros precios varían según la temporada y el tamaño del grupo:\n\n💰 **Circuito Imperial**: 450-650€/persona\n💰 **Sáhara Express**: 280-380€/persona\n💰 **Descubrimiento del Atlas**: 320-450€/persona\n\n*Incluye: transporte, alojamiento, guías, comidas*\n\n¿Cuántas personas viajan contigo?"
+        },
+        {
+          keywords: ['disponibilidad', 'fecha', 'reserva', 'libre'],
+          reply: "¡Puedo comprobar la disponibilidad en tiempo real! 📅\n\n✅ **Próximas fechas disponibles:**\n• 15-22 marzo 2024\n• 5-12 abril 2024\n• 20-27 mayo 2024\n\n¿Qué período te conviene más? Puedo proponerte horarios a medida."
+        },
+        {
+          keywords: ['sahara', 'desierto', 'duna', 'camello'],
+          reply: "¡El Sáhara te llama! 🐪✨\n\n🌟 **Nuestra experiencia en el Sáhara incluye:**\n• Paseo en camello al atardecer\n• Noche en campamento bereber tradicional\n• Observación de estrellas con guía de astronomía\n• Desayuno frente a las dunas de Erg Chebbi\n\n¿Quieres que te prepare un presupuesto personalizado?"
+        }
+      ],
+      fallback: "¡Excelente pregunta! Para darte la respuesta más precisa, ¿puedo ponerte en contacto con nuestro equipo especializado? 📞",
+      quickReplies: [
+        'Ver tours populares',
+        'Solicitar presupuesto',
+        'Comprobar disponibilidad',
+        'Hablar con un asesor'
+      ]
+    }
   };
 
   const currentContent = aiResponses[language];
@@ -149,13 +210,21 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
     if (conversationStep === 1) {
       return language === 'fr' 
         ? "Je vois que vous vous renseignez sur nos services ! Êtes-vous plutôt intéressé par les circuits culturels, l'aventure dans le Sahara, ou la découverte des villes impériales ? 🤔"
-        : "أرى أنك تستفسر عن خدماتنا! هل تهتم أكثر بالجولات الثقافية أم مغامرة الصحراء أم اكتشاف المدن الإمبراطورية؟ 🤔";
+        : language === 'ar'
+          ? "أرى أنك تستفسر عن خدماتنا! هل تهتم أكثر بالجولات الثقافية أم مغامرة الصحراء أم اكتشاف المدن الإمبراطورية؟ 🤔"
+          : language === 'en'
+            ? "I see you're exploring our services! Are you more interested in cultural tours, Sahara adventure, or discovering the imperial cities? 🤔"
+            : "Veo que estás explorando nuestros servicios. ¿Te interesan más los tours culturales, la aventura en el Sáhara o descubrir las ciudades imperiales? 🤔";
     }
 
     if (conversationStep >= 3) {
       return language === 'fr'
         ? "Parfait ! Basé sur notre conversation, je pense que vous apprécierez nos circuits personnalisés. Voulez-vous que je vous mette en contact avec notre équipe pour finaliser les détails ? 📞✨"
-        : "ممتاز! بناءً على محادثتنا، أعتقد أنك ستقدر رحلاتنا المخصصة. هل تريد أن أضعك على اتصال مع فريقنا لإنهاء التفاصيل؟ 📞✨";
+        : language === 'ar'
+          ? "ممتاز! بناءً على محادثتنا، أعتقد أنك ستقدر رحلاتنا المخصصة. هل تريد أن أضعك على اتصال مع فريقنا لإنهاء التفاصيل؟ 📞✨"
+          : language === 'en'
+            ? "Perfect! Based on our chat, I think you'll love our personalized tours. Shall I connect you with our team to finalize details? 📞✨"
+            : "¡Perfecto! Según nuestra conversación, te encantarán nuestros tours personalizados. ¿Te conecto con nuestro equipo para finalizar detalles? 📞✨";
     }
 
     return currentContent.fallback;
@@ -173,7 +242,8 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
   };
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString(language === 'fr' ? 'fr-FR' : 'ar-MA', { 
+    const locale = language === 'fr' ? 'fr-FR' : language === 'ar' ? 'ar-MA' : language === 'en' ? 'en-GB' : 'es-ES';
+    return date.toLocaleTimeString(locale, { 
       hour: '2-digit', 
       minute: '2-digit' 
     });
@@ -205,12 +275,12 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
               </div>
               <div>
                 <h3 className="font-bold text-lg">
-                  {language === 'fr' ? 'Aicha - Assistant IA' : 'عائشة - المساعد الذكي'}
+                  {language === 'fr' ? 'Aicha - Assistante IA' : language === 'ar' ? 'عائشة - المساعد الذكي' : language === 'en' ? 'Aicha - AI Assistant' : 'Aicha - Asistente IA'}
                 </h3>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <Sparkles className="h-3 w-3" />
-                  <span>{language === 'fr' ? 'IA en ligne' : 'الذكاء الاصطناعي متصل'}</span>
+                  <span>{language === 'fr' ? 'IA en ligne' : language === 'ar' ? 'الذكاء الاصطناعي متصل' : language === 'en' ? 'AI online' : 'IA en línea'}</span>
                 </div>
               </div>
             </div>
@@ -237,7 +307,7 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
                   {message.sender === 'ai' && (
                     <div className="flex items-center gap-2 mb-2">
                       <Bot className="h-4 w-4 text-purple-600" />
-                      <span className="text-xs font-medium text-purple-600">Aicha IA</span>
+                      <span className="text-xs font-medium text-purple-600">{language === 'fr' ? 'Aicha IA' : language === 'ar' ? 'عائشة' : language === 'en' ? 'Aicha AI' : 'Aicha IA'}</span>
                     </div>
                   )}
                   <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
@@ -260,7 +330,7 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
                   </div>
                   <div className="flex items-center gap-1">
                     <span className="text-sm text-gray-600">
-                      {language === 'fr' ? 'Aicha réfléchit' : 'عائشة تفكر'}
+                      {language === 'fr' ? 'Aicha réfléchit' : language === 'ar' ? 'عائشة تفكر' : language === 'en' ? 'Aicha is typing' : 'Aicha está escribiendo'}
                     </span>
                     <div className="flex space-x-1 ml-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" />
@@ -299,7 +369,7 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder={language === 'fr' ? 'Posez votre question...' : 'اطرح سؤالك...'}
+                placeholder={language === 'fr' ? 'Posez votre question...' : language === 'ar' ? 'اطرح سؤالك...' : language === 'en' ? 'Ask your question...' : 'Haz tu pregunta...'}
                 style={{ backgroundColor: 'white', color: 'black', WebkitTextFillColor: 'black', caretColor: 'black', fontSize: '18px', fontWeight: 'bold' }}
                 className="flex-1 px-4 py-3 border-4 border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent placeholder-black"
               />
@@ -316,15 +386,15 @@ export default function AIAssistantChat({ language }: AIAssistantChatProps) {
             <div className="flex justify-center space-x-6 mt-4 pt-3 border-t border-gray-100">
               <button className="flex items-center text-xs text-gray-600 hover:text-purple-600 transition-colors">
                 <Phone className="h-3 w-3 mr-1" />
-                {language === 'fr' ? 'Appeler' : 'اتصل'}
+                {language === 'fr' ? 'Appeler' : language === 'ar' ? 'اتصل' : language === 'en' ? 'Call' : 'Llamar'}
               </button>
               <button className="flex items-center text-xs text-gray-600 hover:text-purple-600 transition-colors">
                 <Mail className="h-3 w-3 mr-1" />
-                {language === 'fr' ? 'Email' : 'إيميل'}
+                {language === 'fr' ? 'Email' : language === 'ar' ? 'إيميل' : language === 'en' ? 'Email' : 'Email'}
               </button>
               <button className="flex items-center text-xs text-gray-600 hover:text-purple-600 transition-colors">
                 <MapPin className="h-3 w-3 mr-1" />
-                {language === 'fr' ? 'Localisation' : 'الموقع'}
+                {language === 'fr' ? 'Localisation' : language === 'ar' ? 'الموقع' : language === 'en' ? 'Location' : 'Ubicación'}
               </button>
             </div>
           </div>

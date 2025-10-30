@@ -4,15 +4,21 @@
       "id": "ourika",
       "name": {
         "fr": "Vallée d'Ourika & Atelier Artisanal",
-        "ar": "وادي أوريكا وورشة الحرف التقليدية"
+        "ar": "وادي أوريكا وورشة الحرف التقليدية",
+        "en": "Ourika Valley & Artisan Workshop",
+        "es": "Valle de Ourika y Taller Artesanal"
       },
       "subtitle": {
         "fr": "Nature, cascades et savoir-faire berbère",
-        "ar": "الطبيعة والشلالات والحرف البربرية"
+        "ar": "الطبيعة والشلالات والحرف البربرية",
+        "en": "Nature, waterfalls and Berber craftsmanship",
+        "es": "Naturaleza, cascadas y artesanía bereber"
       },
       "duration": {
         "fr": "Demi-journée (5h)",
-        "ar": "نصف يوم (5 ساعات)"
+        "ar": "نصف يوم (5 ساعات)",
+        "en": "Half-day (5h)",
+        "es": "Medio día (5h)"
       },
       "price": {
         "group": 280,
@@ -39,6 +45,20 @@
           "الشلالات وأنهار الجبال",
           "غداء بربري أصيل",
           "القرى التقليدية"
+        ],
+        "en": [
+          "Spectacular High Atlas landscapes",
+          "Visit to a traditional pottery workshop",
+          "Mountain waterfalls and rivers",
+          "Authentic Berber lunch",
+          "Traditional villages"
+        ],
+        "es": [
+          "Paisajes espectaculares del Alto Atlas",
+          "Visita a un taller de alfarería tradicional",
+          "Cascadas y ríos de montaña",
+          "Almuerzo bereber auténtico",
+          "Pueblos tradicionales"
         ]
       },
       "itinerary": {
@@ -105,6 +125,70 @@
             "activity": "العودة إلى مراكش",
             "duration": "ساعة ونصف"
           }
+        ],
+        "en": [
+          {
+            "time": "08:00",
+            "activity": "Pickup from your riad/hotel",
+            "duration": "30min"
+          },
+          {
+            "time": "09:30",
+            "activity": "Arrive in Ourika Valley - First waterfall",
+            "duration": "1h30"
+          },
+          {
+            "time": "11:00",
+            "activity": "Pottery workshop visit + demo",
+            "duration": "45min"
+          },
+          {
+            "time": "12:00",
+            "activity": "Traditional lunch by the river",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Free time and exploration",
+            "duration": "1h"
+          },
+          {
+            "time": "15:00",
+            "activity": "Return to Marrakech",
+            "duration": "1h30"
+          }
+        ],
+        "es": [
+          {
+            "time": "08:00",
+            "activity": "Salida desde tu riad/hotel",
+            "duration": "30min"
+          },
+          {
+            "time": "09:30",
+            "activity": "Llegada al valle de Ourika - Primera cascada",
+            "duration": "1h30"
+          },
+          {
+            "time": "11:00",
+            "activity": "Visita al taller de cerámica + demostración",
+            "duration": "45min"
+          },
+          {
+            "time": "12:00",
+            "activity": "Almuerzo tradicional junto al río",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Tiempo libre y exploración",
+            "duration": "1h"
+          },
+          {
+            "time": "15:00",
+            "activity": "Regreso a Marrakech",
+            "duration": "1h30"
+          }
         ]
       },
       "included": {
@@ -121,6 +205,20 @@
           "زيارة ورشة حرفية",
           "أتاي الترحيب",
           "تأمين السفر"
+        ],
+        "en": [
+          "Round-trip air-conditioned transport",
+          "Local Berber French-speaking guide",
+          "Visit to an artisan workshop",
+          "Welcome mint tea",
+          "Travel insurance"
+        ],
+        "es": [
+          "Transporte climatizado ida y vuelta",
+          "Guía bereber local francófono",
+          "Visita a un taller artesanal",
+          "Té de menta de bienvenida",
+          "Seguro de viaje"
         ]
       },
       "notIncluded": {
@@ -135,6 +233,18 @@
           "المشروبات الشخصية",
           "الإكراميات",
           "المشتريات الشخصية"
+        ],
+        "en": [
+          "Lunch (15-25 MAD)",
+          "Personal drinks",
+          "Tips",
+          "Personal purchases"
+        ],
+        "es": [
+          "Almuerzo (15-25 MAD)",
+          "Bebidas personales",
+          "Propinas",
+          "Compras personales"
         ]
       }
     },
@@ -142,15 +252,21 @@
       "id": "essaouira",
       "name": {
         "fr": "Essaouira - Perle de l'Atlantique",
-        "ar": "الصويرة - لؤلؤة الأطلسي"
+        "ar": "الصويرة - لؤلؤة الأطلسي",
+        "en": "Essaouira - Pearl of the Atlantic",
+        "es": "Esauira - Perla del Atlántico"
       },
       "subtitle": {
         "fr": "Médina UNESCO, port de pêche et artisanat",
-        "ar": "المدينة العتيقة المصنفة واليونسكو وميناء الصيد"
+        "ar": "المدينة العتيقة المصنفة واليونسكو وميناء الصيد",
+        "en": "UNESCO medina, fishing port and craftsmanship",
+        "es": "Medina UNESCO, puerto pesquero y artesanía"
       },
       "duration": {
         "fr": "Journée complète (10h)",
-        "ar": "يوم كامل (10 ساعات)"
+        "ar": "يوم كامل (10 ساعات)",
+        "en": "Full day (10h)",
+        "es": "Día completo (10h)"
       },
       "price": {
         "group": 350,
@@ -177,6 +293,20 @@
           "ورش خشب العرعار",
           "الأسوار والحصون البرتغالية",
           "الشاطئ والرياضات المائية"
+        ],
+        "en": [
+          "UNESCO-listed medina",
+          "Traditional fishing port",
+          "Thuya marquetry workshops",
+          "Portuguese ramparts and fortifications",
+          "Beach and water sports"
+        ],
+        "es": [
+          "Medina catalogada por la UNESCO",
+          "Puerto pesquero tradicional",
+          "Talleres de marquetería de tuya",
+          "Murallas y fortificaciones portuguesas",
+          "Playa y deportes acuáticos"
         ]
       },
       "itinerary": {
@@ -243,6 +373,70 @@
             "activity": "العودة إلى مراكش",
             "duration": "ساعتان ونصف"
           }
+        ],
+        "en": [
+          {
+            "time": "08:00",
+            "activity": "Depart from Marrakech",
+            "duration": "2h30"
+          },
+          {
+            "time": "10:30",
+            "activity": "Arrive in Essaouira - Ramparts tour",
+            "duration": "1h"
+          },
+          {
+            "time": "11:30",
+            "activity": "Visit the medina and souks",
+            "duration": "2h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Fresh fish lunch at the port",
+            "duration": "1h30"
+          },
+          {
+            "time": "15:00",
+            "activity": "Marquetry workshop + free time",
+            "duration": "2h"
+          },
+          {
+            "time": "17:00",
+            "activity": "Return to Marrakech",
+            "duration": "2h30"
+          }
+        ],
+        "es": [
+          {
+            "time": "08:00",
+            "activity": "Salida desde Marrakech",
+            "duration": "2h30"
+          },
+          {
+            "time": "10:30",
+            "activity": "Llegada a Esauira - Visita a las murallas",
+            "duration": "1h"
+          },
+          {
+            "time": "11:30",
+            "activity": "Visita a la medina y los zocos",
+            "duration": "2h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Almuerzo de pescado fresco en el puerto",
+            "duration": "1h30"
+          },
+          {
+            "time": "15:00",
+            "activity": "Taller de marquetería + tiempo libre",
+            "duration": "2h"
+          },
+          {
+            "time": "17:00",
+            "activity": "Regreso a Marrakech",
+            "duration": "2h30"
+          }
         ]
       }
     },
@@ -250,15 +444,21 @@
       "id": "agafay",
       "name": {
         "fr": "Agafay Desert - Coucher de Soleil & Dîner",
-        "ar": "صحراء أڭافاي - غروب الشمس والعشاء"
+        "ar": "صحراء أڭافاي - غروب الشمس والعشاء",
+        "en": "Agafay Desert - Sunset & Dinner",
+        "es": "Desierto de Agafay - Atardecer y Cena"
       },
       "subtitle": {
         "fr": "Désert de pierres, quad et soirée berbère",
-        "ar": "صحراء الحجارة والكواد والسهرة البربرية"
+        "ar": "صحراء الحجارة والكواد والسهرة البربرية",
+        "en": "Stone desert, quad and Berber evening",
+        "es": "Desierto de piedra, quad y velada bereber"
       },
       "duration": {
         "fr": "Soirée (6h)",
-        "ar": "مساء (6 ساعات)"
+        "ar": "مساء (6 ساعات)",
+        "en": "Evening (6h)",
+        "es": "Tarde-noche (6h)"
       },
       "price": {
         "group": 450,
@@ -285,6 +485,20 @@
           "غروب شمس رائع",
           "عشاء تقليدي تحت النجوم",
           "عرض موسيقى كناوة"
+        ],
+        "en": [
+          "Quad ride in the desert",
+          "Camel trek",
+          "Spectacular sunset",
+          "Traditional dinner under the stars",
+          "Gnawa music show"
+        ],
+        "es": [
+          "Paseo en quad por el desierto",
+          "Paseo en camello",
+          "Atardecer espectacular",
+          "Cena tradicional bajo las estrellas",
+          "Espectáculo de música gnawa"
         ]
       },
       "itinerary": {
@@ -351,6 +565,70 @@
             "activity": "العودة إلى مراكش",
             "duration": "45 دقيقة"
           }
+        ],
+        "en": [
+          {
+            "time": "15:00",
+            "activity": "Depart Marrakech to Agafay",
+            "duration": "45min"
+          },
+          {
+            "time": "16:00",
+            "activity": "Safety briefing + quad ride",
+            "duration": "1h30"
+          },
+          {
+            "time": "17:30",
+            "activity": "Camel ride + Berber tea",
+            "duration": "1h"
+          },
+          {
+            "time": "18:30",
+            "activity": "Panoramic sunset",
+            "duration": "30min"
+          },
+          {
+            "time": "19:30",
+            "activity": "Traditional dinner + show",
+            "duration": "2h"
+          },
+          {
+            "time": "21:30",
+            "activity": "Return to Marrakech",
+            "duration": "45min"
+          }
+        ],
+        "es": [
+          {
+            "time": "15:00",
+            "activity": "Salida de Marrakech hacia Agafay",
+            "duration": "45min"
+          },
+          {
+            "time": "16:00",
+            "activity": "Briefing de seguridad + paseo en quad",
+            "duration": "1h30"
+          },
+          {
+            "time": "17:30",
+            "activity": "Paseo en camello + té bereber",
+            "duration": "1h"
+          },
+          {
+            "time": "18:30",
+            "activity": "Atardecer panorámico",
+            "duration": "30min"
+          },
+          {
+            "time": "19:30",
+            "activity": "Cena tradicional + espectáculo",
+            "duration": "2h"
+          },
+          {
+            "time": "21:30",
+            "activity": "Regreso a Marrakech",
+            "duration": "45min"
+          }
         ]
       }
     },
@@ -358,15 +636,21 @@
       "id": "ouzoud",
       "name": {
         "fr": "Cascades d'Ouzoud - Merveille Naturelle",
-        "ar": "شلالات أوزود - العجيبة الطبيعية"
+        "ar": "شلالات أوزود - العجيبة الطبيعية",
+        "en": "Ouzoud Waterfalls - Natural Wonder",
+        "es": "Cascadas de Ouzoud - Maravilla Natural"
       },
       "subtitle": {
         "fr": "Plus hautes chutes du Maroc et singes magots",
-        "ar": "أعلى شلالات المغرب وقرود المكاك"
+        "ar": "أعلى شلالات المغرب وقرود المكاك",
+        "en": "Morocco’s highest falls and Barbary macaques",
+        "es": "Las cataratas más altas de Marruecos y macacos de Berbería"
       },
       "duration": {
         "fr": "Journée complète (9h)",
-        "ar": "يوم كامل (9 ساعات)"
+        "ar": "يوم كامل (9 ساعات)",
+        "en": "Full day (9h)",
+        "es": "Día completo (9h)"
       },
       "price": {
         "group": 320,
@@ -393,6 +677,20 @@
           "نزهة بالقارب التقليدي",
           "المشي في بستان الزيتون",
           "غداء بإطلالة بانورامية"
+        ],
+        "en": [
+          "110-meter waterfalls",
+          "Spotting Barbary macaques",
+          "Traditional boat ride",
+          "Walk through olive groves",
+          "Lunch with panoramic view"
+        ],
+        "es": [
+          "Cataratas de 110 metros",
+          "Observación de macacos de Berbería",
+          "Paseo en barca tradicional",
+          "Caminata por olivar",
+          "Almuerzo con vista panorámica"
         ]
       },
       "itinerary": {
@@ -469,6 +767,80 @@
             "activity": "العودة إلى مراكش",
             "duration": "ساعتان ونصف"
           }
+        ],
+        "en": [
+          {
+            "time": "08:00",
+            "activity": "Depart from Marrakech",
+            "duration": "2h30"
+          },
+          {
+            "time": "10:30",
+            "activity": "Arrive at falls - First viewpoint",
+            "duration": "30min"
+          },
+          {
+            "time": "11:00",
+            "activity": "Hike to the base of the falls",
+            "duration": "1h30"
+          },
+          {
+            "time": "12:30",
+            "activity": "Boat ride + monkey watching",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Lunch at panoramic restaurant",
+            "duration": "1h30"
+          },
+          {
+            "time": "15:00",
+            "activity": "Free time and exploration",
+            "duration": "1h"
+          },
+          {
+            "time": "16:00",
+            "activity": "Return to Marrakech",
+            "duration": "2h30"
+          }
+        ],
+        "es": [
+          {
+            "time": "08:00",
+            "activity": "Salida desde Marrakech",
+            "duration": "2h30"
+          },
+          {
+            "time": "10:30",
+            "activity": "Llegada a las cataratas - Primer mirador",
+            "duration": "30min"
+          },
+          {
+            "time": "11:00",
+            "activity": "Caminata hasta la base de las cataratas",
+            "duration": "1h30"
+          },
+          {
+            "time": "12:30",
+            "activity": "Paseo en barca + observación de monos",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Almuerzo en restaurante panorámico",
+            "duration": "1h30"
+          },
+          {
+            "time": "15:00",
+            "activity": "Tiempo libre y exploración",
+            "duration": "1h"
+          },
+          {
+            "time": "16:00",
+            "activity": "Regreso a Marrakech",
+            "duration": "2h30"
+          }
         ]
       },
       "included": {
@@ -485,6 +857,20 @@
           "نزهة بالقارب التقليدي",
           "تأمين السفر",
           "مياه معدنية"
+        ],
+        "en": [
+          "Round-trip air-conditioned transport",
+          "Experienced local guide",
+          "Traditional boat ride",
+          "Travel insurance",
+          "Mineral water"
+        ],
+        "es": [
+          "Transporte climatizado ida y vuelta",
+          "Guía local experimentado",
+          "Paseo en barca tradicional",
+          "Seguro de viaje",
+          "Agua mineral"
         ]
       },
       "notIncluded": {
@@ -499,6 +885,18 @@
           "المشروبات في المطعم",
           "إكرامية المرشد",
           "شراء الهدايا التذكارية"
+        ],
+        "en": [
+          "Lunch (25-35 MAD)",
+          "Drinks at the restaurant",
+          "Guide tips",
+          "Souvenir purchases"
+        ],
+        "es": [
+          "Almuerzo (25-35 MAD)",
+          "Bebidas en el restaurante",
+          "Propinas para el guía",
+          "Compras de recuerdos"
         ]
       }
     },
@@ -506,15 +904,21 @@
       "id": "atlas-imlil",
       "name": {
         "fr": "Haut Atlas & Imlil - Villages Berbères",
-        "ar": "الأطلس الكبير وإمليل - القرى البربرية"
+        "ar": "الأطلس الكبير وإمليل - القرى البربرية",
+        "en": "High Atlas & Imlil - Berber Villages",
+        "es": "Alto Atlas e Imlil - Pueblos Bereberes"
       },
       "subtitle": {
         "fr": "Trekking, culture berbère et panoramas",
-        "ar": "المشي والثقافة البربرية والمناظر"
+        "ar": "المشي والثقافة البربرية والمناظر",
+        "en": "Trekking, Berber culture and panoramas",
+        "es": "Trekking, cultura bereber y panoramas"
       },
       "duration": {
         "fr": "Journée complète (8h)",
-        "ar": "يوم كامل (8 ساعات)"
+        "ar": "يوم كامل (8 ساعات)",
+        "en": "Full day (8h)",
+        "es": "Día completo (8h)"
       },
       "price": {
         "group": 380,
@@ -541,6 +945,20 @@
           "المشي في المدرجات",
           "غداء عند السكان المحليين",
           "الحرف المحلية والتعاونيات"
+        ],
+        "en": [
+          "View of Mount Toubkal (4167m)",
+          "Authentic Berber villages",
+          "Hike through terraced fields",
+          "Lunch with a local family",
+          "Local crafts and cooperatives"
+        ],
+        "es": [
+          "Vista del Toubkal (4167 m)",
+          "Pueblos bereberes auténticos",
+          "Caminata por terrazas",
+          "Almuerzo con una familia local",
+          "Artesanía local y cooperativas"
         ]
       }
     },
@@ -548,15 +966,21 @@
       "id": "balloon",
       "name": {
         "fr": "Vol en Montgolfière - Lever de Soleil",
-        "ar": "رحلة المنطاد - شروق الشمس"
+        "ar": "رحلة المنطاد - شروق الشمس",
+        "en": "Hot Air Balloon - Sunrise Flight",
+        "es": "Paseo en Globo - Amanecer"
       },
       "subtitle": {
         "fr": "Survol magique de la palmeraie",
-        "ar": "تحليق سحري فوق النخيل"
+        "ar": "تحليق سحري فوق النخيل",
+        "en": "Magical flight over the palm grove",
+        "es": "Vuelo mágico sobre la palmera"
       },
       "duration": {
         "fr": "Matinée (4h)",
-        "ar": "صباح (4 ساعات)"
+        "ar": "صباح (4 ساعات)",
+        "en": "Morning (4h)",
+        "es": "Mañana (4h)"
       },
       "price": {
         "group": 1450,
@@ -583,49 +1007,341 @@
           "إفطار بربري تقليدي",
           "شهادة طيران شخصية",
           "نقل فاخر مشمول"
+        ],
+        "en": [
+          "Sunrise flight",
+          "Panoramic views of the Atlas",
+          "Traditional Berber breakfast",
+          "Personalized flight certificate",
+          "Luxury transport included"
+        ],
+        "es": [
+          "Vuelo al amanecer",
+          "Vistas panorámicas del Atlas",
+          "Desayuno bereber tradicional",
+          "Certificado de vuelo personalizado",
+          "Transporte de lujo incluido"
+        ]
+      }
+    },
+    "cooking-class": {
+      "id": "cooking-class",
+      "name": {
+        "fr": "Atelier Cuisine Traditionnelle Marocaine",
+        "ar": "ورشة الطبخ المغربي التقليدي",
+        "en": "Traditional Moroccan Cooking Workshop",
+        "es": "Taller de Cocina Tradicional Marroquí"
+      },
+      "subtitle": {
+        "fr": "Cuisinez avec un chef local authentique",
+        "ar": "اطبخ مع شيف محلي أصيل",
+        "en": "Cook with an authentic local chef",
+        "es": "Cocina con un chef local auténtico"
+      },
+      "duration": {
+        "fr": "Demi-journée (4h)",
+        "ar": "نصف يوم (4 ساعات)",
+        "en": "Half-day (4h)",
+        "es": "Medio día (4h)"
+      },
+      "price": {
+        "group": 500,
+        "private": 500,
+        "currency": "MAD"
+      },
+      "priceUSD": {
+        "group": 50,
+        "private": 50
+      },
+      "difficulty": "facile",
+      "category": "gastronomie",
+      "highlights": {
+        "fr": [
+          "Cours avec chef traditionnel marocain",
+          "Préparation de tajine et couscous",
+          "Visite du marché aux épices",
+          "Dégustation de vos créations",
+          "Recettes authentiques à emporter",
+          "Thé à la menthe et pâtisseries"
+        ],
+        "ar": [
+          "درس مع شيف مغربي تقليدي",
+          "تحضير الطاجين والكسكس",
+          "زيارة سوق التوابل",
+          "تذوق إبداعاتكم",
+          "وصفات أصيلة للأخذ معكم",
+          "أتاي وحلويات"
+        ],
+        "en": [
+          "Class with a traditional Moroccan chef",
+          "Prepare tajine and couscous",
+          "Visit the spice market",
+          "Taste your creations",
+          "Authentic recipes to take home",
+          "Mint tea and pastries"
+        ],
+        "es": [
+          "Clase con un chef marroquí tradicional",
+          "Preparación de tajine y cuscús",
+          "Visita al mercado de especias",
+          "Degustación de tus creaciones",
+          "Recetas auténticas para llevar",
+          "Té de menta y pasteles"
+        ]
+      },
+      "itinerary": {
+        "fr": [
+          {
+            "time": "09:00",
+            "activity": "Accueil chez le chef + thé de bienvenue",
+            "duration": "30min"
+          },
+          {
+            "time": "09:30",
+            "activity": "Visite guidée du marché aux épices",
+            "duration": "1h"
+          },
+          {
+            "time": "10:30",
+            "activity": "Préparation des ingrédients et épices",
+            "duration": "30min"
+          },
+          {
+            "time": "11:00",
+            "activity": "Cours de cuisine - Tajine traditionnel",
+            "duration": "1h30"
+          },
+          {
+            "time": "12:30",
+            "activity": "Préparation du couscous et légumes",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Dégustation + remise des recettes",
+            "duration": "30min"
+          }
+        ],
+        "ar": [
+          {
+            "time": "09:00",
+            "activity": "الاستقبال عند الشيف + أتاي الترحيب",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "09:30",
+            "activity": "جولة مرشدة في سوق التوابل",
+            "duration": "ساعة"
+          },
+          {
+            "time": "10:30",
+            "activity": "تحضير المكونات والتوابل",
+            "duration": "30 دقيقة"
+          },
+          {
+            "time": "11:00",
+            "activity": "درس الطبخ - الطاجين التقليدي",
+            "duration": "ساعة ونصف"
+          },
+          {
+            "time": "12:30",
+            "activity": "تحضير الكسكس والخضار",
+            "duration": "ساعة"
+          },
+          {
+            "time": "13:30",
+            "activity": "التذوق + تسليم الوصفات",
+            "duration": "30 دقيقة"
+          }
+        ],
+        "en": [
+          {
+            "time": "09:00",
+            "activity": "Welcome at the chef’s home + welcome tea",
+            "duration": "30min"
+          },
+          {
+            "time": "09:30",
+            "activity": "Guided visit of the spice market",
+            "duration": "1h"
+          },
+          {
+            "time": "10:30",
+            "activity": "Prepare ingredients and spices",
+            "duration": "30min"
+          },
+          {
+            "time": "11:00",
+            "activity": "Cooking class - Traditional tajine",
+            "duration": "1h30"
+          },
+          {
+            "time": "12:30",
+            "activity": "Prepare couscous and vegetables",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Tasting + recipes handover",
+            "duration": "30min"
+          }
+        ],
+        "es": [
+          {
+            "time": "09:00",
+            "activity": "Bienvenida en casa del chef + té de bienvenida",
+            "duration": "30min"
+          },
+          {
+            "time": "09:30",
+            "activity": "Visita guiada al mercado de especias",
+            "duration": "1h"
+          },
+          {
+            "time": "10:30",
+            "activity": "Preparación de ingredientes y especias",
+            "duration": "30min"
+          },
+          {
+            "time": "11:00",
+            "activity": "Clase de cocina - Tajine tradicional",
+            "duration": "1h30"
+          },
+          {
+            "time": "12:30",
+            "activity": "Preparación de cuscús y verduras",
+            "duration": "1h"
+          },
+          {
+            "time": "13:30",
+            "activity": "Degustación + entrega de recetas",
+            "duration": "30min"
+          }
+        ]
+      },
+      "included": {
+        "fr": [
+          "Chef professionnel marocain",
+          "Tous les ingrédients et épices",
+          "Visite du marché traditionnel",
+          "Dégustation complète",
+          "Livret de recettes authentiques",
+          "Tablier de cuisine souvenir",
+          "Thé à la menthe et pâtisseries"
+        ],
+        "ar": [
+          "شيف مغربي محترف",
+          "جميع المكونات والتوابل",
+          "زيارة السوق التقليدي",
+          "تذوق كامل",
+          "كتيب الوصفات الأصيلة",
+          "مريلة طبخ تذكارية",
+          "أتاي وحلويات"
+        ],
+        "en": [
+          "Professional Moroccan chef",
+          "All ingredients and spices",
+          "Visit to the traditional market",
+          "Full tasting",
+          "Booklet of authentic recipes",
+          "Souvenir kitchen apron",
+          "Mint tea and pastries"
+        ],
+        "es": [
+          "Chef marroquí profesional",
+          "Todos los ingredientes y especias",
+          "Visita al mercado tradicional",
+          "Degustación completa",
+          "Libreto de recetas auténticas",
+          "Delantal de cocina de recuerdo",
+          "Té de menta y pasteles"
+        ]
+      },
+      "notIncluded": {
+        "fr": [
+          "Transport (disponible +50 MAD)",
+          "Boissons supplémentaires",
+          "Achats personnels au marché"
+        ],
+        "ar": [
+          "النقل (متوفر +50 درهم)",
+          "المشروبات الإضافية",
+          "المشتريات الشخصية في السوق"
+        ],
+        "en": [
+          "Transport (available +50 MAD)",
+          "Additional drinks",
+          "Personal purchases at the market"
+        ],
+        "es": [
+          "Transporte (disponible +50 MAD)",
+          "Bebidas adicionales",
+          "Compras personales en el mercado"
         ]
       }
     }
   },
   "categories": {
     "nature": {
-      "fr": "Nature & Paysages",
-      "ar": "الطبيعة والمناظر",
+      "fr": "Nature",
+      "ar": "الطبيعة",
+      "en": "Nature",
+      "es": "Naturaleza",
       "color": "emerald"
     },
     "culture": {
-      "fr": "Culture & Patrimoine", 
-      "ar": "الثقافة والتراث",
+      "fr": "Culture",
+      "ar": "الثقافة",
+      "en": "Culture",
+      "es": "Cultura",
       "color": "amber"
     },
     "aventure": {
-      "fr": "Aventure & Sport",
-      "ar": "المغامرة والرياضة", 
+      "fr": "Aventure",
+      "ar": "المغامرة",
+      "en": "Adventure",
+      "es": "Aventura",
       "color": "red"
     },
     "trekking": {
-      "fr": "Randonnée & Trekking",
-      "ar": "المشي والتسلق",
+      "fr": "Randonnée",
+      "ar": "المشي لمسافات طويلة",
+      "en": "Trekking",
+      "es": "Senderismo",
       "color": "orange"
     },
     "luxe": {
-      "fr": "Expériences de Luxe",
-      "ar": "تجارب فاخرة",
+      "fr": "Luxe",
+      "ar": "الفخامة",
+      "en": "Luxury",
+      "es": "Lujo",
       "color": "purple"
+    },
+    "gastronomie": {
+      "fr": "Gastronomie",
+      "ar": "فن الطبخ",
+      "en": "Gastronomy",
+      "es": "Gastronomía"
     }
   },
   "specialOffers": {
     "groupDiscount": {
       "fr": "Réduction groupe (6+ personnes): -15%",
-      "ar": "خصم المجموعة (6+ أشخاص): -15%"
+      "ar": "خصم المجموعة (6+ أشخاص): -15%",
+      "en": "Group discount (6+ people): -15%",
+      "es": "Descuento grupo (6+ personas): -15%"
     },
     "multiDay": {
       "fr": "Forfait 3 excursions: -20%",
-      "ar": "باقة 3 رحلات: -20%"
+      "ar": "باقة 3 رحلات: -20%",
+      "en": "3 excursions package: -20%",
+      "es": "Paquete 3 excursiones: -20%"
     },
     "familyPackage": {
-      "fr": "Pack famille (2 adultes + 2 enfants): Prix spécial",
-      "ar": "باقة العائلة (2 بالغ + 2 طفل): سعر خاص"
+      "fr": "Forfait famille (2 adultes + 2 enfants): -10%",
+      "ar": "باقة العائلة (2 بالغين + 2 أطفال): -10%",
+      "en": "Family package (2 adults + 2 children): -10%",
+      "es": "Paquete familiar (2 adultos + 2 niños): -10%"
     }
   }
 }

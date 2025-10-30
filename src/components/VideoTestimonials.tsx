@@ -6,7 +6,7 @@ import VideoPlayer from './VideoPlayer';
 import { imageUrls } from './ImageManager';
 
 interface VideoTestimonialProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function VideoTestimonials({ language }: VideoTestimonialProps) {
@@ -76,6 +76,70 @@ export default function VideoTestimonials({ language }: VideoTestimonialProps) {
         quote: 'تنظيم مثالي، مناظر طبيعية خلابة!',
         videoTitle: 'شهادة - جبال الأطلس'
       }
+    ],
+    en: [
+      {
+        id: 1,
+        name: 'Marie Dubois',
+        country: 'France',
+        tour: 'Imperial Cities Tour',
+        rating: 5,
+        image: imageUrls.client1,
+        quote: 'An absolutely magical experience! The guides were exceptional.',
+        videoTitle: 'Testimonial - Imperial Cities Tour'
+      },
+      {
+        id: 2,
+        name: 'Sarah Johnson',
+        country: 'Canada',
+        tour: 'Sahara Adventure',
+        rating: 5,
+        image: imageUrls.client2,
+        quote: 'The Sahara desert took our breath away. Unforgettable!',
+        videoTitle: 'Testimonial - Sahara Experience'
+      },
+      {
+        id: 3,
+        name: 'Hans Mueller',
+        country: 'Germany',
+        tour: 'Atlas & Valleys',
+        rating: 5,
+        image: imageUrls.client3,
+        quote: 'Perfect organization, breathtaking landscapes!',
+        videoTitle: 'Testimonial - Atlas Mountains'
+      }
+    ],
+    es: [
+      {
+        id: 1,
+        name: 'Marie Dubois',
+        country: 'Francia',
+        tour: 'Circuito Imperial',
+        rating: 5,
+        image: imageUrls.client1,
+        quote: '¡Una experiencia absolutamente mágica! Los guías fueron excepcionales.',
+        videoTitle: 'Testimonio - Circuito de Ciudades Imperiales'
+      },
+      {
+        id: 2,
+        name: 'Sarah Johnson',
+        country: 'Canadá',
+        tour: 'Aventura en el Sahara',
+        rating: 5,
+        image: imageUrls.client2,
+        quote: 'El desierto del Sahara nos dejó sin aliento. ¡Inolvidable!',
+        videoTitle: 'Testimonio - Experiencia en el Sahara'
+      },
+      {
+        id: 3,
+        name: 'Hans Mueller',
+        country: 'Alemania',
+        tour: 'Atlas y Valles',
+        rating: 5,
+        image: imageUrls.client3,
+        quote: '¡Organización perfecta y paisajes impresionantes!',
+        videoTitle: 'Testimonio - Montañas del Atlas'
+      }
     ]
   };
 
@@ -95,13 +159,22 @@ export default function VideoTestimonials({ language }: VideoTestimonialProps) {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {language === 'fr' ? 'Témoignages Vidéo' : 'شهادات فيديو'}
+            {language === 'fr' 
+              ? 'Témoignages Vidéo' 
+              : language === 'ar' 
+                ? 'شهادات فيديو' 
+                : language === 'en' 
+                  ? 'Video Testimonials' 
+                  : 'Testimonios en Video'}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'fr' 
               ? 'Découvrez les expériences authentiques de nos voyageurs'
-              : 'اكتشف التجارب الأصيلة لمسافرينا'
-            }
+              : language === 'ar' 
+                ? 'اكتشف التجارب الأصيلة لمسافرينا'
+                : language === 'en' 
+                  ? 'Discover authentic experiences from our travelers'
+                  : 'Descubre experiencias auténticas de nuestros viajeros'}
           </p>
         </div>
 
@@ -163,25 +236,49 @@ export default function VideoTestimonials({ language }: VideoTestimonialProps) {
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="text-3xl font-bold text-morocco-red mb-2">98%</div>
             <div className="text-gray-600 text-sm">
-              {language === 'fr' ? 'Satisfaction client' : 'رضا العملاء'}
+              {language === 'fr' 
+                ? 'Satisfaction client' 
+                : language === 'ar' 
+                  ? 'رضا العملاء' 
+                  : language === 'en' 
+                    ? 'Customer satisfaction' 
+                    : 'Satisfacción del cliente'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="text-3xl font-bold text-morocco-green mb-2">5000+</div>
             <div className="text-gray-600 text-sm">
-              {language === 'fr' ? 'Clients heureux' : 'عملاء سعداء'}
+              {language === 'fr' 
+                ? 'Clients heureux' 
+                : language === 'ar' 
+                  ? 'عملاء سعداء' 
+                  : language === 'en' 
+                    ? 'Happy clients' 
+                    : 'Clientes felices'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="text-3xl font-bold text-morocco-gold mb-2">4.9/5</div>
             <div className="text-gray-600 text-sm">
-              {language === 'fr' ? 'Note moyenne' : 'التقييم المتوسط'}
+              {language === 'fr' 
+                ? 'Note moyenne' 
+                : language === 'ar' 
+                  ? 'التقييم المتوسط' 
+                  : language === 'en' 
+                    ? 'Average rating' 
+                    : 'Calificación promedio'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="text-3xl font-bold text-morocco-blue mb-2">15+</div>
             <div className="text-gray-600 text-sm">
-              {language === 'fr' ? 'Années d\'expérience' : 'سنوات الخبرة'}
+              {language === 'fr' 
+                ? 'Années d\'expérience' 
+                : language === 'ar' 
+                  ? 'سنوات الخبرة' 
+                  : language === 'en' 
+                    ? 'Years of experience' 
+                    : 'Años de experiencia'}
             </div>
           </div>
         </div>

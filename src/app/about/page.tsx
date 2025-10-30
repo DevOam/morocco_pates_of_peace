@@ -16,7 +16,7 @@ export default function AboutPage() {
               <ArrowLeft className="h-5 w-5" />
             </button>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">À propos de Marrakech Tours</h1>
+              <h1 className="text-2xl font-bold text-gray-900">À propos de Morocco Plant Peace</h1>
               <p className="text-gray-600">Votre partenaire de confiance pour découvrir le Maroc</p>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <p className="text-gray-600 mb-4">
-                Marrakech Tours a été fondée en 2009 par Ahmed et Fatima Benali, deux passionnés de voyage 
+                Morocco Plant Peace a été fondée en 2009 par Ahmed et Fatima Benali, deux passionnés de voyage 
                 originaires de Marrakech. Leur vision était simple : partager la beauté et la richesse 
                 culturelle du Maroc avec des voyageurs du monde entier.
               </p>

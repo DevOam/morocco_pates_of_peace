@@ -2,10 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX, Music, Play, Pause, SkipBack, SkipForward, Shuffle, Repeat } from 'lucide-react';
-import { audioUrls } from './ImageManager';
 
 interface AdvancedAudioSystemProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemProps) {
@@ -26,84 +25,86 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
   const tracks = [
     {
       id: 1,
-      title: language === 'fr' ? 'Ambiance Jemaa el-Fna' : 'أجواء ساحة جامع الفنا',
-      artist: language === 'fr' ? 'Sons de Marrakech' : 'أصوات مراكش',
-      duration: 245, // 4:05
-      file: audioUrls.marrakech,
+      title: language === 'fr' ? 'Ambiance Jemaa el-Fna' : language === 'ar' ? 'أجواء ساحة جامع الفنا' : language === 'en' ? 'Jemaa el-Fna Ambiance' : 'Ambiente Jemaa el-Fna',
+      artist: language === 'fr' ? 'Sons de Marrakech' : language === 'ar' ? 'أصوات مراكش' : language === 'en' ? 'Sounds of Marrakech' : 'Sonidos de Marrakech',
+      duration: 0,
+      file: '/assets/audio/jamaa-el-fna-ambience.mp3',
       cover: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=300&h=300&fit=crop&crop=center',
-      description: language === 'fr' ? 'Immersion sonore au cœur de la place mythique' : 'انغماس صوتي في قلب الساحة الأسطورية'
+      description: language === 'fr' ? 'Immersion sonore au cœur de la place mythique' : language === 'ar' ? 'انغماس صوتي في قلب الساحة الأسطورية' : language === 'en' ? 'Sound immersion in the heart of the mythical square' : 'Inmersión sonora en el corazón de la plaza mítica'
     },
     {
       id: 2,
-      title: language === 'fr' ? 'Vent du Sahara' : 'رياح الصحراء',
-      artist: language === 'fr' ? 'Désert de Merzouga' : 'صحراء مرزوقة',
-      duration: 320, // 5:20
-      file: audioUrls.sahara,
+      title: language === 'fr' ? 'Musique Touareg du Sahara' : language === 'ar' ? 'موسيقى الطوارق من الصحراء' : language === 'en' ? 'Touareg Music - Sahara' : 'Música Tuareg - Sáhara',
+      artist: language === 'fr' ? 'Désert de Merzouga' : language === 'ar' ? 'صحراء مرزوقة' : language === 'en' ? 'Merzouga Desert' : 'Desierto de Merzouga',
+      duration: 0,
+      file: '/assets/audio/sahara-touareg-music.mp3',
       cover: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=300&h=300&fit=crop&crop=center',
-      description: language === 'fr' ? 'Le silence majestueux des dunes dorées' : 'الصمت المهيب للكثبان الذهبية'
+      description: language === 'fr' ? 'Rythmes du désert et esprit nomade' : language === 'ar' ? 'إيقاعات الصحراء وروح البداوة' : language === 'en' ? 'Desert rhythms and nomadic spirit' : 'Ritmos del desierto y espíritu nómada'
     },
     {
       id: 3,
-      title: language === 'fr' ? 'Musique Gnawa Traditionnelle' : 'موسيقى كناوة تقليدية',
-      artist: language === 'fr' ? 'Maîtres Gnawa d\'Essaouira' : 'أساتذة كناوة الصويرة',
-      duration: 198, // 3:18
-      file: audioUrls.gnawa,
+      title: language === 'fr' ? 'Nek ligh ezzaman' : language === 'ar' ? 'نكّال nek ligh ezzaman' : language === 'en' ? 'Nek ligh ezzaman' : 'Nek ligh ezzaman',
+      artist: language === 'fr' ? 'Chant traditionnel' : language === 'ar' ? 'غناء تقليدي' : language === 'en' ? 'Traditional song' : 'Canto tradicional',
+      duration: 0,
+      file: '/assets/audio/nek-ligh-ezzaman.mp3',
       cover: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center',
-      description: language === 'fr' ? 'Rythmes ancestraux et spiritualité' : 'إيقاعات أجداد وروحانية'
-    },
-    {
-      id: 4,
-      title: language === 'fr' ? 'Médina de Fès' : 'مدينة فاس العتيقة',
-      artist: language === 'fr' ? 'Échos du Patrimoine' : 'أصداء التراث',
-      duration: 275, // 4:35
-      file: audioUrls.fes,
-      cover: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=300&h=300&fit=crop&center',
-      description: language === 'fr' ? 'Murmures millénaires des ruelles anciennes' : 'همسات ألفية من الأزقة القديمة'
-    },
-    {
-      id: 5,
-      title: language === 'fr' ? 'Cascade d\'Ouzoud' : 'شلالات أوزود',
-      artist: language === 'fr' ? 'Nature de l\'Atlas' : 'طبيعة الأطلس',
-      duration: 210, // 3:30
-      file: audioUrls.ouzoud,
-      cover: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=300&h=300&fit=crop&crop=center',
-      description: language === 'fr' ? 'Symphonie aquatique des montagnes' : 'سيمفونية مائية من الجبال'
+      description: language === 'fr' ? 'Chant traditionnel et émotion' : language === 'ar' ? 'غناء تقليدي وإحساس' : language === 'en' ? 'Traditional vocals and emotion' : 'Voz tradicional y emoción'
     }
   ];
 
   const currentTrackData = tracks[currentTrack];
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      audioRef.current = new Audio();
-      audioRef.current.volume = volume;
-      audioRef.current.src = currentTrackData.file;
-      
-      const audio = audioRef.current;
-      
-      const updateTime = () => setCurrentTime(audio.currentTime);
-      const updateDuration = () => setDuration(audio.duration);
-      const handleEnded = () => {
-        if (repeatMode === 'one') {
-          audio.currentTime = 0;
-          audio.play();
-        } else if (repeatMode === 'all' || currentTrack < tracks.length - 1) {
-          nextTrack();
-        } else {
-          setIsPlaying(false);
-        }
-      };
+    if (typeof window === 'undefined') return;
 
-      audio.addEventListener('timeupdate', updateTime);
-      audio.addEventListener('loadedmetadata', updateDuration);
-      audio.addEventListener('ended', handleEnded);
-
-      return () => {
-        audio.removeEventListener('timeupdate', updateTime);
-        audio.removeEventListener('loadedmetadata', updateDuration);
-        audio.removeEventListener('ended', handleEnded);
-      };
+    // Pause any previously created audio instance
+    if (audioRef.current) {
+      try { audioRef.current.pause(); } catch {}
     }
+
+    const prevWasPlaying = isPlaying;
+
+    // Create and configure new audio instance
+    const audio = new Audio();
+    audio.volume = volume;
+    audio.src = encodeURI(currentTrackData.file);
+    audioRef.current = audio;
+
+    // Keep only one global player across the app
+    const w = window as unknown as { __mppAudio?: HTMLAudioElement };
+    if (w.__mppAudio && w.__mppAudio !== audio) {
+      try { w.__mppAudio.pause(); } catch {}
+    }
+    w.__mppAudio = audio;
+
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    const updateDuration = () => setDuration(audio.duration || 0);
+    const handleEnded = () => {
+      if (repeatMode === 'one') {
+        audio.currentTime = 0;
+        audio.play();
+      } else if (repeatMode === 'all' || currentTrack < tracks.length - 1) {
+        nextTrack();
+      } else {
+        setIsPlaying(false);
+      }
+    };
+
+    audio.addEventListener('timeupdate', updateTime);
+    audio.addEventListener('loadedmetadata', updateDuration);
+    audio.addEventListener('ended', handleEnded);
+
+    // Auto-play if we were playing before switching tracks
+    if (prevWasPlaying) {
+      audio.play().catch(() => {});
+    }
+
+    return () => {
+      audio.removeEventListener('timeupdate', updateTime);
+      audio.removeEventListener('loadedmetadata', updateDuration);
+      audio.removeEventListener('ended', handleEnded);
+      try { audio.pause(); } catch {}
+    };
   }, [currentTrack, repeatMode]);
 
   // Detect when footer is near viewport and adjust player behavior/position
@@ -132,11 +133,19 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
     if (!audioRef.current) return;
 
     try {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        await audioRef.current.play();
+      // Ensure singleton across the app
+      if (typeof window !== 'undefined') {
+        const w = window as unknown as { __mppAudio?: HTMLAudioElement };
+        if (w.__mppAudio && w.__mppAudio !== audioRef.current) {
+          try { w.__mppAudio.pause(); } catch {}
+          w.__mppAudio = audioRef.current;
+        } else {
+          w.__mppAudio = audioRef.current;
+        }
       }
+
+      if (isPlaying) audioRef.current.pause();
+      else await audioRef.current.play();
       setIsPlaying(!isPlaying);
     } catch (error) {
       console.log('Audio simulation mode');
@@ -207,7 +216,7 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
           <div className="flex items-center">
             <Music className="h-5 w-5 text-morocco-red mr-2" />
             <span className="font-semibold text-gray-900">
-              {language === 'fr' ? 'Ambiances Maroc' : 'أجواء المغرب'}
+              {language === 'fr' ? 'Ambiances Maroc' : language === 'ar' ? 'أجواء المغرب' : language === 'en' ? 'Morocco Ambiances' : 'Ambientes de Marruecos'}
             </span>
           </div>
           <button
@@ -341,7 +350,7 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
           <div className="border-t border-gray-100 max-h-64 overflow-y-auto">
             <div className="p-2">
               <h5 className="text-sm font-semibold text-gray-900 mb-2 px-2">
-                {language === 'fr' ? 'Playlist' : 'قائمة التشغيل'}
+                {language === 'fr' ? 'Playlist' : language === 'ar' ? 'قائمة التشغيل' : language === 'en' ? 'Playlist' : 'Lista de reproducción'}
               </h5>
               {tracks.map((track, index) => (
                 <button
@@ -378,8 +387,8 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
             <div className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-green-500 animate-pulse' : 'bg-gray-300'}`} />
             <span>
               {isPlaying 
-                ? (language === 'fr' ? 'En cours de lecture' : 'قيد التشغيل')
-                : (language === 'fr' ? 'En pause' : 'متوقف')
+                ? (language === 'fr' ? 'En cours de lecture' : language === 'ar' ? 'قيد التشغيل' : language === 'en' ? 'Playing' : 'Reproduciendo')
+                : (language === 'fr' ? 'En pause' : language === 'ar' ? 'متوقف' : language === 'en' ? 'Paused' : 'Pausado')
               }
             </span>
           </div>

@@ -5,7 +5,7 @@ import { imageUrls, videoUrls } from './ImageManager';
 import { ChevronDown, Play, MapPin, Star, Calendar, Users, Search, ArrowRight } from 'lucide-react';
 
 interface AnimatedHeroProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
   onBookingClick: () => void;
 }
 
@@ -16,18 +16,36 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
   const slides = [
     {
       image: imageUrls.hero1,
-      title: language === 'fr' ? 'Découvrez le Maroc Authentique' : 'اكتشف المغرب الأصيل',
-      subtitle: language === 'fr' ? 'Circuits personnalisés et expériences inoubliables' : 'رحلات مخصصة وتجارب لا تُنسى'
+      title: language === 'fr' ? 'Découvrez le Maroc Authentique' : 
+             language === 'ar' ? 'اكتشف المغرب الأصيل' :
+             language === 'en' ? 'Discover Authentic Morocco' : 
+             'Descubre el Marruecos Auténtico',
+      subtitle: language === 'fr' ? 'Circuits personnalisés et expériences inoubliables' : 
+                language === 'ar' ? 'رحلات مخصصة وتجارب لا تُنسى' :
+                language === 'en' ? 'Personalized tours and unforgettable experiences' :
+                'Tours personalizados y experiencias inolvidables'
     },
     {
       image: imageUrls.hero2,
-      title: language === 'fr' ? 'Aventures dans le Sahara' : 'مغامرات في الصحراء',
-      subtitle: language === 'fr' ? 'Nuits sous les étoiles du désert' : 'ليالي تحت نجوم الصحراء'
+      title: language === 'fr' ? 'Aventures dans le Sahara' : 
+             language === 'ar' ? 'مغامرات في الصحراء' :
+             language === 'en' ? 'Sahara Adventures' : 
+             'Aventuras en el Sahara',
+      subtitle: language === 'fr' ? 'Nuits sous les étoiles du désert' : 
+                language === 'ar' ? 'ليالي تحت نجوم الصحراء' :
+                language === 'en' ? 'Nights under the desert stars' :
+                'Noches bajo las estrellas del desierto'
     },
     {
       image: imageUrls.hero3,
-      title: language === 'fr' ? 'Villes Impériales Majestueuses' : 'المدن الإمبراطورية المهيبة',
-      subtitle: language === 'fr' ? 'Histoire millénaire et architecture sublime' : 'تاريخ عريق وعمارة رائعة'
+      title: language === 'fr' ? 'Villes Impériales Majestueuses' : 
+             language === 'ar' ? 'المدن الإمبراطورية المهيبة' :
+             language === 'en' ? 'Majestic Imperial Cities' : 
+             'Ciudades Imperiales Majestuosas',
+      subtitle: language === 'fr' ? 'Histoire millénaire et architecture sublime' : 
+                language === 'ar' ? 'تاريخ عريق وعمارة رائعة' :
+                language === 'en' ? 'Millennial history and sublime architecture' :
+                'Historia milenaria y arquitectura sublime'
     }
   ];
 
@@ -78,18 +96,31 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
                   Découvrez le <span className="text-morocco-gold">Maroc</span><br />
                   Authentique
                 </>
-              ) : (
+              ) : language === 'ar' ? (
                 <>
                   اكتشف <span className="text-morocco-gold">المغرب</span><br />
                   الأصيل
+                </>
+              ) : language === 'en' ? (
+                <>
+                  Discover <span className="text-morocco-gold">Morocco</span><br />
+                  Authentic
+                </>
+              ) : (
+                <>
+                  Descubre <span className="text-morocco-gold">Marruecos</span><br />
+                  Auténtico
                 </>
               )}
             </h1>
             <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 leading-relaxed text-shadow-lg">
               {language === 'fr'
                 ? 'Voyages sur mesure dans les villes impériales, le Sahara et l\'Atlas'
-                : 'رحلات مخصصة في المدن الإمبراطورية والصحراء والأطلس'
-              }
+                : language === 'ar'
+                  ? 'رحلات مخصصة في المدن الإمبراطورية والصحراء والأطلس'
+                  : language === 'en'
+                    ? 'Tailor-made trips to imperial cities, the Sahara and the Atlas'
+                    : 'Viajes a medida por las ciudades imperiales, el Sáhara y el Atlas'}
             </p>
             
             {/* Advanced Search Engine */}
@@ -97,12 +128,18 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                 <div className="relative">
                   <label className="block text-white text-sm font-medium mb-2">
-                    {language === 'fr' ? 'Destination' : 'الوجهة'}
+                    {language === 'fr' ? 'Destination' : 
+                     language === 'ar' ? 'الوجهة' :
+                     language === 'en' ? 'Destination' : 
+                     'Destino'}
                   </label>
                   <div className="relative">
                     <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5" />
                     <select className="w-full pl-10 pr-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg bg-white text-gray-900 border border-white/0 shadow-sm focus:outline-none focus:ring-2 focus:ring-morocco-gold">
-                      <option value="">{language === 'fr' ? 'Choisir...' : 'اختر...'}</option>
+                      <option value="">{language === 'fr' ? 'Choisir...' : 
+                                          language === 'ar' ? 'اختر...' :
+                                          language === 'en' ? 'Choose...' : 
+                                          'Elegir...'}</option>
                       <option value="marrakech">{language === 'fr' ? 'Marrakech' : 'مراكش'}</option>
                       <option value="fes">{language === 'fr' ? 'Fès' : 'فاس'}</option>
                       <option value="sahara">{language === 'fr' ? 'Sahara' : 'الصحراء'}</option>
@@ -113,7 +150,10 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
                 
                 <div className="relative">
                   <label className="block text-white text-sm font-medium mb-2">
-                    {language === 'fr' ? 'Dates' : 'التواريخ'}
+                    {language === 'fr' ? 'Dates' : 
+                     language === 'ar' ? 'التواريخ' :
+                     language === 'en' ? 'Dates' : 
+                     'Fechas'}
                   </label>
                   <div className="relative">
                     <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5" />
@@ -126,41 +166,53 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
                 
                 <div className="relative">
                   <label className="block text-white text-sm font-medium mb-2">
-                    {language === 'fr' ? 'Voyageurs' : 'المسافرون'}
+                    {language === 'fr' ? 'Voyageurs' : 
+                     language === 'ar' ? 'المسافرون' :
+                     language === 'en' ? 'Travelers' : 
+                     'Viajeros'}
                   </label>
                   <div className="relative">
                     <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5" />
                     <select className="w-full pl-10 pr-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg bg-white text-gray-900 border border-white/0 shadow-sm focus:outline-none focus:ring-2 focus:ring-morocco-gold">
-                      <option value="1">1 {language === 'fr' ? 'personne' : 'شخص'}</option>
-                      <option value="2">2 {language === 'fr' ? 'personnes' : 'أشخاص'}</option>
-                      <option value="4">4 {language === 'fr' ? 'personnes' : 'أشخاص'}</option>
-                      <option value="6">6+ {language === 'fr' ? 'personnes' : 'أشخاص'}</option>
+                      <option value="1">1 {language === 'fr' ? 'personne' : language === 'ar' ? 'شخص' : language === 'en' ? 'person' : 'persona'}</option>
+                      <option value="2">2 {language === 'fr' ? 'personnes' : language === 'ar' ? 'أشخاص' : language === 'en' ? 'people' : 'personas'}</option>
+                      <option value="4">4 {language === 'fr' ? 'personnes' : language === 'ar' ? 'أشخاص' : language === 'en' ? 'people' : 'personas'}</option>
+                      <option value="6">6+ {language === 'fr' ? 'personnes' : language === 'ar' ? 'أشخاص' : language === 'en' ? 'people' : 'personas'}</option>
                     </select>
                   </div>
                 </div>
                 
                 <div className="relative">
                   <label className="block text-white text-sm font-medium mb-2">
-                    {language === 'fr' ? 'Budget' : 'الميزانية'}
+                    {language === 'fr' ? 'Budget' : 
+                     language === 'ar' ? 'الميزانية' :
+                     language === 'en' ? 'Budget' : 
+                     'Presupuesto'}
                   </label>
                   <select className="w-full px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg bg-white text-gray-900 border border-white/0 shadow-sm focus:outline-none focus:ring-2 focus:ring-morocco-gold">
-                    <option value="budget">{language === 'fr' ? 'Économique' : 'اقتصادي'}</option>
-                    <option value="standard">{language === 'fr' ? 'Standard' : 'عادي'}</option>
-                    <option value="luxury">{language === 'fr' ? 'Luxe' : 'فاخر'}</option>
+                    <option value="budget">{language === 'fr' ? 'Économique' : language === 'ar' ? 'اقتصادي' : language === 'en' ? 'Budget' : 'Económico'}</option>
+                    <option value="standard">{language === 'fr' ? 'Standard' : language === 'ar' ? 'عادي' : language === 'en' ? 'Standard' : 'Estándar'}</option>
+                    <option value="luxury">{language === 'fr' ? 'Luxe' : language === 'ar' ? 'فاخر' : language === 'en' ? 'Luxury' : 'Lujo'}</option>
                   </select>
                 </div>
               </div>
               
               <button className="w-full bg-morocco-gold hover:bg-yellow-500 text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl text-base sm:text-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2">
                 <Search className="h-5 w-5" />
-                {language === 'fr' ? 'Trouver mon voyage parfait' : 'ابحث عن رحلتي المثالية'}
+                {language === 'fr' ? 'Trouver mon voyage parfait' : 
+                 language === 'ar' ? 'ابحث عن رحلتي المثالية' :
+                 language === 'en' ? 'Find my perfect trip' : 
+                 'Encontrar mi viaje perfecto'}
               </button>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
               <button className="border-2 border-white text-white hover:bg-white hover:text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-all duration-300 flex items-center gap-2">
                 <Play className="h-5 w-5" />
-                {language === 'fr' ? 'Voir la vidéo' : 'شاهد الفيديو'}
+                {language === 'fr' ? 'Voir la vidéo' : 
+                 language === 'ar' ? 'شاهد الفيديو' :
+                 language === 'en' ? 'Watch video' : 
+                 'Ver video'}
               </button>
             </div>
             
@@ -169,7 +221,10 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
                 onClick={onBookingClick}
                 className="group bg-morocco-gold text-black px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center"
               >
-                {language === 'fr' ? 'Explorez nos circuits' : 'استكشف رحلاتنا'}
+                {language === 'fr' ? 'Explorez nos circuits' : 
+                 language === 'ar' ? 'استكشف رحلاتنا' :
+                 language === 'en' ? 'Explore our tours' : 
+                 'Explora nuestros tours'}
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
               </button>
               
@@ -181,7 +236,10 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
                   <Play className="h-6 w-6 ml-1" />
                 </div>
                 <span className="text-base sm:text-lg font-medium">
-                  {language === 'fr' ? 'Regarder la vidéo' : 'شاهد الفيديو'}
+                  {language === 'fr' ? 'Regarder la vidéo' : 
+                   language === 'ar' ? 'شاهد الفيديو' :
+                   language === 'en' ? 'Watch video' : 
+                   'Ver video'}
                 </span>
               </button>
             </div>
@@ -247,20 +305,20 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
         <div className="flex items-center gap-2">
           <Star className="h-5 w-5 text-morocco-gold fill-current" />
           <span className="text-sm font-medium">
-            {language === 'fr' ? '4.9/5 sur 2,847 avis' : '4.9/5 من 2,847 تقييم'}
+            {language === 'fr' ? '4.9/5 sur 2,847 avis' : language === 'ar' ? '4.9/5 من 2,847 تقييم' : language === 'en' ? '4.9/5 from 2,847 reviews' : '4.9/5 sobre 2.847 reseñas'}
           </span>
         </div>
         <div className="flex items-center gap-2">
           <MapPin className="h-5 w-5 text-morocco-gold" />
           <span className="text-sm font-medium">
-            {language === 'fr' ? '15+ ans d\'expérience' : '15+ سنة خبرة'}
+            {language === 'fr' ? '15+ ans d\'expérience' : language === 'ar' ? '15+ سنة خبرة' : language === 'en' ? '15+ years of experience' : '15+ años de experiencia'}
           </span>
         </div>
         <div className="text-sm font-medium">
-          {language === 'fr' ? 'Guides locaux certifiés' : 'مرشدون محليون معتمدون'}
+          {language === 'fr' ? 'Guides locaux certifiés' : language === 'ar' ? 'مرشدون محليون معتمدون' : language === 'en' ? 'Certified local guides' : 'Guías locales certificados'}
         </div>
         <div className="bg-green-500/20 px-3 py-1 rounded-full text-sm font-medium border border-green-400/30">
-          {language === 'fr' ? '✓ Annulation gratuite' : '✓ إلغاء مجاني'}
+          {language === 'fr' ? '✓ Annulation gratuite' : language === 'ar' ? '✓ إلغاء مجاني' : language === 'en' ? '✓ Free cancellation' : '✓ Cancelación gratuita'}
         </div>
       </div>
 

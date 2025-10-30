@@ -11,7 +11,7 @@ interface Message {
 }
 
 interface LiveChatProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function LiveChat({ language }: LiveChatProps) {
@@ -37,6 +37,22 @@ export default function LiveChat({ language }: LiveChatProps) {
       "اختيار رائع! مرشدونا المحليون سيعرفونك على أماكن أصيلة. هل تريد الحجز الآن؟",
       "سأضعك على اتصال مع فريقنا لإنهاء حجزك. خبير سيتصل بك خلال 30 دقيقة!",
       "هل لديك أسئلة حول الإقامة أو النقل أو الأنشطة المتضمنة؟"
+    ],
+    en: [
+      "Hello! I'm Aicha, your virtual assistant. How can I help you today?",
+      "Our most popular tours are the Imperial Cities Tour (7 days) and the Sahara Adventure (4 days). Which one interests you?",
+      "Perfect! I can help you customize your trip. How many people are traveling with you?",
+      "Great choice! Our local guides will show you authentic places. Would you like to book now?",
+      "I'll connect you with our team to finalize your booking. An expert will contact you within 30 minutes!",
+      "Do you have any questions about accommodation, transport, or included activities?"
+    ],
+    es: [
+      "¡Hola! Soy Aicha, tu asistente virtual. ¿Cómo puedo ayudarte hoy?",
+      "Nuestros tours más populares son el Circuito Imperial (7 días) y la Aventura en el Sahara (4 días). ¿Cuál te interesa?",
+      "¡Perfecto! Puedo ayudarte a personalizar tu viaje. ¿Cuántas personas viajan contigo?",
+      "¡Excelente elección! Nuestros guías locales te mostrarán lugares auténticos. ¿Te gustaría reservar ahora?",
+      "Te pondré en contacto con nuestro equipo para finalizar tu reserva. ¡Un experto te contactará en 30 minutos!",
+      "¿Tienes preguntas sobre el alojamiento, el transporte o las actividades incluidas?"
     ]
   };
 
@@ -52,6 +68,18 @@ export default function LiveChat({ language }: LiveChatProps) {
       "الأسعار والتعرفة",
       "احجز الآن", 
       "تحدث مع وكيل"
+    ],
+    en: [
+      "View tours",
+      "Prices & rates",
+      "Book now",
+      "Talk to an agent"
+    ],
+    es: [
+      "Ver tours",
+      "Precios y tarifas",
+      "Reservar ahora",
+      "Hablar con un agente"
     ]
   };
 
@@ -111,7 +139,8 @@ export default function LiveChat({ language }: LiveChatProps) {
   };
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString(language === 'fr' ? 'fr-FR' : 'ar-MA', { 
+    const locale = language === 'fr' ? 'fr-FR' : language === 'ar' ? 'ar-MA' : language === 'en' ? 'en-GB' : 'es-ES';
+    return date.toLocaleTimeString(locale, { 
       hour: '2-digit', 
       minute: '2-digit' 
     });
@@ -141,10 +170,10 @@ export default function LiveChat({ language }: LiveChatProps) {
               </div>
               <div>
                 <h3 className="font-semibold">
-                  {language === 'fr' ? 'Aicha - Assistante' : 'عائشة - المساعدة'}
+                  {language === 'fr' ? 'Aicha - Assistante' : language === 'ar' ? 'عائشة - المساعدة' : language === 'en' ? 'Aicha - Assistant' : 'Aicha - Asistente'}
                 </h3>
                 <p className="text-sm opacity-90">
-                  {language === 'fr' ? 'En ligne maintenant' : 'متصلة الآن'}
+                  {language === 'fr' ? 'En ligne maintenant' : language === 'ar' ? 'متصلة الآن' : language === 'en' ? 'Online now' : 'En línea ahora'}
                 </p>
               </div>
             </div>
@@ -218,7 +247,7 @@ export default function LiveChat({ language }: LiveChatProps) {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder={language === 'fr' ? 'Tapez votre message...' : 'اكتب رسالتك...'}
+                placeholder={language === 'fr' ? 'Tapez votre message...' : language === 'ar' ? 'اكتب رسالتك...' : language === 'en' ? 'Type your message...' : 'Escribe tu mensaje...'}
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-morocco-red text-base bg-white text-black placeholder-gray-700 caret-black"
               />
               <button
@@ -234,11 +263,11 @@ export default function LiveChat({ language }: LiveChatProps) {
             <div className="flex justify-center space-x-4 mt-3 pt-3 border-t">
               <button className="flex items-center text-xs text-gray-600 hover:text-morocco-red">
                 <Phone className="h-3 w-3 mr-1" />
-                {language === 'fr' ? 'Appeler' : 'اتصل'}
+                {language === 'fr' ? 'Appeler' : language === 'ar' ? 'اتصل' : language === 'en' ? 'Call' : 'Llamar'}
               </button>
               <button className="flex items-center text-xs text-gray-600 hover:text-morocco-red">
                 <Mail className="h-3 w-3 mr-1" />
-                {language === 'fr' ? 'Email' : 'إيميل'}
+                {language === 'fr' ? 'Email' : language === 'ar' ? 'إيميل' : language === 'en' ? 'Email' : 'Email'}
               </button>
             </div>
           </div>

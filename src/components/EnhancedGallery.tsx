@@ -6,7 +6,7 @@ import { imageUrls } from './ImageManager';
 import destinationsData from '../data/destinations.json';
 
 interface EnhancedGalleryProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 interface GalleryImage {
@@ -45,30 +45,30 @@ export default function EnhancedGallery({ language }: EnhancedGalleryProps) {
     {
       id: 1,
       src: imageUrls.marrakech,
-      title: destinationsData.destinations.marrakech.monuments?.[0]?.name?.[language] || (language === 'fr' ? 'Mosquée Koutoubia' : 'مسجد الكتبية'),
-      location: `${destinationsData.destinations.marrakech.name[language]}, ${language === 'fr' ? 'Maroc' : 'المغرب'}`,
+      title: (destinationsData.destinations.marrakech.monuments?.[0]?.name as any)?.[language] || (language === 'fr' ? 'Mosquée Koutoubia' : language === 'ar' ? 'مسجد الكتبية' : language === 'en' ? 'Koutoubia Mosque' : 'Mezquita Koutoubia'),
+      location: `${destinationsData.destinations.marrakech.name[language]}, ${language === 'fr' ? 'Maroc' : language === 'ar' ? 'المغرب' : language === 'en' ? 'Morocco' : 'Marruecos'}`,
       coordinates: { lat: 31.6259, lng: -7.9891 },
       date: '2024-03-15',
       category: 'imperial',
       photographer: 'Wikimedia Commons (Crédit auteur sur la page du fichier)',
-      description: destinationsData.destinations.marrakech.monuments?.[0]?.description?.[language] || destinationsData.destinations.marrakech.description[language]
+      description: (destinationsData.destinations.marrakech.monuments?.[0]?.description as any)?.[language] || (destinationsData.destinations.marrakech.description as any)[language]
     },
     {
       id: 2,
       src: imageUrls.casablanca,
-      title: destinationsData.destinations.casablanca.monuments?.[0]?.name?.[language] || (language === 'fr' ? 'Mosquée Hassan II' : 'مسجد الحسن الثاني'),
-      location: `${destinationsData.destinations.casablanca.name[language]}, ${language === 'fr' ? 'Maroc' : 'المغرب'}`,
+      title: (destinationsData.destinations.casablanca.monuments?.[0]?.name as any)?.[language] || (language === 'fr' ? 'Mosquée Hassan II' : language === 'ar' ? 'مسجد الحسن الثاني' : language === 'en' ? 'Hassan II Mosque' : 'Mezquita Hassan II'),
+      location: `${destinationsData.destinations.casablanca.name[language]}, ${language === 'fr' ? 'Maroc' : language === 'ar' ? 'المغرب' : language === 'en' ? 'Morocco' : 'Marruecos'}`,
       coordinates: { lat: 33.6084, lng: -7.6325 },
       date: '2024-02-20',
       category: 'imperial',
       photographer: 'Wikimedia Commons (Crédit auteur sur la page du fichier)',
-      description: destinationsData.destinations.casablanca.monuments?.[0]?.description?.[language] || destinationsData.destinations.casablanca.description[language]
+      description: (destinationsData.destinations.casablanca.monuments?.[0]?.description as any)?.[language] || (destinationsData.destinations.casablanca.description as any)[language]
     },
     {
       id: 3,
       src: imageUrls.merzouga,
       title: `${destinationsData.destinations.merzouga.name[language]} - ${destinationsData.destinations.merzouga.subtitle[language]}`,
-      location: `${destinationsData.destinations.merzouga.name[language]}, ${language === 'fr' ? 'Sahara' : 'الصحراء'}`,
+      location: `${destinationsData.destinations.merzouga.name[language]}, ${language === 'fr' ? 'Sahara' : language === 'ar' ? 'الصحراء' : language === 'en' ? 'Sahara' : 'Sáhara'}`,
       coordinates: { lat: 31.0801, lng: -4.0133 },
       date: '2024-01-10',
       category: 'sahara',
@@ -78,19 +78,19 @@ export default function EnhancedGallery({ language }: EnhancedGalleryProps) {
     {
       id: 4,
       src: imageUrls.fes,
-      title: destinationsData.destinations.fes.monuments?.[1]?.name?.[language] || (language === 'fr' ? 'Bab Boujloud' : 'باب بوجلود'),
-      location: `${destinationsData.destinations.fes.name[language]}, ${language === 'fr' ? 'Maroc' : 'المغرب'}`,
+      title: (destinationsData.destinations.fes.monuments?.[1]?.name as any)?.[language] || (language === 'fr' ? 'Bab Boujloud' : language === 'ar' ? 'باب بوجلود' : language === 'en' ? 'Bab Boujloud' : 'Bab Boujloud'),
+      location: `${destinationsData.destinations.fes.name[language]}, ${language === 'fr' ? 'Maroc' : language === 'ar' ? 'المغرب' : language === 'en' ? 'Morocco' : 'Marruecos'}`,
       coordinates: { lat: 34.0631, lng: -4.9998 },
       date: '2024-03-05',
       category: 'imperial',
       photographer: 'Wikimedia Commons (Crédit auteur sur la page du fichier)',
-      description: destinationsData.destinations.fes.monuments?.[1]?.description?.[language] || destinationsData.destinations.fes.description[language]
+      description: (destinationsData.destinations.fes.monuments?.[1]?.description as any)?.[language] || (destinationsData.destinations.fes.description as any)[language]
     },
     {
       id: 5,
       src: imageUrls.essaouira,
       title: `${destinationsData.destinations.essaouira.name[language]} - ${destinationsData.destinations.essaouira.subtitle[language]}`,
-      location: `${destinationsData.destinations.essaouira.name[language]}, ${language === 'fr' ? 'Maroc' : 'المغرب'}`,
+      location: `${destinationsData.destinations.essaouira.name[language]}, ${language === 'fr' ? 'Maroc' : language === 'ar' ? 'المغرب' : language === 'en' ? 'Morocco' : 'Marruecos'}`,
       coordinates: { lat: 31.5084, lng: -9.7595 },
       date: '2024-04-12',
       category: 'coast',
@@ -100,22 +100,22 @@ export default function EnhancedGallery({ language }: EnhancedGalleryProps) {
     {
       id: 6,
       src: imageUrls.rabat,
-      title: destinationsData.destinations.rabat.monuments?.[0]?.name?.[language] || (language === 'fr' ? 'Tour Hassan' : 'صومعة حسان'),
-      location: `${destinationsData.destinations.rabat.name[language]}, ${language === 'fr' ? 'Maroc' : 'المغرب'}`,
+      title: (destinationsData.destinations.rabat.monuments?.[0]?.name as any)?.[language] || (language === 'fr' ? 'Tour Hassan' : language === 'ar' ? 'صومعة حسان' : language === 'en' ? 'Hassan Tower' : 'Torre Hassan'),
+      location: `${destinationsData.destinations.rabat.name[language]}, ${language === 'fr' ? 'Maroc' : language === 'ar' ? 'المغرب' : language === 'en' ? 'Morocco' : 'Marruecos'}`,
       coordinates: { lat: 34.0233, lng: -6.8223 },
       date: '2024-02-28',
       category: 'imperial',
       photographer: 'Wikimedia Commons (Crédit auteur sur la page du fichier)',
-      description: destinationsData.destinations.rabat.monuments?.[0]?.description?.[language] || destinationsData.destinations.rabat.description[language]
+      description: (destinationsData.destinations.rabat.monuments?.[0]?.description as any)?.[language] || (destinationsData.destinations.rabat.description as any)[language]
     }
   ];
 
   const categories = [
-    { id: 'all', name: language === 'fr' ? 'Toutes' : 'الكل', count: images.length },
-    { id: 'imperial', name: language === 'fr' ? 'Villes Impériales' : 'المدن الإمبراطورية', count: images.filter(img => img.category === 'imperial').length },
-    { id: 'sahara', name: language === 'fr' ? 'Sahara' : 'الصحراء', count: images.filter(img => img.category === 'sahara').length },
-    { id: 'atlas', name: language === 'fr' ? 'Atlas' : 'الأطلس', count: images.filter(img => img.category === 'atlas').length },
-    { id: 'coast', name: language === 'fr' ? 'Côte' : 'الساحل', count: images.filter(img => img.category === 'coast').length }
+    { id: 'all', name: language === 'fr' ? 'Toutes' : language === 'ar' ? 'الكل' : language === 'en' ? 'All' : 'Todas', count: images.length },
+    { id: 'imperial', name: language === 'fr' ? 'Villes Impériales' : language === 'ar' ? 'المدن الإمبراطورية' : language === 'en' ? 'Imperial Cities' : 'Ciudades Imperiales', count: images.filter(img => img.category === 'imperial').length },
+    { id: 'sahara', name: language === 'fr' ? 'Sahara' : language === 'ar' ? 'الصحراء' : language === 'en' ? 'Sahara' : 'Sáhara', count: images.filter(img => img.category === 'sahara').length },
+    { id: 'atlas', name: language === 'fr' ? 'Atlas' : language === 'ar' ? 'الأطلس' : language === 'en' ? 'Atlas' : 'Atlas', count: images.filter(img => img.category === 'atlas').length },
+    { id: 'coast', name: language === 'fr' ? 'Côte' : language === 'ar' ? 'الساحل' : language === 'en' ? 'Coast' : 'Costa', count: images.filter(img => img.category === 'coast').length }
   ];
 
   const getCategoryColor = (category: string) => {
@@ -210,13 +210,16 @@ export default function EnhancedGallery({ language }: EnhancedGalleryProps) {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {language === 'fr' ? 'Galerie Géolocalisée' : 'معرض مُحدد الموقع'}
+            {language === 'fr' ? 'Galerie Géolocalisée' : language === 'ar' ? 'معرض مُحدد الموقع' : language === 'en' ? 'Geolocated Gallery' : 'Galería Geolocalizada'}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'fr' 
               ? 'Explorez le Maroc à travers nos photos authentiques avec localisation précise'
-              : 'استكشف المغرب من خلال صورنا الأصيلة مع تحديد الموقع الدقيق'
-            }
+              : language === 'ar' 
+                ? 'استكشف المغرب من خلال صورنا الأصيلة مع تحديد الموقع الدقيق'
+                : language === 'en'
+                  ? 'Explore Morocco through our authentic photos with precise location'
+                  : 'Explora Marruecos a través de nuestras fotos auténticas con ubicación precisa'}
           </p>
         </div>
 
@@ -403,7 +406,7 @@ export default function EnhancedGallery({ language }: EnhancedGalleryProps) {
                     </div>
                     <div className="flex items-center">
                       <Eye className="h-3 w-3 mr-2 text-morocco-gold" />
-                      <span>{language === 'fr' ? 'Voir détails' : 'عرض التفاصيل'}</span>
+                      <span>{language === 'fr' ? 'Voir détails' : language === 'ar' ? 'عرض التفاصيل' : language === 'en' ? 'View details' : 'Ver detalles'}</span>
                     </div>
                   </div>
                 </div>

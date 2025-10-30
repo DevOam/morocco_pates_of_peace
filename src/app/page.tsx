@@ -26,9 +26,9 @@ import BackToTop from '@/components/BackToTop';
 import ToastNotification, { useToast } from '@/components/ToastNotification';
 
 export default function Home() {
-  const [language, setLanguage] = useState<'fr' | 'ar'>('fr');
+  const [language, setLanguage] = useState<'fr' | 'ar' | 'en' | 'es'>('fr');
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const { toasts, removeToast, showSuccess } = useToast();
+  const { toasts, removeToast, showSuccess, showError } = useToast();
 
   const content = {
     fr: {
@@ -45,7 +45,7 @@ export default function Home() {
         cta: 'Explorez nos circuits'
       },
       features: {
-        title: 'Pourquoi choisir Marrakech Tours ?',
+        title: 'Pourquoi choisir Morocco Plant Peace ?',
         items: [
           { icon: Star, title: 'Guides Experts', desc: 'Guides locaux certifiés avec 10+ ans d\'expérience' },
           { icon: Users, title: 'Groupes Privés', desc: 'Circuits sur mesure pour votre groupe' },
@@ -123,6 +123,102 @@ export default function Home() {
             price: '320€',
             image: 'https://i.pinimg.com/736x/be/a7/3e/bea73e9259c54a11a998ce5b749c0c89.jpg',
             desc: 'الأطلس الكبير والوديان البربرية'
+          }
+        ]
+      }
+    },
+    en: {
+      nav: {
+        home: 'Home',
+        tours: 'Tours',
+        about: 'About',
+        contact: 'Contact',
+        book: 'Book'
+      },
+      hero: {
+        title: 'Discover Authentic Morocco',
+        subtitle: 'Personalized tours and unforgettable experiences',
+        cta: 'Explore our tours'
+      },
+      features: {
+        title: 'Why choose Morocco Plant Peace?',
+        items: [
+          { icon: Star, title: 'Expert Guides', desc: 'Certified local guides with 10+ years experience' },
+          { icon: Users, title: 'Private Groups', desc: 'Tailor-made tours for your group' },
+          { icon: Clock, title: 'Available 24/7', desc: 'Customer support available anytime' }
+        ]
+      },
+      tours: {
+        title: 'Our Popular Tours',
+        items: [
+          {
+            title: 'Imperial Circuit',
+            duration: '7 days',
+            price: '850€',
+            image: 'https://i.pinimg.com/736x/5e/c7/f7/5ec7f7fb6ffd18246b36f6c440a639b8.jpg',
+            desc: 'Marrakech, Fez, Meknes and Rabat'
+          },
+          {
+            title: 'Sahara Adventure',
+            duration: '4 days',
+            price: '450€',
+            image: 'https://i.pinimg.com/736x/c1/93/a1/c193a1476a6302a6fb1a6717e4e48da6.jpg',
+            desc: 'Merzouga desert and night under the stars'
+          },
+          {
+            title: 'Atlas & Valleys',
+            duration: '3 days',
+            price: '320€',
+            image: 'https://i.pinimg.com/736x/be/a7/3e/bea73e9259c54a11a998ce5b749c0c89.jpg',
+            desc: 'High Atlas and Berber valleys'
+          }
+        ]
+      }
+    },
+    es: {
+      nav: {
+        home: 'Inicio',
+        tours: 'Tours',
+        about: 'Acerca de',
+        contact: 'Contacto',
+        book: 'Reservar'
+      },
+      hero: {
+        title: 'Descubre el Marruecos Auténtico',
+        subtitle: 'Tours personalizados y experiencias inolvidables',
+        cta: 'Explora nuestros tours'
+      },
+      features: {
+        title: '¿Por qué elegir Morocco Plant Peace?',
+        items: [
+          { icon: Star, title: 'Guías Expertos', desc: 'Guías locales certificados con más de 10 años de experiencia' },
+          { icon: Users, title: 'Grupos Privados', desc: 'Tours hechos a medida para tu grupo' },
+          { icon: Clock, title: 'Disponible 24/7', desc: 'Soporte al cliente disponible en cualquier momento' }
+        ]
+      },
+      tours: {
+        title: 'Nuestros Tours Populares',
+        items: [
+          {
+            title: 'Circuito Imperial',
+            duration: '7 días',
+            price: '850€',
+            image: 'https://i.pinimg.com/736x/5e/c7/f7/5ec7f7fb6ffd18246b36f6c440a639b8.jpg',
+            desc: 'Marrakech, Fez, Meknes y Rabat'
+          },
+          {
+            title: 'Aventura Sahara',
+            duration: '4 días',
+            price: '450€',
+            image: 'https://i.pinimg.com/736x/c1/93/a1/c193a1476a6302a6fb1a6717e4e48da6.jpg',
+            desc: 'Desierto de Merzouga y noche bajo las estrellas'
+          },
+          {
+            title: 'Atlas y Valles',
+            duration: '3 días',
+            price: '320€',
+            image: 'https://i.pinimg.com/736x/be/a7/3e/bea73e9259c54a11a998ce5b749c0c89.jpg',
+            desc: 'Alto Atlas y valles bereberes'
           }
         ]
       }
@@ -256,7 +352,13 @@ export default function Home() {
                     onClick={() => setIsBookingOpen(true)}
                     className="w-full bg-morocco-gold hover:bg-yellow-500 text-black font-bold py-2 sm:py-3 text-sm sm:text-base rounded-lg transition-all transform hover:scale-105"
                   >
-                    {language === 'fr' ? 'Réserver maintenant' : 'احجز الآن'}
+                    {language === 'fr' 
+                      ? 'Réserver maintenant' 
+                      : language === 'ar' 
+                        ? 'احجز الآن' 
+                        : language === 'en' 
+                          ? 'Book now' 
+                          : 'Reservar ahora'}
                   </button>
                 </div>
               </div>
@@ -308,6 +410,8 @@ export default function Home() {
         language={language} 
         isOpen={isBookingOpen} 
         onClose={() => setIsBookingOpen(false)} 
+        onSuccess={(title, message) => showSuccess(title, message)}
+        onError={(title, message) => showError(title, message)}
       />
 
       {/* Footer at the very bottom */}

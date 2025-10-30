@@ -12,7 +12,7 @@ interface Message {
 }
 
 interface SuperAIAssistantProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
@@ -32,6 +32,159 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
   // Base de connaissances complète du Maroc
   type IntentType = 'booking' | 'city' | 'recommendation' | 'safety' | 'pricing' | 'menu' | 'history' | 'culture' | 'weather' | 'logistics';
   interface IntentResponse { text: string; type: IntentType; }
+
+  // --- Helpers to localize dynamic blocks for EN/ES so they don't fall back to FR ---
+  const cityInfoEn = (city: string) => {
+    switch (city) {
+      case 'marrakech':
+        return `🏛️ **Marrakech - The Red City**
+
+📚 **History:** Founded in 1062 by the Almoravids. UNESCO-listed medina with centuries-old architecture.
+
+🎯 **Highlights:**
+• Jemaa el-Fna square – heart of the medina
+• Koutoubia – 12th-century minaret
+• Majorelle Gardens – iconic oasis
+• Bahia Palace – masterpiece of Moroccan art
+• Souks – labyrinth of artisans
+
+🛡️ **Safety:** Very safe in tourist areas. Avoid deserted alleys late at night.
+
+🌤️ **Best time:** October–April (20–25°C). Avoid July–August (40°C+)
+
+🍽️ **Specialties:** Tagine, couscous, almond pastries, mint tea`;
+      case 'fes':
+        return `🏛️ **Fez - Spiritual Capital**
+
+📚 **History:** Founded in 789. Home to Al‑Qarawiyyin (859), the world’s oldest university.
+
+🎯 **Highlights:**
+• Fes el‑Bali medina – world’s largest car‑free area
+• Al‑Qarawiyyin University
+• Chouara Tanneries
+• Bou Inania Madrasa
+• Royal Palace gates
+
+🛡️ **Safety:** Safe; the medina is very maze‑like—use a guide.
+
+🌤️ **Best time:** Mar–May, Sep–Nov (15–25°C)`;
+      case 'chefchaouen':
+        return `🏛️ **Chefchaouen - The Blue Pearl**
+
+🎯 **Highlights:**
+• Blue-painted medina
+• Kasbah & Uta el‑Hammam square
+• Spanish Mosque viewpoint
+• Akchour waterfalls
+
+🛡️ **Safety:** Very safe; take care on mountain trails.
+
+🌤️ **Best time:** Apr–Jun, Sep–Oct`;
+      case 'casablanca':
+        return `🏛️ **Casablanca - Economic Capital**
+
+🎯 **Highlights:**
+• Hassan II Mosque
+• Ain Diab Corniche
+• Habous quarter
+• Art Deco architecture
+
+🛡️ **Safety:** Safe in tourist zones; avoid some outskirts at night.`;
+      case 'essaouira':
+        return `🏛️ **Essaouira - Wind City**
+
+🎯 **Highlights:**
+• Fortified medina & ramparts
+• Fishing port & blue boats
+• Atlantic beaches & surf
+
+🛡️ **Safety:** Very safe; strong winds—bring a light jacket.`;
+      default:
+        return "City not found.";
+    }
+  };
+
+  const cityInfoEs = (city: string) => {
+    switch (city) {
+      case 'marrakech':
+        return `🏛️ **Marrakech - La Ciudad Roja**
+
+📚 **Historia:** Fundada en 1062 por los almoháravides. Medina declarada Patrimonio UNESCO.
+
+🎯 **Imprescindibles:**
+• Plaza Jemaa el‑Fna – corazón de la medina
+• Koutoubia – alminar del s. XII
+• Jardines Majorelle – oasis icónico
+• Palacio de la Bahía – obra maestra del arte marroquí
+• Zocos – laberinto de artesanos
+
+🛡️ **Seguridad:** Muy segura en zonas turísticas. Evitar callejones solitarios de noche.
+
+🌤️ **Mejor época:** Octubre–abril (20–25°C); evitar julio–agosto (40°C+)
+
+🍽️ **Especialidades:** Tajín, cuscús, dulces de almendra, té de menta`;
+      case 'fes':
+        return `🏛️ **Fez - Capital Espiritual**
+
+📚 **Historia:** Fundada en 789. Sede de Al‑Qarawiyyin (859), la universidad más antigua del mundo.
+
+🎯 **Imprescindibles:**
+• Medina Fes el‑Bali – mayor zona peatonal del mundo
+• Universidad Al‑Qarawiyyin
+• Curtidurías Chouara
+• Madraza Bou Inania
+• Puertas del Palacio Real
+
+🛡️ **Seguridad:** Segura; la medina es laberíntica—usa guía.
+
+🌤️ **Mejor época:** Mar–may, sep–nov (15–25°C)`;
+      case 'chefchaouen':
+        return `🏛️ **Chefchaouen - La Perla Azul**
+
+🎯 **Imprescindibles:**
+• Medina azul
+• Kasbah y plaza Uta el‑Hammam
+• Mezquita española (mirador)
+• Cascadas de Akchour
+
+🛡️ **Seguridad:** Muy segura; precaución en senderos de montaña.`;
+      case 'casablanca':
+        return `🏛️ **Casablanca - Capital Económica**
+
+🎯 **Imprescindibles:**
+• Mezquita Hassan II
+• Corniche Ain Diab
+• Barrio Habous
+• Arquitectura Art Déco
+
+🛡️ **Seguridad:** Segura en zonas turísticas; evitar algunos barrios periféricos de noche.`;
+      case 'essaouira':
+        return `🏛️ **Essaouira - Ciudad del Viento**
+
+🎯 **Imprescindibles:**
+• Medina amurallada y baluartes
+• Puerto pesquero y barcas azules
+• Playas del Atlántico y surf
+
+🛡️ **Seguridad:** Muy segura; vientos fuertes—lleva chaqueta.`;
+      default:
+        return "Ciudad no encontrada.";
+    }
+  };
+
+  const weatherEn = (city: string) => `☀️ Typical weather in ${city}
+
+• Spring: 20–28°C, ideal for visits
+• Summer: hot (Marrakech up to 35–42°C) – activities morning/evening
+• Autumn: 22–30°C, great conditions
+• Winter: 12–20°C, cooler in the Atlas`;
+
+  const weatherEs = (city: string) => `☀️ Clima típico en ${city}
+
+• Primavera: 20–28°C, ideal para visitas
+• Verano: caluroso (Marrakech hasta 35–42°C) – actividades mañana/tarde
+• Otoño: 22–30°C, condiciones excelentes
+• Invierno: 12–20°C, más fresco en el Atlas`;
 
   const moroccoKnowledge = {
     fr: {
@@ -202,17 +355,46 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
         weather: (city: string) => moroccoKnowledge.fr.responses.weather(city),
         fallback: "اسألني سؤالاً محدداً: معلومات مراكش، الأمان، أسعار الصحراء، حجز 4 أيام..."
       }
+    },
+
+    en: {
+      responses: {
+        welcome: "Hi! I'm Aicha, your AI Morocco guide 🇲🇦✨ I know everything about history, culture, excursions, safety, prices and bookings. What can I help you with?",
+        bookingStart: "Great! Let's build your trip! 🎯\n\nStep 1/5: Choose city and dates. Which city do you prefer? Marrakech / Fez / Chefchaouen / Essaouira / Casablanca",
+        cityInfo: (city: string) => cityInfoEn(city),
+        recommendations: (interests: string[]) => moroccoKnowledge.fr.responses.recommendations(interests),
+        logistics: "🚐 Transport in Morocco is reliable and safe: air‑conditioned vehicles, professional drivers, and intercity trains.",
+        culture: "🎭 Moroccan culture: hospitality, crafts, Gnawa music, and delicious cuisine.",
+        weather: (city: string) => weatherEn(city),
+        fallback: "Ask me something specific: Marrakech info, safety, Sahara prices, book 4 days..."
+      }
+    },
+
+    es: {
+      responses: {
+        welcome: "¡Hola! Soy Aicha, tu guía IA de Marruecos 🇲🇦✨ Conozco historia, cultura, excursiones, seguridad, precios y reservas. ¿En qué te ayudo?",
+        bookingStart: "¡Perfecto! ¡Construyamos tu viaje! 🎯\n\nPaso 1/5: Elige ciudad y fechas. ¿Qué ciudad prefieres? Marrakech / Fez / Chefchaouen / Essaouira / Casablanca",
+        cityInfo: (city: string) => cityInfoEs(city),
+        recommendations: (interests: string[]) => moroccoKnowledge.fr.responses.recommendations(interests),
+        logistics: "🚐 El transporte en Marruecos es fiable y seguro: vehículos con aire acondicionado, conductores profesionales y trenes entre ciudades.",
+        culture: "🎭 Cultura marroquí: hospitalidad, artesanía, música Gnawa y gastronomía deliciosa.",
+        weather: (city: string) => weatherEs(city),
+        fallback: "Hazme una pregunta concreta: Info de Marrakech, seguridad, precios del Sáhara, reservar 4 días..."
+      }
     }
   };
 
   const currentContent = moroccoKnowledge[language];
 
+  // When opening the chat, always show a fresh welcome in the current language
   useEffect(() => {
-    if (isOpen && messages.length === 0) {
+    if (isOpen) {
+      setMessages([]);
       setTimeout(() => {
         addAIMessage(currentContent.responses.welcome);
-      }, 1000);
+      }, 400);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, language]);
 
   useEffect(() => {
@@ -234,7 +416,7 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
         type
       }]);
       setIsTyping(false);
-    }, 1500 + Math.random() * 1000);
+    }, 2000);
   };
 
   const addUserMessage = (text: string) => {
@@ -290,12 +472,16 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
       };
     }
 
-    // Sécurité
-    if (userInput.includes('sécur') || userInput.includes('danger') || userInput.includes('sûr')) {
-      return {
-        text: "🛡️ **Sécurité au Maroc - Guide Complet**\n\n✅ **Zones très sûres :** Toutes les villes touristiques principales\n⚠️ **Précautions standard :** Éviter ruelles isolées la nuit\n🚫 **Zones à éviter :** Certains quartiers périphériques de Casablanca\n\n**Conseils pratiques :**\n• Gardez copies de vos papiers\n• Négociez prix avant services\n• Utilisez taxis officiels\n• Respectez codes vestimentaires locaux\n\nVoulez-vous des infos spécifiques à une ville ?",
-        type: 'safety'
-      };
+    // Sécurité / Safety
+    if (userInput.includes('sécur') || userInput.includes('danger') || userInput.includes('sûr') || userInput.includes('safety')) {
+      const safetyText = language === 'fr'
+        ? "🛡️ **Sécurité au Maroc - Guide Complet**\n\n✅ **Zones très sûres :** Villes touristiques principales\n⚠️ **Précautions :** Éviter ruelles isolées la nuit\n🚫 **À éviter :** Quelques quartiers périphériques\n\n**Conseils :**\n• Copies de papiers\n• Négocier avant service\n• Taxis officiels\n• Respect des codes locaux"
+        : language === 'ar'
+          ? "🛡️ **الأمان في المغرب - دليل مختصر**\n\n✅ **مناطق آمنة جداً:** المدن السياحية الرئيسية\n⚠️ **احتياطات:** تجنب الأزقة المعزولة ليلاً\n🚫 **تجنب:** بعض الأحياء الطرفية\n\n**نصائح:**\n• نسخ من الوثائق\n• التفاوض قبل الخدمة\n• استخدام سيارات الأجرة الرسمية\n• احترام العادات"
+          : language === 'en'
+            ? "🛡️ **Safety in Morocco - Quick Guide**\n\n✅ **Very safe areas:** Main tourist cities\n⚠️ **Precautions:** Avoid deserted alleys at night\n🚫 **Avoid:** Some outer districts\n\n**Tips:**\n• Carry copies of documents\n• Agree price before service\n• Use official taxis\n• Respect local codes"
+            : "🛡️ **Seguridad en Marruecos - Guía Rápida**\n\n✅ **Zonas muy seguras:** Ciudades turísticas principales\n⚠️ **Precauciones:** Evitar callejones solitarios de noche\n🚫 **Evitar:** Algunos barrios periféricos\n\n**Consejos:**\n• Copias de documentos\n• Acordar precio antes del servicio\n• Taxis oficiales\n• Respetar códigos locales";
+      return { text: safetyText, type: 'safety' };
     }
 
     // Météo / climat
@@ -319,17 +505,29 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
       return { text: currentContent.responses.logistics, type: 'logistics' } as IntentResponse;
     }
 
-    // Prix et budget
-    if (userInput.includes('prix') || userInput.includes('coût') || userInput.includes('budget')) {
-      return {
-        text: "💰 **Tarifs 2024 - Circuits Premium**\n\n🏛️ **Circuit Impérial** (7j)\n• Standard : 450€ • Luxe : 850€\n\n🏜️ **Sahara Express** (4j)\n• Standard : 280€ • Luxe : 480€\n\n🏔️ **Atlas Découverte** (5j)\n• Standard : 320€ • Luxe : 520€\n\n🌊 **Tour Côtier** (6j)\n• Standard : 380€ • Luxe : 680€\n\n*Inclus : hébergement, transport, guides, repas*\n\nQuel circuit vous intéresse ?",
-        type: 'pricing'
-      };
+    // Prix / Prices / Precios
+    if (userInput.includes('prix') || userInput.includes('coût') || userInput.includes('budget') || userInput.includes('price') || userInput.includes('prices')) {
+      const pricingText = language === 'fr'
+        ? "💰 **Tarifs 2024 - Circuits Premium**\n\n🏛️ **Circuit Impérial** (7j)\n• Standard : 450€ • Luxe : 850€\n\n🏜️ **Sahara Express** (4j)\n• Standard : 280€ • Luxe : 480€\n\n🏔️ **Atlas Découverte** (5j)\n• Standard : 320€ • Luxe : 520€\n\n🌊 **Tour Côtier** (6j)\n• Standard : 380€ • Luxe : 680€\n\n*Inclus : hébergement, transport, guides, repas*"
+        : language === 'ar'
+          ? "💰 **الأسعار 2024 - جولات مميزة**\n\n🏛️ **الجولة الإمبراطورية** (7 أيام)\n• عادي: 450€ • فاخر: 850€\n\n🏜️ **الصحراء السريعة** (4 أيام)\n• عادي: 280€ • فاخر: 480€\n\n🏔️ **اكتشاف الأطلس** (5 أيام)\n• عادي: 320€ • فاخر: 520€\n\n🌊 **جولة الساحل** (6 أيام)\n• عادي: 380€ • فاخر: 680€\n\n*يشمل: الإقامة، النقل، المرشدون، الوجبات*"
+          : language === 'en'
+            ? "💰 **2024 Pricing - Premium Tours**\n\n🏛️ **Imperial Circuit** (7d)\n• Standard: 450€ • Luxury: 850€\n\n🏜️ **Sahara Express** (4d)\n• Standard: 280€ • Luxury: 480€\n\n🏔️ **Atlas Discovery** (5d)\n• Standard: 320€ • Luxury: 520€\n\n🌊 **Coastal Tour** (6d)\n• Standard: 380€ • Luxury: 680€\n\n*Includes: accommodation, transport, guides, meals*"
+            : "💰 **Precios 2024 - Tours Premium**\n\n🏛️ **Circuito Imperial** (7d)\n• Estándar: 450€ • Lujo: 850€\n\n🏜️ **Sáhara Express** (4d)\n• Estándar: 280€ • Lujo: 480€\n\n🏔️ **Descubrimiento del Atlas** (5d)\n• Estándar: 320€ • Lujo: 520€\n\n🌊 **Tour Costero** (6d)\n• Estándar: 380€ • Lujo: 680€\n\n*Incluye: alojamiento, transporte, guías, comidas*";
+      return { text: pricingText, type: 'pricing' };
     }
 
-    // Réponse par défaut intelligente
+    // Réponse par défaut intelligente / Default response
+    const menuText = language === 'fr'
+      ? "Je suis votre experte Maroc ! Posez-moi des questions sur :\n\n🏛️ **Villes** (histoire, attractions, excursions)\n🎯 **Réservations** (circuits, hébergements)\n💰 **Prix** (budgets, comparaisons)\n🛡️ **Sécurité** (conseils, zones)\n🍽️ **Culture** (gastronomie, traditions)\n📸 **Activités** (photo, aventure, détente)\n\nQue voulez-vous découvrir ?"
+      : language === 'ar'
+        ? "أنا خبيرتك في المغرب! اسألني عن:\n\n🏛️ **المدن** (التاريخ، المعالم، الرحلات)\n🎯 **الحجوزات** (الجولات، الإقامة)\n💰 **الأسعار** (الميزانيات، المقارنات)\n🛡️ **الأمان** (النصائح، المناطق)\n🍽️ **الثقافة** (المطبخ، التقاليد)\n📸 **الأنشطة** (التصوير، المغامرة، الاسترخاء)\n\nماذا تريد أن تكتشف؟"
+        : language === 'en'
+          ? "I'm your Morocco expert! Ask me about:\n\n🏛️ **Cities** (history, attractions, excursions)\n🎯 **Bookings** (tours, accommodation)\n💰 **Prices** (budgets, comparisons)\n🛡️ **Safety** (tips, areas)\n🍽️ **Culture** (cuisine, traditions)\n📸 **Activities** (photo, adventure, relaxation)\n\nWhat would you like to discover?"
+          : "¡Soy tu experta en Marruecos! Pregúntame sobre:\n\n🏛️ **Ciudades** (historia, atracciones, excursiones)\n🎯 **Reservas** (tours, alojamiento)\n💰 **Precios** (presupuestos, comparaciones)\n🛡️ **Seguridad** (consejos, zonas)\n🍽️ **Cultura** (gastronomía, tradiciones)\n📸 **Actividades** (foto, aventura, relajación)\n\n¿Qué te gustaría descubrir?";
+    
     return {
-      text: "Je suis votre experte Maroc ! Posez-moi des questions sur :\n\n🏛️ **Villes** (histoire, attractions, excursions)\n🎯 **Réservations** (circuits, hébergements)\n💰 **Prix** (budgets, comparaisons)\n🛡️ **Sécurité** (conseils, zones)\n🍽️ **Culture** (gastronomie, traditions)\n📸 **Activités** (photo, aventure, détente)\n\nQue voulez-vous découvrir ?",
+      text: menuText,
       type: 'menu'
     };
   };
@@ -345,22 +543,64 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
     addUserMessage(reply);
   };
 
-  const quickReplies = [
-    "Réserver un circuit",
-    "Infos Marrakech",
-    "Infos Fès",
-    "Infos Chefchaouen",
-    "Infos Essaouira",
-    "Infos Casablanca",
-    "Sécurité au Maroc",
-    "Prix et budgets",
-    "Météo Marrakech",
-    "Culture & Gastronomie",
-    "Recommandations personnalisées"
-  ];
+  const quickRepliesMap = {
+    fr: [
+      "Réserver un circuit",
+      "Infos Marrakech",
+      "Infos Fès",
+      "Infos Chefchaouen",
+      "Infos Essaouira",
+      "Infos Casablanca",
+      "Sécurité au Maroc",
+      "Prix et budgets",
+      "Météo Marrakech",
+      "Culture & Gastronomie",
+      "Recommandations personnalisées"
+    ],
+    ar: [
+      "حجز جولة",
+      "معلومات مراكش",
+      "معلومات فاس",
+      "معلومات شفشاون",
+      "معلومات الصويرة",
+      "معلومات الدار البيضاء",
+      "السلامة في المغرب",
+      "الأسعار والميزانيات",
+      "طقس مراكش",
+      "الثقافة والمطبخ",
+      "توصيات مخصصة"
+    ],
+    en: [
+      "Book a tour",
+      "Marrakech info",
+      "Fez info",
+      "Chefchaouen info",
+      "Essaouira info",
+      "Casablanca info",
+      "Morocco safety",
+      "Prices & budgets",
+      "Marrakech weather",
+      "Culture & Food",
+      "Personalized recommendations"
+    ],
+    es: [
+      "Reservar un tour",
+      "Info Marrakech",
+      "Info Fez",
+      "Info Chefchaouen",
+      "Info Essaouira",
+      "Info Casablanca",
+      "Seguridad en Marruecos",
+      "Precios y presupuestos",
+      "Clima Marrakech",
+      "Cultura y Gastronomía",
+      "Recomendaciones personalizadas"
+    ]
+  } as const;
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('fr-FR', { 
+    const locale = language === 'fr' ? 'fr-FR' : language === 'ar' ? 'ar-MA' : language === 'en' ? 'en-GB' : 'es-ES';
+    return date.toLocaleTimeString(locale, { 
       hour: '2-digit', 
       minute: '2-digit' 
     });
@@ -380,7 +620,7 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
           <Sparkles className="h-2 w-2 text-white" />
         </div>
         <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-          Guide IA Expert
+          {language === 'fr' ? 'Guide IA Expert' : language === 'ar' ? 'مرشد ذكاء اصطناعي خبير' : language === 'en' ? 'Expert AI Guide' : 'Guía IA Experta'}
         </div>
       </button>
 
@@ -395,12 +635,12 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
               </div>
               <div>
                 <h3 className="font-bold text-lg">
-                  {language === 'fr' ? 'Aicha - Guide IA Expert' : 'عائشة - المرشد الذكي'}
+                  {language === 'fr' ? 'Aicha - Guide IA Expert' : language === 'ar' ? 'عائشة - المرشد الذكي' : language === 'en' ? 'Aicha - Expert AI Guide' : 'Aicha - Guía IA Experta'}
                 </h3>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <Sparkles className="h-3 w-3" />
-                  <span>{language === 'fr' ? 'Expert Maroc 24/7' : 'خبير المغرب 24/7'}</span>
+                  <span>{language === 'fr' ? 'Expert Maroc 24/7' : language === 'ar' ? 'خبير المغرب 24/7' : language === 'en' ? 'Morocco expert 24/7' : 'Experta de Marruecos 24/7'}</span>
                 </div>
               </div>
             </div>
@@ -427,7 +667,9 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
                   {message.sender === 'ai' && (
                     <div className="flex items-center gap-2 mb-2">
                       <Bot className="h-4 w-4 text-purple-600" />
-                      <span className="text-xs font-medium text-purple-600">Aicha IA Expert</span>
+                      <span className="text-xs font-medium text-purple-600">
+                        {language === 'fr' ? 'Aicha IA Expert' : language === 'ar' ? 'عائشة الذكاء الاصطناعي' : language === 'en' ? 'Aicha AI Expert' : 'Aicha IA Experta'}
+                      </span>
                     </div>
                   )}
                   <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
@@ -446,7 +688,9 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
                 <div className="bg-white text-gray-800 shadow-md px-4 py-3 rounded-2xl border border-gray-100">
                   <div className="flex items-center gap-2 mb-2">
                     <Bot className="h-4 w-4 text-purple-600" />
-                    <span className="text-xs font-medium text-purple-600">Aicha analyse...</span>
+                    <span className="text-xs font-medium text-purple-600">
+                      {language === 'fr' ? 'Aicha analyse...' : language === 'ar' ? 'عائشة تحلل...' : language === 'en' ? 'Aicha is analyzing...' : 'Aicha está analizando...'}
+                    </span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="flex space-x-1">
@@ -465,7 +709,7 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
           {messages.length > 0 && messages.length < 4 && (
             <div className="p-3 bg-gray-50 border-t">
               <div className="flex flex-wrap gap-2">
-                {quickReplies.slice(0, 3).map((reply, index) => (
+                {quickRepliesMap[language].slice(0, 3).map((reply: string, index: number) => (
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
@@ -486,7 +730,7 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder={language === 'fr' ? 'Posez votre question d\'expert...' : 'اطرح سؤالك...'}
+                placeholder={language === 'fr' ? 'Posez votre question d\'expert...' : language === 'ar' ? 'اطرح سؤالك...' : language === 'en' ? 'Ask your expert question...' : 'Haz tu pregunta al experto...'}
                 style={{ backgroundColor: 'white', color: 'black', WebkitTextFillColor: 'black', caretColor: 'black', fontSize: '16px', fontWeight: '500' }}
                 className="flex-1 px-4 py-3 border-2 border-purple-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent placeholder-gray-500"
               />
@@ -502,25 +746,31 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
             {/* Expert Features */}
             <div className="flex justify-center space-x-4 mt-3 pt-3 border-t border-gray-200">
               <button 
-                onClick={() => handleQuickReply("Réserver maintenant")}
+                onClick={() => handleQuickReply(
+                  language === 'fr' ? 'Réserver maintenant' : language === 'ar' ? 'احجز الآن' : language === 'en' ? 'Book now' : 'Reservar ahora'
+                )}
                 className="flex items-center text-xs text-purple-600 hover:text-purple-800 transition-colors font-medium"
               >
                 <Calendar className="h-3 w-3 mr-1" />
-                Réserver
+                {language === 'fr' ? 'Réserver' : language === 'ar' ? 'احجز' : language === 'en' ? 'Book' : 'Reservar'}
               </button>
               <button 
-                onClick={() => handleQuickReply("Conseils sécurité")}
+                onClick={() => handleQuickReply(
+                  language === 'fr' ? 'Conseils sécurité' : language === 'ar' ? 'نصائح الأمان' : language === 'en' ? 'Safety tips' : 'Consejos de seguridad'
+                )}
                 className="flex items-center text-xs text-purple-600 hover:text-purple-800 transition-colors font-medium"
               >
                 <Shield className="h-3 w-3 mr-1" />
-                Sécurité
+                {language === 'fr' ? 'Sécurité' : language === 'ar' ? 'الأمان' : language === 'en' ? 'Safety' : 'Seguridad'}
               </button>
               <button 
-                onClick={() => handleQuickReply("Prix détaillés")}
+                onClick={() => handleQuickReply(
+                  language === 'fr' ? 'Prix détaillés' : language === 'ar' ? 'الأسعار بالتفصيل' : language === 'en' ? 'Detailed prices' : 'Precios detallados'
+                )}
                 className="flex items-center text-xs text-purple-600 hover:text-purple-800 transition-colors font-medium"
               >
                 <CreditCard className="h-3 w-3 mr-1" />
-                Prix
+                {language === 'fr' ? 'Prix' : language === 'ar' ? 'الأسعار' : language === 'en' ? 'Prices' : 'Precios'}
               </button>
             </div>
           </div>

@@ -12,7 +12,7 @@ interface GalleryImage {
 }
 
 interface InteractiveGalleryProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function InteractiveGallery({ language }: InteractiveGalleryProps) {
@@ -20,12 +20,12 @@ export default function InteractiveGallery({ language }: InteractiveGalleryProps
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const images: GalleryImage[] = [
-    { id: 1, src: 'gradient-1', title: language === 'fr' ? 'Palais de la Bahia' : 'قصر الباهية', location: 'Marrakech', category: 'imperial' },
-    { id: 2, src: 'gradient-2', title: language === 'fr' ? 'Dunes de Merzouga' : 'كثبان مرزوقة', location: 'Sahara', category: 'sahara' },
-    { id: 3, src: 'gradient-3', title: language === 'fr' ? 'Vallée de l\'Ourika' : 'وادي أوريكة', location: 'Atlas', category: 'atlas' },
-    { id: 4, src: 'gradient-4', title: language === 'fr' ? 'Médina de Fès' : 'مدينة فاس', location: 'Fès', category: 'imperial' },
-    { id: 5, src: 'gradient-5', title: language === 'fr' ? 'Coucher de soleil Sahara' : 'غروب الصحراء', location: 'Erg Chebbi', category: 'sahara' },
-    { id: 6, src: 'gradient-6', title: language === 'fr' ? 'Souk traditionnel' : 'السوق التقليدي', location: 'Marrakech', category: 'culture' },
+    { id: 1, src: 'gradient-1', title: language === 'fr' ? 'Palais de la Bahia' : language === 'ar' ? 'قصر الباهية' : language === 'en' ? 'Bahia Palace' : 'Palacio de la Bahía', location: 'Marrakech', category: 'imperial' },
+    { id: 2, src: 'gradient-2', title: language === 'fr' ? 'Dunes de Merzouga' : language === 'ar' ? 'كثبان مرزوقة' : language === 'en' ? 'Merzouga Dunes' : 'Dunas de Merzouga', location: 'Sahara', category: 'sahara' },
+    { id: 3, src: 'gradient-3', title: language === 'fr' ? 'Vallée de l\'Ourika' : language === 'ar' ? 'وادي أوريكة' : language === 'en' ? 'Ourika Valley' : 'Valle de Ourika', location: 'Atlas', category: 'atlas' },
+    { id: 4, src: 'gradient-4', title: language === 'fr' ? 'Médina de Fès' : language === 'ar' ? 'مدينة فاس' : language === 'en' ? 'Fez Medina' : 'Medina de Fez', location: 'Fès', category: 'imperial' },
+    { id: 5, src: 'gradient-5', title: language === 'fr' ? 'Coucher de soleil Sahara' : language === 'ar' ? 'غروب الصحراء' : language === 'en' ? 'Sahara Sunset' : 'Atardecer en el Sahara', location: 'Erg Chebbi', category: 'sahara' },
+    { id: 6, src: 'gradient-6', title: language === 'fr' ? 'Souk traditionnel' : language === 'ar' ? 'السوق التقليدي' : language === 'en' ? 'Traditional Souk' : 'Zoco Tradicional', location: 'Marrakech', category: 'culture' },
   ];
 
   const imageUrls = {
@@ -38,11 +38,11 @@ export default function InteractiveGallery({ language }: InteractiveGalleryProps
   };
 
   const filters = [
-    { key: 'all', label: language === 'fr' ? 'Tout' : 'الكل' },
-    { key: 'imperial', label: language === 'fr' ? 'Villes Impériales' : 'المدن الإمبراطورية' },
-    { key: 'sahara', label: language === 'fr' ? 'Sahara' : 'الصحراء' },
-    { key: 'atlas', label: language === 'fr' ? 'Atlas' : 'الأطلس' },
-    { key: 'culture', label: language === 'fr' ? 'Culture' : 'الثقافة' },
+    { key: 'all', label: language === 'fr' ? 'Tout' : language === 'ar' ? 'الكل' : language === 'en' ? 'All' : 'Todo' },
+    { key: 'imperial', label: language === 'fr' ? 'Villes Impériales' : language === 'ar' ? 'المدن الإمبراطورية' : language === 'en' ? 'Imperial Cities' : 'Ciudades Imperiales' },
+    { key: 'sahara', label: language === 'fr' ? 'Sahara' : language === 'ar' ? 'الصحراء' : language === 'en' ? 'Sahara' : 'Sáhara' },
+    { key: 'atlas', label: language === 'fr' ? 'Atlas' : language === 'ar' ? 'الأطلس' : language === 'en' ? 'Atlas' : 'Atlas' },
+    { key: 'culture', label: language === 'fr' ? 'Culture' : language === 'ar' ? 'الثقافة' : language === 'en' ? 'Culture' : 'Cultura' },
   ];
 
   const filteredImages = activeFilter === 'all' 
@@ -77,12 +77,16 @@ export default function InteractiveGallery({ language }: InteractiveGalleryProps
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            {language === 'fr' ? 'Galerie Immersive' : 'معرض تفاعلي'}
+            {language === 'fr' ? 'Galerie Immersive' : language === 'ar' ? 'معرض تفاعلي' : language === 'en' ? 'Immersive Gallery' : 'Galería Inmersiva'}
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             {language === 'fr' 
               ? 'Découvrez la beauté du Maroc à travers notre collection de moments authentiques'
-              : 'اكتشف جمال المغرب من خلال مجموعتنا من اللحظات الأصيلة'
+              : language === 'ar'
+                ? 'اكتشف جمال المغرب من خلال مجموعتنا من اللحظات الأصيلة'
+                : language === 'en'
+                  ? 'Discover the beauty of Morocco through our collection of authentic moments'
+                  : 'Descubre la belleza de Marruecos a través de nuestra colección de momentos auténticos'
             }
           </p>
         </div>
@@ -141,19 +145,19 @@ export default function InteractiveGallery({ language }: InteractiveGalleryProps
           <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 shadow-md hover:shadow-lg transition-shadow">
             <div className="text-4xl font-bold text-morocco-red mb-2">500+</div>
             <div className="text-gray-600">
-              {language === 'fr' ? 'Photos authentiques' : 'صور أصيلة'}
+              {language === 'fr' ? 'Photos authentiques' : language === 'ar' ? 'صور أصيلة' : language === 'en' ? 'Authentic photos' : 'Fotos auténticas'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 shadow-md hover:shadow-lg transition-shadow">
             <div className="text-4xl font-bold text-morocco-green mb-2">50+</div>
             <div className="text-gray-600">
-              {language === 'fr' ? 'Destinations uniques' : 'وجهات فريدة'}
+              {language === 'fr' ? 'Destinations uniques' : language === 'ar' ? 'وجهات فريدة' : language === 'en' ? 'Unique destinations' : 'Destinos únicos'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 shadow-md hover:shadow-lg transition-shadow">
             <div className="text-4xl font-bold text-morocco-gold mb-2">15</div>
             <div className="text-gray-600">
-              {language === 'fr' ? 'Années d\'expérience' : 'سنة من الخبرة'}
+              {language === 'fr' ? 'Années d\'expérience' : language === 'ar' ? 'سنة من الخبرة' : language === 'en' ? 'Years of experience' : 'Años de experiencia'}
             </div>
           </div>
         </div>
@@ -200,7 +204,11 @@ export default function InteractiveGallery({ language }: InteractiveGalleryProps
                 <p className="text-gray-600">
                   {language === 'fr' 
                     ? 'Une destination authentique qui capture l\'essence du Maroc traditionnel.'
-                    : 'وجهة أصيلة تجسد جوهر المغرب التقليدي.'
+                    : language === 'ar' 
+                      ? 'وجهة أصيلة تجسد جوهر المغرب التقليدي.'
+                      : language === 'en'
+                        ? 'An authentic destination that captures the essence of traditional Morocco.'
+                        : 'Un destino auténtico que capta la esencia del Marruecos tradicional.'
                   }
                 </p>
               </div>

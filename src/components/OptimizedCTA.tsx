@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ArrowRight, Sparkles, Star, Shield, Clock } from 'lucide-react';
 
 interface OptimizedCTAProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
   variant?: 'primary' | 'secondary' | 'outline' | 'gradient';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   icon?: 'arrow' | 'sparkles' | 'star' | 'shield' | 'clock';
@@ -135,7 +135,7 @@ export default function OptimizedCTA({
 
 // Pre-configured CTA components for common use cases
 export const BookNowCTA = ({ language, onClick, className }: { 
-  language: 'fr' | 'ar'; 
+  language: 'fr' | 'ar' | 'en' | 'es'; 
   onClick?: () => void; 
   className?: string; 
 }) => (
@@ -147,12 +147,15 @@ export const BookNowCTA = ({ language, onClick, className }: {
     onClick={onClick}
     className={className}
   >
-    {language === 'fr' ? 'Réserver Maintenant' : 'احجز الآن'}
+    {language === 'fr' ? 'Réserver Maintenant' : 
+     language === 'ar' ? 'احجز الآن' :
+     language === 'en' ? 'Book Now' : 
+     'Reservar Ahora'}
   </OptimizedCTA>
 );
 
 export const GetQuoteCTA = ({ language, onClick, className }: { 
-  language: 'fr' | 'ar'; 
+  language: 'fr' | 'ar' | 'en' | 'es'; 
   onClick?: () => void; 
   className?: string; 
 }) => (
@@ -164,12 +167,15 @@ export const GetQuoteCTA = ({ language, onClick, className }: {
     onClick={onClick}
     className={className}
   >
-    {language === 'fr' ? 'Demander un Devis' : 'طلب عرض أسعار'}
+    {language === 'fr' ? 'Demander un Devis' : 
+     language === 'ar' ? 'طلب عرض أسعار' :
+     language === 'en' ? 'Get Quote' : 
+     'Solicitar Cotización'}
   </OptimizedCTA>
 );
 
 export const ContactUsCTA = ({ language, onClick, className }: { 
-  language: 'fr' | 'ar'; 
+  language: 'fr' | 'ar' | 'en' | 'es'; 
   onClick?: () => void; 
   className?: string; 
 }) => (
@@ -180,12 +186,15 @@ export const ContactUsCTA = ({ language, onClick, className }: {
     onClick={onClick}
     className={className}
   >
-    {language === 'fr' ? 'Nous Contacter' : 'اتصل بنا'}
+    {language === 'fr' ? 'Nous Contacter' : 
+     language === 'ar' ? 'اتصل بنا' :
+     language === 'en' ? 'Contact Us' : 
+     'Contáctanos'}
   </OptimizedCTA>
 );
 
 export const LearnMoreCTA = ({ language, onClick, className }: { 
-  language: 'fr' | 'ar'; 
+  language: 'fr' | 'ar' | 'en' | 'es'; 
   onClick?: () => void; 
   className?: string; 
 }) => (
@@ -197,6 +206,9 @@ export const LearnMoreCTA = ({ language, onClick, className }: {
     onClick={onClick}
     className={className}
   >
-    {language === 'fr' ? 'En Savoir Plus' : 'اعرف المزيد'}
+    {language === 'fr' ? 'En Savoir Plus' : 
+     language === 'ar' ? 'اعرف المزيد' :
+     language === 'en' ? 'Learn More' : 
+     'Saber Más'}
   </OptimizedCTA>
 );

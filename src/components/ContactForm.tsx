@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Send, User, Mail, Phone, MessageSquare, MapPin, Calendar, Users, CheckCircle, AlertCircle } from 'lucide-react';
 
 interface ContactFormProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 interface FormData {
@@ -126,6 +126,98 @@ export default function ContactForm({ language }: ContactFormProps) {
         messageRequired: 'الرسالة مطلوبة',
         messageMinLength: 'يجب أن تحتوي الرسالة على 10 أحرف على الأقل'
       }
+    },
+    en: {
+      title: 'Contact Us',
+      subtitle: 'Ready for an unforgettable adventure?',
+      description: 'Tell us about your travel dreams and we will craft the perfect experience for you.',
+      form: {
+        name: 'Full name *',
+        email: 'Email *',
+        phone: 'Phone',
+        subject: 'Subject *',
+        message: 'Your message *',
+        travelDate: 'Preferred travel date',
+        travelers: 'Number of travelers',
+        destination: 'Preferred destination',
+        submit: 'Send message',
+        submitting: 'Sending...'
+      },
+      subjects: [
+        'Quote request',
+        'Tour booking',
+        'General information',
+        'Customer service',
+        'Partnership'
+      ],
+      destinations: [
+        'Marrakech',
+        'Fez',
+        'Sahara/Merzouga',
+        'Chefchaouen',
+        'Essaouira',
+        'Casablanca',
+        'Full tour'
+      ],
+      success: {
+        title: 'Message sent!',
+        message: 'Thank you for your message. Our team will reply within 2 hours.',
+        cta: 'New message'
+      },
+      validation: {
+        nameRequired: 'Name is required',
+        emailRequired: 'Email is required',
+        emailInvalid: 'Invalid email',
+        subjectRequired: 'Subject is required',
+        messageRequired: 'Message is required',
+        messageMinLength: 'Message must be at least 10 characters'
+      }
+    },
+    es: {
+      title: 'Contáctanos',
+      subtitle: '¿Listo para una aventura inolvidable?',
+      description: 'Cuéntanos tus sueños de viaje y crearemos la experiencia perfecta para ti.',
+      form: {
+        name: 'Nombre completo *',
+        email: 'Email *',
+        phone: 'Teléfono',
+        subject: 'Asunto *',
+        message: 'Tu mensaje *',
+        travelDate: 'Fecha de viaje preferida',
+        travelers: 'Número de viajeros',
+        destination: 'Destino preferido',
+        submit: 'Enviar mensaje',
+        submitting: 'Enviando...'
+      },
+      subjects: [
+        'Solicitud de presupuesto',
+        'Reserva de tour',
+        'Información general',
+        'Atención al cliente',
+        'Colaboración'
+      ],
+      destinations: [
+        'Marrakech',
+        'Fez',
+        'Sáhara/Merzouga',
+        'Chefchaouen',
+        'Esauira',
+        'Casablanca',
+        'Tour completo'
+      ],
+      success: {
+        title: '¡Mensaje enviado!',
+        message: 'Gracias por tu mensaje. Nuestro equipo te responderá en 2 horas.',
+        cta: 'Nuevo mensaje'
+      },
+      validation: {
+        nameRequired: 'El nombre es obligatorio',
+        emailRequired: 'El email es obligatorio',
+        emailInvalid: 'Email inválido',
+        subjectRequired: 'El asunto es obligatorio',
+        messageRequired: 'El mensaje es obligatorio',
+        messageMinLength: 'El mensaje debe tener al menos 10 caracteres'
+      }
     }
   };
 
@@ -165,11 +257,30 @@ export default function ContactForm({ language }: ContactFormProps) {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Erreur:', error);
+      // Vous pouvez ajouter une notification d'erreur ici
+      alert(language === 'fr' ? 'Erreur lors de l\'envoi. Veuillez réessayer.' : 
+            language === 'ar' ? 'خطأ في الإرسال. يرجى المحاولة مرة أخرى.' :
+            language === 'en' ? 'Sending error. Please try again.' :
+            'Error al enviar. Por favor, inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: keyof FormData, value: string) => {
@@ -231,7 +342,13 @@ export default function ContactForm({ language }: ContactFormProps) {
           <div className="lg:col-span-1">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold mb-6">
-                {language === 'fr' ? 'Informations de contact' : 'معلومات الاتصال'}
+                {language === 'fr' 
+                  ? 'Informations de contact' 
+                  : language === 'ar' 
+                    ? 'معلومات الاتصال' 
+                    : language === 'en' 
+                      ? 'Contact Information' 
+                      : 'Información de contacto'}
               </h3>
               
               <div className="space-y-6">
@@ -239,7 +356,7 @@ export default function ContactForm({ language }: ContactFormProps) {
                   <MapPin className="h-6 w-6 mr-4 text-morocco-gold" />
                   <div>
                     <p className="font-semibold">
-                      {language === 'fr' ? 'Adresse' : 'العنوان'}
+                      {language === 'fr' ? 'Adresse' : language === 'ar' ? 'العنوان' : language === 'en' ? 'Address' : 'Dirección'}
                     </p>
                     <p className="opacity-90">Médina de Marrakech, Maroc</p>
                   </div>
@@ -249,7 +366,7 @@ export default function ContactForm({ language }: ContactFormProps) {
                   <Phone className="h-6 w-6 mr-4 text-morocco-gold" />
                   <div>
                     <p className="font-semibold">
-                      {language === 'fr' ? 'Téléphone' : 'الهاتف'}
+                      {language === 'fr' ? 'Téléphone' : language === 'ar' ? 'الهاتف' : language === 'en' ? 'Phone' : 'Teléfono'}
                     </p>
                     <a href="tel:+212772321613" className="opacity-90 hover:text-morocco-gold transition-colors">
                       +212 772321613
@@ -272,7 +389,11 @@ export default function ContactForm({ language }: ContactFormProps) {
                 <p className="text-sm opacity-80">
                   {language === 'fr' 
                     ? 'Réponse garantie sous 2 heures • Support 24/7'
-                    : 'رد مضمون خلال ساعتين • دعم 24/7'
+                    : language === 'ar'
+                      ? 'رد مضمون خلال ساعتين • دعم 24/7'
+                      : language === 'en'
+                        ? 'Response guaranteed within 2 hours • 24/7 support'
+                        : 'Respuesta garantizada en 2 horas • Soporte 24/7'
                   }
                 </p>
               </div>
@@ -294,10 +415,11 @@ export default function ContactForm({ language }: ContactFormProps) {
                       type="text"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
+                      suppressHydrationWarning
                       className={`w-full px-4 py-3 bg-white/20 border rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all ${
                         errors.name ? 'border-red-400' : 'border-white/30'
                       }`}
-                      placeholder={language === 'fr' ? 'Votre nom complet' : 'اسمك الكامل'}
+                      placeholder={language === 'fr' ? 'Votre nom complet' : language === 'ar' ? 'اسمك الكامل' : language === 'en' ? 'Your full name' : 'Tu nombre completo'}
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-red-300 flex items-center">
@@ -316,10 +438,11 @@ export default function ContactForm({ language }: ContactFormProps) {
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
+                      suppressHydrationWarning
                       className={`w-full px-4 py-3 bg-white/20 border rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all ${
                         errors.email ? 'border-red-400' : 'border-white/30'
                       }`}
-                      placeholder={language === 'fr' ? 'votre@email.com' : 'بريدك@الإلكتروني.com'}
+                      placeholder={language === 'fr' ? 'votre@email.com' : language === 'ar' ? 'بريدك@الإلكتروني.com' : language === 'en' ? 'your@email.com' : 'tu@email.com'}
                     />
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-300 flex items-center">
@@ -341,6 +464,7 @@ export default function ContactForm({ language }: ContactFormProps) {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all"
                       placeholder="+212 6XX XXX XXX"
                     />
@@ -354,12 +478,13 @@ export default function ContactForm({ language }: ContactFormProps) {
                     <select
                       value={formData.subject}
                       onChange={(e) => handleInputChange('subject', e.target.value)}
+                      suppressHydrationWarning
                       className={`w-full px-4 py-3 bg-white/20 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all ${
                         errors.subject ? 'border-red-400' : 'border-white/30'
                       }`}
                     >
                       <option value="" className="text-gray-800">
-                        {language === 'fr' ? 'Choisir un sujet...' : 'اختر موضوعاً...'}
+                        {language === 'fr' ? 'Choisir un sujet...' : language === 'ar' ? 'اختر موضوعاً...' : language === 'en' ? 'Choose a subject...' : 'Elige un asunto...'}
                       </option>
                       {t.subjects.map((subject, index) => (
                         <option key={index} value={subject} className="text-gray-800">
@@ -387,6 +512,7 @@ export default function ContactForm({ language }: ContactFormProps) {
                       type="date"
                       value={formData.travelDate}
                       onChange={(e) => handleInputChange('travelDate', e.target.value)}
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all"
                     />
                   </div>
@@ -399,11 +525,12 @@ export default function ContactForm({ language }: ContactFormProps) {
                     <select
                       value={formData.travelers}
                       onChange={(e) => handleInputChange('travelers', e.target.value)}
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all"
                     >
                       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
                         <option key={num} value={num.toString()} className="text-gray-800">
-                          {num} {language === 'fr' ? (num === 1 ? 'personne' : 'personnes') : (num === 1 ? 'شخص' : 'أشخاص')}
+                          {num} {language === 'fr' ? (num === 1 ? 'personne' : 'personnes') : language === 'ar' ? (num === 1 ? 'شخص' : 'أشخاص') : language === 'en' ? (num === 1 ? 'person' : 'people') : (num === 1 ? 'persona' : 'personas')}
                         </option>
                       ))}
                     </select>
@@ -417,10 +544,11 @@ export default function ContactForm({ language }: ContactFormProps) {
                     <select
                       value={formData.destination}
                       onChange={(e) => handleInputChange('destination', e.target.value)}
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all"
                     >
                       <option value="" className="text-gray-800">
-                        {language === 'fr' ? 'Choisir...' : 'اختر...'}
+                        {language === 'fr' ? 'Choisir...' : language === 'ar' ? 'اختر...' : language === 'en' ? 'Choose...' : 'Elegir...'}
                       </option>
                       {t.destinations.map((dest, index) => (
                         <option key={index} value={dest} className="text-gray-800">
@@ -441,12 +569,17 @@ export default function ContactForm({ language }: ContactFormProps) {
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
                     rows={5}
+                    suppressHydrationWarning
                     className={`w-full px-4 py-3 bg-white/20 border rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-morocco-gold transition-all resize-none ${
                       errors.message ? 'border-red-400' : 'border-white/30'
                     }`}
                     placeholder={language === 'fr' 
                       ? 'Décrivez votre projet de voyage, vos préférences, questions...'
-                      : 'صف مشروع سفرك، تفضيلاتك، أسئلتك...'
+                      : language === 'ar'
+                        ? 'صف مشروع سفرك، تفضيلاتك، أسئلتك...'
+                        : language === 'en'
+                          ? 'Describe your travel project, preferences, questions...'
+                          : 'Describe tu proyecto de viaje, tus preferencias, preguntas...'
                     }
                   />
                   {errors.message && (

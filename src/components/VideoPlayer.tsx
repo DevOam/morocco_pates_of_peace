@@ -230,7 +230,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title, onClose }: Vid
         <div className="mt-4 text-center">
           <h3 className="text-white text-xl font-semibold">{title}</h3>
           <p className="text-gray-300 text-sm mt-1">
-            Témoignage client authentique - Expérience Marrakech Tours
+            Témoignage client authentique - Expérience Morocco Plant Peace
           </p>
         </div>
       </div>

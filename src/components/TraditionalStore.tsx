@@ -5,14 +5,14 @@ import { ShoppingBag, Star, Plus, Minus, Heart, Eye, Truck, Shield, Award } from
 import { imageUrls } from './ImageManager';
 
 interface TraditionalStoreProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
   onAddToCart?: (product: any) => void;
 }
 
 interface Product {
   id: string;
-  name: { fr: string; ar: string };
-  description: { fr: string; ar: string };
+  name: { fr: string; ar: string; en: string; es: string };
+  description: { fr: string; ar: string; en: string; es: string };
   price: number;
   originalPrice?: number;
   image: string;
@@ -31,11 +31,15 @@ const products: Product[] = [
     id: 'merzouga-orange-blossom',
     name: { 
       fr: 'Eau de Fleur d\'Oranger du Sahara', 
-      ar: 'ماء زهر البرتقال الصحراوي' 
+      ar: 'ماء زهر البرتقال الصحراوي',
+      en: 'Saharan Orange Blossom Water',
+      es: 'Agua de Azahar del Sahara' 
     },
     description: { 
       fr: 'Eau de fleur d\'oranger pure, distillée traditionnellement dans le désert de Merzouga. Parfum envoûtant aux vertus apaisantes.',
-      ar: 'ماء زهر البرتقال النقي، مقطر تقليدياً في صحراء مرزوقة. عطر ساحر بخصائص مهدئة.'
+      ar: 'ماء زهر البرتقال النقي، مقطر تقليدياً في صحراء مرزوقة. عطر ساحر بخصائص مهدئة.',
+      en: 'Pure orange blossom water, traditionally distilled in the Merzouga desert. Enchanting scent with soothing properties.',
+      es: 'Agua de azahar pura, destilada tradicionalmente en el desierto de Merzouga. Aroma cautivador con propiedades calmantes.'
     },
     price: 45,
     originalPrice: 60,
@@ -54,11 +58,15 @@ const products: Product[] = [
     id: 'essaouira-argan-oil',
     name: { 
       fr: 'Huile d\'Argan Pure d\'Essaouira', 
-      ar: 'زيت الأركان النقي من الصويرة' 
+      ar: 'زيت الأركان النقي من الصويرة',
+      en: 'Pure Argan Oil from Essaouira',
+      es: 'Aceite de Argán Puro de Esauira' 
     },
     description: { 
       fr: 'Huile d\'argan 100% pure, pressée à froid par les coopératives féminines d\'Essaouira. Or liquide du Maroc.',
-      ar: 'زيت الأركان النقي 100%، معصور على البارد من تعاونيات نساء الصويرة. الذهب السائل للمغرب.'
+      ar: 'زيت الأركان النقي 100%، معصور على البارد من تعاونيات نساء الصويرة. الذهب السائل للمغرب.',
+      en: '100% pure argan oil, cold-pressed by women cooperatives in Essaouira. Morocco’s liquid gold.',
+      es: 'Aceite de argán 100% puro, prensado en frío por cooperativas de mujeres en Esauira. El oro líquido de Marruecos.'
     },
     price: 85,
     originalPrice: 110,
@@ -77,11 +85,15 @@ const products: Product[] = [
     id: 'fes-black-soap',
     name: { 
       fr: 'Savon Noir de Fès aux Olives', 
-      ar: 'الصابون الأسود الفاسي بالزيتون' 
+      ar: 'الصابون الأسود الفاسي بالزيتون',
+      en: 'Fez Black Soap with Olives',
+      es: 'Jabón Negro de Fez con Aceitunas' 
     },
     description: { 
       fr: 'Savon noir traditionnel de Fès, fabriqué artisanalement avec des olives locales. Secret de beauté ancestral.',
-      ar: 'الصابون الأسود التقليدي من فاس، مصنوع يدوياً بالزيتون المحلي. سر جمال أجدادنا.'
+      ar: 'الصابون الأسود التقليدي من فاس، مصنوع يدوياً بالزيتون المحلي. سر جمال أجدادنا.',
+      en: 'Traditional black soap from Fez, handcrafted with local olives. Ancestral beauty secret.',
+      es: 'Jabón negro tradicional de Fez, elaborado artesanalmente con aceitunas locales. Secreto de belleza ancestral.'
     },
     price: 25,
     originalPrice: 35,
@@ -99,11 +111,15 @@ const products: Product[] = [
     id: 'marrakech-spice-mix',
     name: { 
       fr: 'Épices', 
-      ar: 'توابل' 
+      ar: 'توابل',
+      en: 'Spices',
+      es: 'Especias' 
     },
     description: { 
       fr: 'Mélange secret de 27 épices des souks de Marrakech. Saveurs authentiques pour vos tagines.',
-      ar: 'خليط سري من 27 نوع توابل من أسواق مراكش. نكهات أصيلة لطاجينكم.'
+      ar: 'خليط سري من 27 نوع توابل من أسواق مراكش. نكهات أصيلة لطاجينكم.',
+      en: 'Secret blend of 27 spices from Marrakech souks. Authentic flavors for your tagines.',
+      es: 'Mezcla secreta de 27 especias de los zocos de Marrakech. Sabores auténticos para tus tajines.'
     },
     price: 35,
     image: 'https://i.pinimg.com/1200x/8c/22/e1/8c22e105de8928643f398aa894d0c82b.jpg',
@@ -120,11 +136,15 @@ const products: Product[] = [
     id: 'chefchaouen-berber-rug',
     name: { 
       fr: 'Tapis Berbère de Chefchaouen', 
-      ar: 'سجادة بربرية من شفشاون' 
+      ar: 'سجادة بربرية من شفشاون',
+      en: 'Berber Rug from Chefchaouen',
+      es: 'Alfombra Bereber de Chefchaouen' 
     },
     description: { 
       fr: 'Tapis berbère tissé main aux motifs géométriques traditionnels. Laine locale des montagnes du Rif.',
-      ar: 'سجادة بربرية منسوجة يدوياً بأشكال هندسية تقليدية. صوف محلي من جبال الريف.'
+      ar: 'سجادة بربرية منسوجة يدوياً بأشكال هندسية تقليدية. صوف محلي من جبال الريف.',
+      en: 'Handwoven Berber rug with traditional geometric patterns. Local wool from the Rif mountains.',
+      es: 'Alfombra bereber tejida a mano con patrones geométricos tradicionales. Lana local de las montañas del Rif.'
     },
     price: 180,
     originalPrice: 250,
@@ -142,11 +162,15 @@ const products: Product[] = [
     id: 'casablanca-silver-teapot',
     name: { 
       fr: 'Théière en Argent Gravée', 
-      ar: 'إبريق الشاي الفضي المحفور' 
+      ar: 'إبريق الشاي الفضي المحفور',
+      en: 'Engraved Silver Teapot',
+      es: 'Tetera de Plata Grabada' 
     },
     description: { 
       fr: 'Théière en argent massif, gravée à la main par les maîtres artisans de Casablanca. Pièce d\'exception.',
-      ar: 'إبريق شاي من الفضة الخالصة، محفور يدوياً من أساتذة الحرفيين في الدار البيضاء. قطعة استثنائية.'
+      ar: 'إبريق شاي من الفضة الخالصة، محفور يدوياً من أساتذة الحرفيين في الدار البيضاء. قطعة استثنائية.',
+      en: 'Solid silver teapot, hand-engraved by master artisans of Casablanca. An exceptional piece.',
+      es: 'Tetera de plata maciza, grabada a mano por maestros artesanos de Casablanca. Una pieza excepcional.'
     },
     price: 320,
     originalPrice: 420,
@@ -167,11 +191,11 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const categories = {
-    all: { fr: 'Tous', ar: 'الكل' },
-    cosmetics: { fr: 'Cosmétiques', ar: 'مستحضرات التجميل' },
-    spices: { fr: 'Épices', ar: 'التوابل' },
-    textiles: { fr: 'Textiles', ar: 'المنسوجات' },
-    crafts: { fr: 'Artisanat', ar: 'الحرف اليدوية' }
+    all: { fr: 'Tous', ar: 'الكل', en: 'All', es: 'Todos' },
+    cosmetics: { fr: 'Cosmétiques', ar: 'مستحضرات التجميل', en: 'Cosmetics', es: 'Cosméticos' },
+    spices: { fr: 'Épices', ar: 'التوابل', en: 'Spices', es: 'Especias' },
+    textiles: { fr: 'Textiles', ar: 'المنسوجات', en: 'Textiles', es: 'Textiles' },
+    crafts: { fr: 'Artisanat', ar: 'الحرف اليدوية', en: 'Handicrafts', es: 'Artesanía' }
   };
 
   const filteredProducts = selectedCategory === 'all' 
@@ -223,29 +247,32 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
           <div className="flex items-center justify-center gap-3 mb-4">
             <ShoppingBag className="h-8 w-8 text-morocco-gold" />
             <h2 className="text-4xl font-bold text-gray-900">
-              {language === 'fr' ? 'Boutique Traditionnelle' : 'المتجر التقليدي'}
+              {language === 'fr' ? 'Boutique Traditionnelle' : language === 'ar' ? 'المتجر التقليدي' : language === 'en' ? 'Traditional Store' : 'Tienda Tradicional'}
             </h2>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'fr' 
               ? 'Découvrez les trésors authentiques du Maroc. Produits artisanaux sélectionnés dans chaque région.'
-              : 'اكتشف كنوز المغرب الأصيلة. منتجات حرفية مختارة من كل منطقة.'
-            }
+              : language === 'ar'
+                ? 'اكتشف كنوز المغرب الأصيلة. منتجات حرفية مختارة من كل منطقة.'
+                : language === 'en'
+                  ? 'Discover Morocco’s authentic treasures. Handcrafted products selected from each region.'
+                  : 'Descubre los tesoros auténticos de Marruecos. Productos artesanales seleccionados de cada región.'}
           </p>
           
           {/* Trust Badges */}
           <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <Shield className="h-5 w-5 text-green-500" />
-              <span>{language === 'fr' ? 'Authenticité Garantie' : 'أصالة مضمونة'}</span>
+              <span>{language === 'fr' ? 'Authenticité Garantie' : language === 'ar' ? 'أصالة مضمونة' : language === 'en' ? 'Authenticity Guaranteed' : 'Autenticidad Garantizada'}</span>
             </div>
             <div className="flex items-center gap-2">
               <Truck className="h-5 w-5 text-blue-500" />
-              <span>{language === 'fr' ? 'Livraison Mondiale' : 'توصيل عالمي'}</span>
+              <span>{language === 'fr' ? 'Livraison Mondiale' : language === 'ar' ? 'توصيل عالمي' : language === 'en' ? 'Worldwide Delivery' : 'Entrega Mundial'}</span>
             </div>
             <div className="flex items-center gap-2">
               <Award className="h-5 w-5 text-morocco-gold" />
-              <span>{language === 'fr' ? 'Artisans Certifiés' : 'حرفيون معتمدون'}</span>
+              <span>{language === 'fr' ? 'Artisans Certifiés' : language === 'ar' ? 'حرفيون معتمدون' : language === 'en' ? 'Certified Artisans' : 'Artesanos Certificados'}</span>
             </div>
           </div>
         </div>
@@ -256,11 +283,11 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
             <div className="flex items-center gap-3">
               <ShoppingBag className="h-5 w-5" />
               <span className="font-medium">
-                {getTotalItems()} {language === 'fr' ? 'articles' : 'عناصر'} - {getTotalPrice()}€
+                {getTotalItems()} {language === 'fr' ? 'articles' : language === 'ar' ? 'عناصر' : language === 'en' ? 'items' : 'artículos'} - {getTotalPrice()}€
               </span>
             </div>
             <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">
-              {language === 'fr' ? 'Voir le Panier' : 'عرض السلة'}
+              {language === 'fr' ? 'Voir le Panier' : language === 'ar' ? 'عرض السلة' : language === 'en' ? 'View Cart' : 'Ver Carrito'}
             </button>
           </div>
         )}
@@ -301,12 +328,12 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
                   {product.bestseller && (
                     <span className="bg-morocco-red text-white px-3 py-1 rounded-full text-xs font-bold">
-                      {language === 'fr' ? 'Best-seller' : 'الأكثر مبيعاً'}
+                      {language === 'fr' ? 'Best-seller' : language === 'ar' ? 'الأكثر مبيعاً' : language === 'en' ? 'Best-seller' : 'Más vendido'}
                     </span>
                   )}
                   {product.authentic && (
                     <span className="bg-morocco-gold text-black px-3 py-1 rounded-full text-xs font-bold">
-                      {language === 'fr' ? 'Authentique' : 'أصيل'}
+                      {language === 'fr' ? 'Authentique' : language === 'ar' ? 'أصيل' : language === 'en' ? 'Authentic' : 'Auténtico'}
                     </span>
                   )}
                   {product.originalPrice && (
@@ -368,7 +395,7 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
                     ))}
                   </div>
                   <span className="text-sm text-gray-600">
-                    {product.rating} ({product.reviews} {language === 'fr' ? 'avis' : 'تقييم'})
+                    {product.rating} ({product.reviews} {language === 'fr' ? 'avis' : language === 'ar' ? 'تقييم' : language === 'en' ? 'reviews' : 'reseñas'})
                   </span>
                 </div>
 
@@ -415,8 +442,8 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
                       }`}
                     >
                       {product.inStock 
-                        ? (language === 'fr' ? 'Ajouter au panier' : 'أضف للسلة')
-                        : (language === 'fr' ? 'Rupture de stock' : 'نفد المخزون')
+                        ? (language === 'fr' ? 'Ajouter au panier' : language === 'ar' ? 'أضف للسلة' : language === 'en' ? 'Add to cart' : 'Añadir al carrito')
+                        : (language === 'fr' ? 'Rupture de stock' : language === 'ar' ? 'نفد المخزون' : language === 'en' ? 'Out of stock' : 'Agotado')
                       }
                     </button>
                   )}
@@ -429,16 +456,19 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
         {/* CTA Section */}
         <div className="mt-16 bg-gradient-to-r from-morocco-red to-morocco-gold rounded-2xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-4">
-            {language === 'fr' ? 'Commande Personnalisée' : 'طلب مخصص'}
+            {language === 'fr' ? 'Commande Personnalisée' : language === 'ar' ? 'طلب مخصص' : language === 'en' ? 'Custom Order' : 'Pedido Personalizado'}
           </h3>
           <p className="text-lg mb-6 opacity-90">
             {language === 'fr' 
               ? 'Vous cherchez quelque chose de spécifique ? Nos artisans peuvent créer des pièces sur mesure.'
-              : 'تبحث عن شيء محدد؟ يمكن لحرفيينا إنشاء قطع مخصصة.'
-            }
+              : language === 'ar'
+                ? 'تبحث عن شيء محدد؟ يمكن لحرفيينا إنشاء قطع مخصصة.'
+                : language === 'en'
+                  ? 'Looking for something specific? Our artisans can create custom pieces.'
+                  : '¿Buscas algo específico? Nuestros artesanos pueden crear piezas a medida.'}
           </p>
           <button className="bg-white text-morocco-red hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors">
-            {language === 'fr' ? 'Demander un Devis' : 'طلب عرض سعر'}
+            {language === 'fr' ? 'Demander un Devis' : language === 'ar' ? 'طلب عرض سعر' : language === 'en' ? 'Request a Quote' : 'Solicitar Presupuesto'}
           </button>
         </div>
       </div>
@@ -492,7 +522,7 @@ export default function TraditionalStore({ language, onAddToCart }: TraditionalS
                   }}
                   className="w-full bg-morocco-gold hover:bg-yellow-500 text-black py-3 px-6 rounded-lg font-bold transition-colors"
                 >
-                  {language === 'fr' ? 'Ajouter au panier' : 'أضف للسلة'}
+                  {language === 'fr' ? 'Ajouter au panier' : language === 'ar' ? 'أضف للسلة' : language === 'en' ? 'Add to cart' : 'Añadir al carrito'}
                 </button>
               </div>
             </div>

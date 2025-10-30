@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { imageUrls } from './ImageManager';
 
 interface Parallax3DProps {
-  language: 'fr' | 'ar';
+  language: 'fr' | 'ar' | 'en' | 'es';
 }
 
 export default function Parallax3D({ language }: Parallax3DProps) {
@@ -62,19 +62,19 @@ export default function Parallax3D({ language }: Parallax3DProps) {
       image: imageUrls.merzouga,
       speed: 0.2,
       scale: 1.1,
-      title: language === 'fr' ? 'Sahara Majestueux' : 'الصحراء المهيبة'
+      title: language === 'fr' ? 'Sahara Majestueux' : language === 'ar' ? 'الصحراء المهيبة' : language === 'en' ? 'Majestic Sahara' : 'Sáhara Majestuoso'
     },
     {
       image: imageUrls.marrakech,
       speed: 0.5,
       scale: 1.05,
-      title: language === 'fr' ? 'Marrakech Authentique' : 'مراكش الأصيلة'
+      title: language === 'fr' ? 'Marrakech Authentique' : language === 'ar' ? 'مراكش الأصيلة' : language === 'en' ? 'Authentic Marrakech' : 'Marrakech Auténtica'
     },
     {
       image: imageUrls.chefchaouen,
       speed: 0.8,
       scale: 1.02,
-      title: language === 'fr' ? 'Chefchaouen Bleue' : 'شفشاون الزرقاء'
+      title: language === 'fr' ? 'Chefchaouen Bleue' : language === 'ar' ? 'شفشاون الزرقاء' : language === 'en' ? 'Blue Chefchaouen' : 'Chefchaouen Azul'
     }
   ];
 
@@ -148,7 +148,7 @@ export default function Parallax3D({ language }: Parallax3DProps) {
               textShadow: '0 10px 30px rgba(0,0,0,0.5)'
             }}
           >
-            {language === 'fr' ? 'Expérience Immersive' : 'تجربة غامرة'}
+            {language === 'fr' ? 'Expérience Immersive' : language === 'ar' ? 'تجربة غامرة' : language === 'en' ? 'Immersive Experience' : 'Experiencia Inmersiva'}
           </h1>
           <p 
             className="text-xl md:text-3xl mb-12 opacity-90"
@@ -159,7 +159,11 @@ export default function Parallax3D({ language }: Parallax3DProps) {
           >
             {language === 'fr' 
               ? 'Découvrez le Maroc comme jamais auparavant'
-              : 'اكتشف المغرب كما لم تره من قبل'
+              : language === 'ar' 
+                ? 'اكتشف المغرب كما لم تره من قبل'
+                : language === 'en'
+                  ? 'Discover Morocco like never before'
+                  : 'Descubre Marruecos como nunca antes'
             }
           </p>
           
@@ -188,7 +192,11 @@ export default function Parallax3D({ language }: Parallax3DProps) {
                 <p className="text-sm opacity-80">
                   {language === 'fr' 
                     ? 'Une destination authentique qui capture l\'essence du Maroc.'
-                    : 'وجهة أصيلة تجسد جوهر المغرب.'
+                    : language === 'ar' 
+                      ? 'وجهة أصيلة تجسد جوهر المغرب.'
+                      : language === 'en'
+                        ? 'An authentic destination that captures Morocco\'s essence.'
+                        : 'Un destino auténtico que capta la esencia de Marruecos.'
                   }
                 </p>
               </div>
@@ -203,7 +211,7 @@ export default function Parallax3D({ language }: Parallax3DProps) {
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
         </div>
         <p className="text-sm mt-2 opacity-75">
-          {language === 'fr' ? 'Faites défiler' : 'مرر لأسفل'}
+          {language === 'fr' ? 'Faites défiler' : language === 'ar' ? 'مرر لأسفل' : language === 'en' ? 'Scroll down' : 'Desplázate'}
         </p>
       </div>
 

@@ -30,7 +30,7 @@ function loadGoogleMaps(apiKey: string): Promise<any> {
 }
 
 interface ProGoogleMapProps {
-  language: "fr" | "ar";
+  language: "fr" | "ar" | "en" | "es";
   onBookingClick?: (destination: string) => void;
 }
 
@@ -86,7 +86,7 @@ export default function ProGoogleMap({ language, onBookingClick }: ProGoogleMapP
           price: "180€",
           rating: 4.9,
           image: imageUrls.marrakech,
-          highlights: language === 'fr' ? ['Médina UNESCO', 'Palais Bahia', 'Jardins Majorelle'] : ['المدينة العتيقة', 'قصر الباهية', 'حدائق ماجوريل']
+          highlights: language === 'fr' ? ['Médina UNESCO', 'Palais Bahia', 'Jardins Majorelle'] : language === 'ar' ? ['المدينة العتيقة', 'قصر الباهية', 'حدائق ماجوريل'] : language === 'en' ? ['UNESCO Medina', 'Bahia Palace', 'Majorelle Gardens'] : ['Medina UNESCO', 'Palacio Bahia', 'Jardines Majorelle']
         },
         { 
           name: "Fès", 
@@ -97,7 +97,7 @@ export default function ProGoogleMap({ language, onBookingClick }: ProGoogleMapP
           price: "220€",
           rating: 4.8,
           image: imageUrls.fes,
-          highlights: language === 'fr' ? ['Médina médiévale', 'Université Al Quaraouiyine', 'Tanneries'] : ['المدينة القديمة', 'جامعة القرويين', 'المدابغ']
+          highlights: language === 'fr' ? ['Médina médiévale', 'Université Al Quaraouiyine', 'Tanneries'] : language === 'ar' ? ['المدينة القديمة', 'جامعة القرويين', 'المدابغ'] : language === 'en' ? ['Medieval medina', 'Al‑Qarawiyyin University', 'Tanneries'] : ['Medina medieval', 'Universidad Al‑Qarawiyyin', 'Curtidurías']
         },
         { 
           name: "Merzouga", 
@@ -108,7 +108,7 @@ export default function ProGoogleMap({ language, onBookingClick }: ProGoogleMapP
           price: "450€",
           rating: 5.0,
           image: imageUrls.merzouga,
-          highlights: language === 'fr' ? ['Dunes Erg Chebbi', 'Nuit sous les étoiles', 'Caravanes chameaux'] : ['كثبان عرق الشبي', 'ليلة تحت النجوم', 'قوافل الجمال']
+          highlights: language === 'fr' ? ['Dunes Erg Chebbi', 'Nuit sous les étoiles', 'Caravanes chameaux'] : language === 'ar' ? ['كثبان عرق الشبي', 'ليلة تحت النجوم', 'قوافل الجمال'] : language === 'en' ? ['Erg Chebbi dunes', 'Night under the stars', 'Camel caravans'] : ['Dunas de Erg Chebbi', 'Noche bajo las estrellas', 'Caravanas de camellos']
         },
         { 
           name: "Chefchaouen", 
@@ -119,7 +119,7 @@ export default function ProGoogleMap({ language, onBookingClick }: ProGoogleMapP
           price: "150€",
           rating: 4.7,
           image: imageUrls.chefchaouen,
-          highlights: language === 'fr' ? ['Ville bleue', 'Montagnes du Rif', 'Artisanat local'] : ['المدينة الزرقاء', 'جبال الريف', 'الحرف المحلية']
+          highlights: language === 'fr' ? ['Ville bleue', 'Montagnes du Rif', 'Artisanat local'] : language === 'ar' ? ['المدينة الزرقاء', 'جبال الريف', 'الحرف المحلية'] : language === 'en' ? ['Blue city', 'Rif mountains', 'Local crafts'] : ['Ciudad azul', 'Montañas del Rif', 'Artesanía local']
         },
         { 
           name: "Essaouira", 
@@ -130,7 +130,7 @@ export default function ProGoogleMap({ language, onBookingClick }: ProGoogleMapP
           price: "200€",
           rating: 4.6,
           image: imageUrls.essaouira,
-          highlights: language === 'fr' ? ['Port historique', 'Remparts', 'Plages atlantiques'] : ['الميناء التاريخي', 'الأسوار', 'شواطئ الأطلسي']
+          highlights: language === 'fr' ? ['Port historique', 'Remparts', 'Plages atlantiques'] : language === 'ar' ? ['الميناء التاريخي', 'الأسوار', 'شواطئ الأطلسي'] : language === 'en' ? ['Historic port', 'Ramparts', 'Atlantic beaches'] : ['Puerto histórico', 'Murallas', 'Playas del Atlántico']
         }
       ] as const;
 
@@ -210,10 +210,10 @@ export default function ProGoogleMap({ language, onBookingClick }: ProGoogleMapP
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {language === "fr" ? "Explorez le Maroc" : "استكشف المغرب"}
+            {language === "fr" ? "Explorez le Maroc" : language === 'ar' ? "استكشف المغرب" : language === 'en' ? 'Explore Morocco' : 'Explora Marruecos'}
           </h2>
           <p className="text-xl text-gray-600">
-            {language === "fr" ? "Carte interactive premium avec trajets et réservation directe" : "خريطة تفاعلية متميزة مع المسارات والحجز المباشر"}
+            {language === "fr" ? "Carte interactive premium avec trajets et réservation directe" : language === 'ar' ? "خريطة تفاعلية متميزة مع المسارات والحجز المباشر" : language === 'en' ? 'Premium interactive map with routes and direct booking' : 'Mapa interactivo premium con rutas y reserva directa'}
           </p>
         </div>
 
@@ -225,7 +225,7 @@ export default function ProGoogleMap({ language, onBookingClick }: ProGoogleMapP
               <input
                 ref={searchRef}
                 type="text"
-                placeholder={language === "fr" ? "Rechercher une destination..." : "ابحث عن وجهة..."}
+                placeholder={language === "fr" ? "Rechercher une destination..." : language === 'ar' ? "ابحث عن وجهة..." : language === 'en' ? 'Search a destination...' : 'Buscar un destino...'}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-morocco-red focus:border-transparent text-gray-900 placeholder-gray-500 bg-white"
               />
             </div>
@@ -293,7 +293,7 @@ function createCategoryIcon(category: string, color: string, imageUrl: string) {
   };
 }
 
-function createRichInfoWindow(destination: any, language: 'fr' | 'ar'): string {
+function createRichInfoWindow(destination: any, language: 'fr' | 'ar' | 'en' | 'es'): string {
   const stars = '★'.repeat(Math.floor(destination.rating)) + '☆'.repeat(5 - Math.floor(destination.rating));
   
   return `
@@ -318,7 +318,7 @@ function createRichInfoWindow(destination: any, language: 'fr' | 'ar'): string {
         
         <div style="margin-bottom: 12px;">
           <div style="font-size: 14px; font-weight: 600; margin-bottom: 4px; color: #333;">
-            ${language === 'fr' ? 'Points forts:' : 'النقاط المميزة:'}
+            ${language === 'fr' ? 'Points forts:' : language === 'ar' ? 'النقاط المميزة:' : language === 'en' ? 'Highlights:' : 'Puntos destacados:'}
           </div>
           ${destination.highlights.slice(0, 2).map((h: string) => `<div style="font-size: 13px; color: #666; margin-bottom: 2px;">• ${h}</div>`).join('')}
         </div>
@@ -327,7 +327,7 @@ function createRichInfoWindow(destination: any, language: 'fr' | 'ar'): string {
           onclick="window.bookDestination && window.bookDestination('${destination.name}')"
           style="width: 100%; background: #C1272D; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px;"
         >
-          ${language === 'fr' ? '🎯 Réserver maintenant' : '🎯 احجز الآن'}
+          ${language === 'fr' ? '🎯 Réserver maintenant' : language === 'ar' ? '🎯 احجز الآن' : language === 'en' ? '🎯 Book now' : '🎯 Reservar ahora'}
         </button>
       </div>
     </div>

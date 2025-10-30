@@ -4,15 +4,21 @@
       "id": "marrakech",
       "name": {
         "fr": "Marrakech",
-        "ar": "مراكش"
+        "ar": "مراكش",
+        "en": "Marrakech",
+        "es": "Marrakech"
       },
       "subtitle": {
         "fr": "La Perle du Sud",
-        "ar": "لؤلؤة الجنوب"
+        "ar": "لؤلؤة الجنوب",
+        "en": "The Pearl of the South",
+        "es": "La Perla del Sur"
       },
       "description": {
         "fr": "Marrakech, la « Ville Rouge », est l'une des quatre villes impériales du Maroc. Fondée en 1062 par les Almoravides, elle fut la capitale de puissants empires berbères. Son cœur historique, la médina, classée au patrimoine mondial de l'UNESCO, abrite des trésors architecturaux exceptionnels.",
-        "ar": "مراكش، \"المدينة الحمراء\"، هي إحدى المدن الإمبراطورية الأربع في المغرب. تأسست عام 1062 من قبل المرابطين، وكانت عاصمة إمبراطوريات بربرية قوية. قلبها التاريخي، المدينة العتيقة، المدرجة في التراث العالمي لليونسكو، تضم كنوزاً معمارية استثنائية."
+        "ar": "مراكش، \"المدينة الحمراء\"، هي إحدى المدن الإمبراطورية الأربع في المغرب. تأسست عام 1062 من قبل المرابطين، وكانت عاصمة إمبراطوريات بربرية قوية. قلبها التاريخي، المدينة العتيقة، المدرجة في التراث العالمي لليونسكو، تضم كنوزاً معمارية استثنائية.",
+        "en": "Marrakech, the 'Red City', is one of Morocco's four imperial cities. Founded in 1062 by the Almoravids, it was the capital of powerful Berber empires. Its historic heart, the medina, a UNESCO World Heritage site, houses exceptional architectural treasures.",
+        "es": "Marrakech, la 'Ciudad Roja', es una de las cuatro ciudades imperiales de Marruecos. Fundada en 1062 por los almorávides, fue la capital de poderosos imperios bereberes. Su corazón histórico, la medina, Patrimonio Mundial de la UNESCO, alberga tesoros arquitectónicos excepcionales."
       },
       "history": {
         "fr": "Marrakech fut fondée en 1062 par Youssef Ibn Tachfin, chef des Almoravides. Elle devint rapidement un centre commercial majeur reliant l'Afrique subsaharienne au monde méditerranéen. Sous les Almohades (XIIe-XIIIe siècles), la ville connut son apogée avec la construction de la Koutoubia. Les dynasties saâdiennes et alaouites enrichirent la ville de palais somptueux comme El Badi et Bahia.",
@@ -89,15 +95,21 @@
       "id": "fes",
       "name": {
         "fr": "Fès",
-        "ar": "فاس"
+        "ar": "فاس",
+        "en": "Fez",
+        "es": "Fez"
       },
       "subtitle": {
         "fr": "Capitale Spirituelle du Maroc",
-        "ar": "العاصمة الروحية للمغرب"
+        "ar": "العاصمة الروحية للمغرب",
+        "en": "Spiritual Capital of Morocco",
+        "es": "Capital Espiritual de Marruecos"
       },
       "description": {
         "fr": "Fès, fondée en 789, est la plus ancienne des villes impériales. Sa médina, Fès el-Bali, est la plus grande zone piétonne du monde et abrite l'université Al-Qarawiyyin, considérée comme la plus ancienne université en fonctionnement continu au monde.",
-        "ar": "فاس، التي تأسست عام 789، هي أقدم المدن الإمبراطورية. مدينتها العتيقة، فاس البالي، هي أكبر منطقة للمشاة في العالم وتضم جامعة القرويين، التي تعتبر أقدم جامعة تعمل بشكل مستمر في العالم."
+        "ar": "فاس، التي تأسست عام 789، هي أقدم المدن الإمبراطورية. مدينتها العتيقة، فاس البالي، هي أكبر منطقة للمشاة في العالم وتضم جامعة القرويين، التي تعتبر أقدم جامعة تعمل بشكل مستمر في العالم.",
+        "en": "Founded in 789, Fez is the oldest of the imperial cities. Its medina, Fes el-Bali, is the world’s largest car-free urban area and is home to Al-Qarawiyyin University, regarded as the oldest continually operating university.",
+        "es": "Fundada en 789, Fez es la más antigua de las ciudades imperiales. Su medina, Fes el-Bali, es la zona peatonal más grande del mundo y alberga la Universidad Al-Qarawiyyin, considerada la universidad en funcionamiento continuo más antigua."
       },
       "history": {
         "fr": "Fondée par Idriss Ier en 789, Fès devint rapidement un centre intellectuel et religieux majeur. Sous les Almoravides et Almohades, elle rivalisa avec Cordoue et Bagdad. La ville accueillit les réfugiés andalous après la Reconquista, enrichissant son patrimoine culturel et artisanal.",
@@ -138,21 +150,29 @@
       "id": "casablanca",
       "name": {
         "fr": "Casablanca",
-        "ar": "الدار البيضاء"
+        "ar": "الدار البيضاء",
+        "en": "Casablanca",
+        "es": "Casablanca"
       },
       "subtitle": {
         "fr": "Capitale Économique du Maroc",
-        "ar": "العاصمة الاقتصادية للمغرب"
+        "ar": "العاصمة الاقتصادية للمغرب",
+        "en": "Economic Capital of Morocco",
+        "es": "Capital Económica de Marruecos"
       },
       "description": {
         "fr": "Casablanca, métropole moderne du Maroc, abrite la mosquée Hassan II, l'une des plus grandes mosquées au monde. Centre économique du pays, elle mélange architecture Art déco du protectorat français et modernité contemporaine.",
-        "ar": "الدار البيضاء، العاصمة الحديثة للمغرب، تضم مسجد الحسن الثاني، أحد أكبر المساجد في العالم. المركز الاقتصادي للبلاد، تمزج بين العمارة الآرت ديكو من عهد الحماية الفرنسية والحداثة المعاصرة."
+        "ar": "الدار البيضاء، العاصمة الحديثة للمغرب، تضم مسجد الحسن الثاني، أحد أكبر المساجد في العالم. المركز الاقتصادي للبلاد، تمزج بين العمارة الآرت ديكو من عهد الحماية الفرنسية والحداثة المعاصرة.",
+        "en": "Casablanca, Morocco’s modern metropolis, is home to the Hassan II Mosque, one of the largest in the world. As the country’s economic hub, it blends French Protectorate Art Deco architecture with contemporary modernity.",
+        "es": "Casablanca, la metrópoli moderna de Marruecos, alberga la Mezquita Hassan II, una de las más grandes del mundo. Como centro económico del país, combina la arquitectura Art Déco del protectorado francés con la modernidad contemporánea."
       },
       "monuments": [
         {
           "name": {
             "fr": "Mosquée Hassan II",
-            "ar": "مسجد الحسن الثاني"
+            "ar": "مسجد الحسن الثاني",
+            "en": "Hassan II Mosque",
+            "es": "Mezquita Hassan II"
           },
           "description": {
             "fr": "Chef-d'œuvre architectural inauguré en 1993, conçu par Michel Pinseau. Son minaret de 210 mètres est le plus haut du monde. La mosquée peut accueillir 105 000 fidèles et dispose d'un toit ouvrant, d'un sol chauffant et d'un laser pointant vers La Mecque.",
@@ -169,15 +189,21 @@
       "id": "chefchaouen", 
       "name": {
         "fr": "Chefchaouen",
-        "ar": "شفشاون"
+        "ar": "شفشاون",
+        "en": "Chefchaouen",
+        "es": "Chefchaouen"
       },
       "subtitle": {
         "fr": "La Perle Bleue du Rif",
-        "ar": "لؤلؤة الريف الزرقاء"
+        "ar": "لؤلؤة الريف الزرقاء",
+        "en": "The Blue Pearl of the Rif",
+        "es": "La Perla Azul del Rif"
       },
       "description": {
         "fr": "Nichée dans les montagnes du Rif, Chefchaouen séduit par ses ruelles peintes en bleu et blanc. Fondée en 1471 comme forteresse contre les invasions portugaises, elle devint refuge des Andalous expulsés d'Espagne.",
-        "ar": "تقع في جبال الريف، تسحر شفشاون بأزقتها المطلية بالأزرق والأبيض. تأسست عام 1471 كحصن ضد الغزوات البرتغالية، أصبحت ملجأ للأندلسيين المطرودين من إسبانيا."
+        "ar": "تقع في جبال الريف، تسحر شفشاون بأزقتها المطلية بالأزرق والأبيض. تأسست عام 1471 كحصن ضد الغزوات البرتغالية، أصبحت ملجأ للأندلسيين المطرودين من إسبانيا.",
+        "en": "Nestled in the Rif mountains, Chefchaouen enchants with its blue-and-white-painted alleys. Founded in 1471 as a fortress against Portuguese incursions, it became a refuge for Andalusians expelled from Spain.",
+        "es": "Ubicada en las montañas del Rif, Chefchaouen encanta con sus callejones pintados de azul y blanco. Fundada en 1471 como fortaleza contra las incursiones portuguesas, se convirtió en refugio de andalusíes expulsados de España."
       },
       "cultural_heritage": {
         "fr": "L'influence andalouse se ressent dans l'architecture, la cuisine et l'artisanat local. Les maisons bleues créent une atmosphère unique, inspirée des traditions berbères et de l'héritage juif séfarade.",
@@ -188,15 +214,21 @@
       "id": "essaouira",
       "name": {
         "fr": "Essaouira",
-        "ar": "الصويرة"
+        "ar": "الصويرة",
+        "en": "Essaouira",
+        "es": "Esauira"
       },
       "subtitle": {
         "fr": "Cité des Vents",
-        "ar": "مدينة الرياح"
+        "ar": "مدينة الرياح",
+        "en": "City of Winds",
+        "es": "Ciudad de los Vientos"
       },
       "description": {
         "fr": "Ancienne Mogador, Essaouira est une cité portuaire fortifiée du XVIIIe siècle, classée UNESCO. Ses remparts face à l'Atlantique, son port de pêche authentique et son festival Gnawa en font une destination unique.",
-        "ar": "موكادور السابقة، الصويرة مدينة ساحلية محصنة من القرن الثامن عشر، مدرجة في اليونسكو. أسوارها المواجهة للأطلسي وميناؤها الأصيل ومهرجان الكناوة يجعلها وجهة فريدة."
+        "ar": "موكادور السابقة، الصويرة مدينة ساحلية محصنة من القرن الثامن عشر، مدرجة في اليونسكو. أسوارها المواجهة للأطلسي وميناؤها الأصيل ومهرجان الكناوة يجعلها وجهة فريدة.",
+        "en": "Formerly Mogador, Essaouira is an 18th-century fortified port city and a UNESCO World Heritage site. Its Atlantic-facing ramparts, authentic fishing port, and Gnawa festival make it a unique destination.",
+        "es": "Antiguamente Mogador, Esauira es una ciudad portuaria fortificada del siglo XVIII y Patrimonio de la Humanidad por la UNESCO. Sus murallas frente al Atlántico, su puerto pesquero auténtico y su festival Gnawa la convierten en un destino único."
       },
       "music_culture": {
         "fr": "Berceau de la musique Gnawa, fusion des traditions africaines subsahariennes et marocaines. Le Festival Gnawa et Musiques du Monde attire chaque année des milliers de mélomanes.",
@@ -207,15 +239,21 @@
       "id": "merzouga",
       "name": {
         "fr": "Merzouga",
-        "ar": "مرزوقة"
+        "ar": "مرزوقة",
+        "en": "Merzouga",
+        "es": "Merzouga"
       },
       "subtitle": {
         "fr": "Porte du Grand Sahara",
-        "ar": "بوابة الصحراء الكبرى"
+        "ar": "بوابة الصحراء الكبرى",
+        "en": "Gateway to the Great Sahara",
+        "es": "Puerta del Gran Sáhara"
       },
       "description": {
         "fr": "Village aux portes de l'Erg Chebbi, Merzouga offre l'expérience authentique du désert saharien. Ses dunes dorées de 150 mètres de haut changent de couleur selon la lumière, créant un spectacle naturel inoubliable.",
-        "ar": "قرية على أبواب عرق الشبي، مرزوقة تقدم تجربة أصيلة للصحراء. كثبانها الذهبية بارتفاع 150 متراً تغير لونها حسب الضوء، خالقة مشهداً طبيعياً لا يُنسى."
+        "ar": "قرية على أبواب عرق الشبي، مرزوقة تقدم تجربة أصيلة للصحراء. كثبانها الذهبية بارتفاع 150 متراً تغير لونها حسب الضوء، خالقة مشهداً طبيعياً لا يُنسى.",
+        "en": "A village at the edge of Erg Chebbi, Merzouga offers an authentic Saharan desert experience. Its 150‑meter golden dunes change color with the light, creating an unforgettable natural spectacle.",
+        "es": "Un pueblo a las puertas del Erg Chebbi, Merzouga ofrece una experiencia auténtica del desierto del Sahara. Sus dunas doradas de 150 metros cambian de color según la luz, creando un espectáculo natural inolvidable."
       },
       "desert_experience": {
         "fr": "Excursions à dos de chameau, nuits sous les étoiles en bivouac berbère, sandboard sur les dunes. Observation astronomique exceptionnelle grâce à l'absence de pollution lumineuse.",
@@ -226,15 +264,21 @@
       "id": "rabat",
       "name": {
         "fr": "Rabat",
-        "ar": "الرباط"
+        "ar": "الرباط",
+        "en": "Rabat",
+        "es": "Rabat"
       },
       "subtitle": {
         "fr": "Capitale Politique du Royaume",
-        "ar": "العاصمة السياسية للمملكة"
+        "ar": "العاصمة السياسية للمملكة",
+        "en": "Political Capital of the Kingdom",
+        "es": "Capital Política del Reino"
       },
       "description": {
         "fr": "Capitale administrative du Maroc depuis 1912, Rabat allie patrimoine historique et modernité. La ville abrite des monuments emblématiques comme la Tour Hassan et le Mausolée Mohammed V, témoins de la grandeur almohade et de l'histoire contemporaine.",
-        "ar": "العاصمة الإدارية للمغرب منذ 1912، الرباط تجمع بين التراث التاريخي والحداثة. تضم المدينة معالم رمزية مثل صومعة حسان وضريح محمد الخامس، شاهدة على العظمة الموحدية والتاريخ المعاصر."
+        "ar": "العاصمة الإدارية للمغرب منذ 1912، الرباط تجمع بين التراث التاريخي والحداثة. تضم المدينة معالم رمزية مثل صومعة حسان وضريح محمد الخامس، شاهدة على العظمة الموحدية والتاريخ المعاصر.",
+        "en": "Morocco’s administrative capital since 1912, Rabat blends historical heritage and modernity. The city features iconic monuments such as the Hassan Tower and the Mausoleum of Mohammed V, symbols of Almohad grandeur and contemporary history.",
+        "es": "Capital administrativa de Marruecos desde 1912, Rabat combina patrimonio histórico y modernidad. La ciudad alberga monumentos emblemáticos como la Torre Hassan y el Mausoleo de Mohamed V, testigos de la grandeza almohade y de la historia contemporánea."
       },
       "monuments": [
         {

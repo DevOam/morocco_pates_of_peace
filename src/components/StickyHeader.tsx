@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Globe, Phone, Mail } from 'lucide-react';
 
 interface StickyHeaderProps {
-  language: 'fr' | 'ar';
-  onLanguageChange: (lang: 'fr' | 'ar') => void;
+  language: 'fr' | 'ar' | 'en' | 'es';
+  onLanguageChange: (lang: 'fr' | 'ar' | 'en' | 'es') => void;
 }
 
 export default function StickyHeader({ language, onLanguageChange }: StickyHeaderProps) {
@@ -39,6 +39,24 @@ export default function StickyHeader({ language, onLanguageChange }: StickyHeade
       { name: 'الرحلات', href: '#excursions' },
       { name: 'المتجر', href: '#store' },
       { name: 'اتصل بنا', href: '#contact' }
+    ],
+    en: [
+      { name: 'Home', href: '#hero' },
+      { name: 'Destinations', href: '#destinations' },
+      { name: 'Tours', href: '#tours' },
+      { name: 'Gallery', href: '#gallery' },
+      { name: 'Excursions', href: '#excursions' },
+      { name: 'Shop', href: '#store' },
+      { name: 'Contact', href: '#contact' }
+    ],
+    es: [
+      { name: 'Inicio', href: '#hero' },
+      { name: 'Destinos', href: '#destinations' },
+      { name: 'Tours', href: '#tours' },
+      { name: 'Galería', href: '#gallery' },
+      { name: 'Excursiones', href: '#excursions' },
+      { name: 'Tienda', href: '#store' },
+      { name: 'Contacto', href: '#contact' }
     ]
   };
 
@@ -55,17 +73,17 @@ export default function StickyHeader({ language, onLanguageChange }: StickyHeade
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-morocco-red to-morocco-gold rounded-lg flex items-center justify-center">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-morocco-red to-morocco-gold rounded-lg flex items-center justify-center shadow-md">
                 <span className="text-white font-bold text-lg">M</span>
               </div>
-              <div className={`${isScrolled ? 'text-gray-900' : 'text-white'} font-bold text-xl hidden sm:block`}>
-                Morocco Tours
+              <div className={`${isScrolled ? 'text-gray-900' : 'text-white'} font-bold text-lg sm:text-xl transition-colors duration-300`}>
+                Morocco Plant Peace
               </div>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navigation[language].map((item) => (
               <a
                 key={item.name}
@@ -77,8 +95,8 @@ export default function StickyHeader({ language, onLanguageChange }: StickyHeade
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
-                className={`font-medium transition-colors hover:text-morocco-gold cursor-pointer ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
+                className={`font-medium text-sm xl:text-base transition-all duration-200 hover:text-morocco-gold cursor-pointer px-2 py-1 rounded-md hover:bg-white/10 ${
+                  isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white'
                 }`}
               >
                 {item.name}
@@ -90,19 +108,20 @@ export default function StickyHeader({ language, onLanguageChange }: StickyHeade
           <div className="flex items-center gap-2 sm:gap-4">
             {/* Language Switcher */}
             <div className="relative">
-              <button
-                onClick={() => onLanguageChange(language === 'fr' ? 'ar' : 'fr')}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
+              <select
+                value={language}
+                onChange={(e) => onLanguageChange(e.target.value as 'fr' | 'ar' | 'en' | 'es')}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer text-sm font-medium ${
                   isScrolled 
-                    ? 'text-gray-700 hover:bg-gray-100' 
-                    : 'text-white hover:bg-white/20'
+                    ? 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-200 shadow-sm' 
+                    : 'text-white hover:bg-white/20 bg-white/10 border border-white/20 backdrop-blur-sm'
                 }`}
               >
-                <Globe className="h-4 w-4" />
-                <span className="text-sm font-medium">
-                  {language === 'fr' ? 'عربي' : 'FR'}
-                </span>
-              </button>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="ar">🇲🇦 العربية</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="es">🇪🇸 Español</option>
+              </select>
             </div>
 
             {/* Contact Info */}
@@ -121,8 +140,11 @@ export default function StickyHeader({ language, onLanguageChange }: StickyHeade
             </div>
 
             {/* CTA Button (hidden on very small screens to preserve menu space) */}
-            <button className="hidden sm:inline-flex bg-morocco-gold hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition-colors text-sm">
-              {language === 'fr' ? 'Réserver' : 'احجز'}
+            <button className="hidden sm:inline-flex bg-morocco-gold hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition-all duration-200 text-sm shadow-md hover:shadow-lg transform hover:scale-105">
+              {language === 'fr' ? 'Réserver' : 
+               language === 'ar' ? 'احجز' :
+               language === 'en' ? 'Book' : 
+               'Reservar'}
             </button>
 
             {/* Mobile Menu Button */}
