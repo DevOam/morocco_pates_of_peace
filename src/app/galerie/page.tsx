@@ -10,7 +10,7 @@ import UltraSimpleFooter from '@/components/UltraSimpleFooter';
 const SuperAIAssistant = dynamic(() => import('@/components/SuperAIAssistant'), { ssr: false });
 
 export default function GaleriePage() {
-  const [language, setLanguage] = useState<'fr' | 'ar'>('fr');
+  const [language, setLanguage] = useState<'fr' | 'ar' | 'en' | 'es'>('fr');
 
   return (
     <div className={`min-h-screen ${language === 'ar' ? 'rtl font-arabic' : 'ltr'}`}>
@@ -24,13 +24,16 @@ export default function GaleriePage() {
       <section className="pt-32 sm:pt-36 pb-12 bg-gradient-to-r from-morocco-red to-morocco-terracotta scroll-mt-28 sm:scroll-mt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            {language === 'fr' ? 'Galerie Photo' : 'معرض الصور'}
+            {language === 'fr' && 'Galerie Photo'}
+            {language === 'ar' && 'معرض الصور'}
+            {language === 'en' && 'Photo Gallery'}
+            {language === 'es' && 'Galería de Fotos'}
           </h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            {language === 'fr' 
-              ? 'Découvrez le Maroc à travers nos photos authentiques avec géolocalisation précise'
-              : 'اكتشف المغرب من خلال صورنا الأصيلة مع تحديد الموقع الدقيق'
-            }
+            {language === 'fr' && 'Découvrez le Maroc à travers nos photos authentiques avec géolocalisation précise'}
+            {language === 'ar' && 'اكتشف المغرب من خلال صورنا الأصيلة مع تحديد الموقع الدقيق'}
+            {language === 'en' && 'Discover Morocco through our authentic photos with precise geolocation'}
+            {language === 'es' && 'Descubre Marruecos a través de nuestras fotos auténticas con geolocalización precisa'}
           </p>
         </div>
       </section>
