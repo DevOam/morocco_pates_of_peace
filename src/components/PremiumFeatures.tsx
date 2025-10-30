@@ -169,9 +169,9 @@ export default function PremiumFeatures({ language }: PremiumFeaturesProps) {
         </div>
 
         {/* Interactive Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mb-20">
           {/* Feature Cards */}
-          <div className="space-y-4">
+          <div className="space-y-3 lg:space-y-4">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               const isActive = activeFeature === index;
@@ -180,21 +180,21 @@ export default function PremiumFeatures({ language }: PremiumFeaturesProps) {
                 <div
                   key={index}
                   onClick={() => setActiveFeature(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                  className={`p-4 sm:p-6 rounded-2xl cursor-pointer transition-all duration-500 transform hover:scale-105 ${
                     isActive 
                       ? `bg-gradient-to-r ${feature.color} shadow-2xl shadow-purple-500/25` 
                       : 'bg-gray-800/50 hover:bg-gray-700/50 backdrop-blur-sm'
                   } ${isVisible ? `animate-fade-in-left animation-delay-${index * 100}` : 'opacity-0'}`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-xl ${isActive ? 'bg-white/20' : 'bg-gray-700'}`}>
-                      <Icon className="h-6 w-6" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className={`p-2 sm:p-3 rounded-xl ${isActive ? 'bg-white/20' : 'bg-gray-700'}`}>
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl font-bold mb-2">
                         {feature.title[language]}
                       </h3>
-                      <p className={`text-sm mb-3 ${isActive ? 'text-white/90' : 'text-gray-400'}`}>
+                      <p className={`text-sm mb-3 ${isActive ? 'text-white/90' : 'text-gray-400'} leading-relaxed`}>
                         {feature.description[language]}
                       </p>
                       <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium ${
@@ -205,8 +205,8 @@ export default function PremiumFeatures({ language }: PremiumFeaturesProps) {
                       </div>
                     </div>
                     {isActive && (
-                      <div className="flex items-center justify-center w-8 h-8 bg-white/20 rounded-full">
-                        <Play className="h-4 w-4 ml-0.5" />
+                      <div className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded-full">
+                        <Play className="h-3 w-3 sm:h-4 sm:w-4 ml-0.5" />
                       </div>
                     )}
                   </div>
@@ -215,8 +215,8 @@ export default function PremiumFeatures({ language }: PremiumFeaturesProps) {
             })}
           </div>
 
-          {/* Feature Preview */}
-          <div className={`relative ${isVisible ? 'animate-fade-in-right animation-delay-300' : 'opacity-0'}`}>
+          {/* Feature Preview - Hidden on Mobile */}
+          <div className={`relative hidden lg:block ${isVisible ? 'animate-fade-in-right animation-delay-300' : 'opacity-0'}`}>
             <div className="sticky top-8">
               <div className={`relative h-96 rounded-2xl overflow-hidden bg-gradient-to-r ${features[activeFeature].color}`}>
                 <div className="absolute inset-0 bg-black/20" />
@@ -255,31 +255,31 @@ export default function PremiumFeatures({ language }: PremiumFeaturesProps) {
         </div>
 
         {/* Achievements Section */}
-        <div className={`bg-gradient-to-r from-morocco-red/20 to-morocco-gold/20 rounded-3xl p-8 backdrop-blur-sm ${isVisible ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-2">
+        <div className={`bg-gradient-to-r from-morocco-red/20 to-morocco-gold/20 rounded-3xl p-4 sm:p-8 backdrop-blur-sm ${isVisible ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'}`}>
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold mb-2">
               {language === 'fr' ? 'Nos Réalisations' : language === 'ar' ? 'إنجازاتنا' : language === 'en' ? 'Our Achievements' : 'Nuestros Logros'}
             </h3>
-            <p className="text-gray-300">
+            <p className="text-gray-300 text-sm sm:text-base">
               {language === 'fr' ? 'Des chiffres qui parlent d\'eux-mêmes' : language === 'ar' ? 'أرقام تتحدث عن نفسها' : language === 'en' ? 'Numbers that speak for themselves' : 'Cifras que hablan por sí solas'}
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {achievements.map((achievement, index) => {
               const Icon = achievement.icon;
               return (
                 <div
                   key={index}
-                  className={`text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 transform hover:scale-105 ${
+                  className={`text-center p-3 sm:p-6 rounded-2xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 transform hover:scale-105 ${
                     isVisible ? `animate-fade-in-up animation-delay-${700 + index * 100}` : 'opacity-0'
                   }`}
                 >
-                  <Icon className="h-8 w-8 mx-auto mb-3 text-morocco-gold" />
-                  <div className="text-2xl font-bold text-white mb-1">
+                  <Icon className="h-6 w-6 sm:h-8 sm:w-8 mx-auto mb-2 sm:mb-3 text-morocco-gold" />
+                  <div className="text-lg sm:text-2xl font-bold text-white mb-1">
                     {achievement.title[language]}
                   </div>
-                  <div className="text-sm text-gray-400">
+                  <div className="text-xs sm:text-sm text-gray-400">
                     {achievement.subtitle[language]}
                   </div>
                 </div>
@@ -289,12 +289,12 @@ export default function PremiumFeatures({ language }: PremiumFeaturesProps) {
         </div>
 
         {/* CTA Section */}
-        <div className={`text-center mt-16 ${isVisible ? 'animate-fade-in-up animation-delay-1000' : 'opacity-0'}`}>
-          <div className="bg-gradient-to-r from-morocco-gold to-yellow-400 rounded-2xl p-8 text-black">
-            <h3 className="text-3xl font-bold mb-4">
+        <div className={`text-center mt-12 sm:mt-16 ${isVisible ? 'animate-fade-in-up animation-delay-1000' : 'opacity-0'}`}>
+          <div className="bg-gradient-to-r from-morocco-gold to-yellow-400 rounded-2xl p-6 sm:p-8 text-black">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
               {language === 'fr' ? 'Prêt à Vivre l\'Excellence ?' : language === 'ar' ? 'مستعد لتجربة التميز؟' : language === 'en' ? 'Ready to Experience Excellence?' : '¿Listo para Vivir la Excelencia?'}
             </h3>
-            <p className="text-lg mb-6 opacity-90">
+            <p className="text-base sm:text-lg mb-6 opacity-90">
               {language === 'fr' 
                 ? 'Rejoignez les milliers de voyageurs qui ont choisi l\'expérience premium'
                 : language === 'ar'
@@ -304,9 +304,15 @@ export default function PremiumFeatures({ language }: PremiumFeaturesProps) {
                     : 'Únete a miles de viajeros que eligieron la experiencia premium'
               }
             </p>
-            <button className="bg-black text-white hover:bg-gray-800 px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 mx-auto group">
+            <button 
+              className="bg-black text-white hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 mx-auto group"
+              onClick={() => {
+                const target = document.querySelector('#booking') || document.querySelector('#tours');
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
               {language === 'fr' ? 'Découvrir Maintenant' : language === 'ar' ? 'اكتشف الآن' : language === 'en' ? 'Discover Now' : 'Descubrir Ahora'}
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>

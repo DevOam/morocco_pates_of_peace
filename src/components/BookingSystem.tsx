@@ -228,35 +228,38 @@ export default function BookingSystem({ language, isOpen, onClose, onSuccess, on
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className={`bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden ${language === 'ar' ? 'rtl' : 'ltr'}`}>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-2 sm:p-4 z-50">
+      <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl mx-2 sm:mx-0">
         {/* Header */}
-        <div className="bg-gradient-to-r from-morocco-red to-morocco-gold text-white p-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold">
-              {language === 'fr' ? 'Réservation Personnalisée' : language === 'ar' ? 'حجز مخصص' : language === 'en' ? 'Custom Booking' : 'Reserva Personalizada'}
+        <div className="bg-gradient-to-r from-morocco-red to-morocco-gold text-white p-4 sm:p-6 rounded-t-2xl">
+          <div className="flex justify-between items-center">
+            <h2 className="text-xl sm:text-2xl font-bold">
+              {language === 'fr' ? 'Réservez votre voyage' : 
+               language === 'ar' ? 'احجز رحلتك' :
+               language === 'en' ? 'Book your trip' : 
+               'Reserva tu viaje'}
             </h2>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+              className="text-white hover:text-gray-200 transition-colors p-1"
             >
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           </div>
-          
-          {/* Progress Steps */}
-          <div className="flex items-center justify-between mt-6">
-            {steps[language].map((step, index) => {
-              const IconComponent = step.icon;
-              return (
-                <div key={step.id} className="flex items-center">
-                  <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-colors ${
-                    currentStep >= step.id 
-                      ? 'bg-white text-morocco-red border-white' 
-                      : 'border-white/50 text-white/50'
-                  }`}>
-                    <IconComponent className="h-5 w-5" />
-                  </div>
+        
+        {/* Progress Steps */}
+        <div className="flex items-center justify-between mt-6">
+          {steps[language].map((step, index) => {
+            const IconComponent = step.icon;
+            return (
+              <div key={step.id} className="flex items-center">
+                <div className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 transition-colors ${
+                  currentStep >= step.id 
+                    ? 'bg-white text-morocco-red border-white' 
+                    : 'border-white/50 text-white/50'
+                }`}>
+                  <IconComponent className="h-4 w-4 sm:h-5 sm:w-5" />
+                </div>
                   <div className="ml-3 hidden sm:block">
                     <p className="text-sm font-medium">{step.title}</p>
                   </div>
@@ -272,29 +275,31 @@ export default function BookingSystem({ language, isOpen, onClose, onSuccess, on
         </div>
 
         {/* Content */}
-        <div className="p-6 overflow-y-auto max-h-[60vh]">
-          {/* Step 1: Destination & Dates */}
-          {currentStep === 1 && (
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-black">
-                {language === 'fr' ? 'Choisissez votre destination et vos dates' : language === 'ar' ? 'اختر وجهتك وتواريخك' : language === 'en' ? 'Choose your destination and dates' : 'Elige tu destino y fechas'}
-              </h3>
+        <div className="p-4 sm:p-6 overflow-y-auto max-h-[60vh]">
+            {currentStep === 1 && (
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-black mb-3 sm:mb-4">
+                  {language === 'fr' ? 'Choisissez votre destination et vos dates' : 
+                   language === 'ar' ? 'اختر وجهتك وتواريخك' :
+                   language === 'en' ? 'Choose your destination and dates' : 
+                   'Elige tu destino y fechas'}
+                </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {destinations[language].map((dest) => (
-                  <button
-                    key={dest.id}
-                    onClick={() => setFormData(prev => ({ ...prev, destination: dest.id }))}
-                    className={`p-4 rounded-xl border-2 transition-all ${
-                      formData.destination === dest.id
-                        ? 'border-morocco-gold bg-morocco-gold/10'
-                        : 'border-gray-200 hover:border-morocco-gold/50'
-                    }`}
-                  >
-                    <h4 className="font-semibold text-black">{dest.name}</h4>
-                    <p className="text-sm text-black">{dest.price}€ / {language === 'fr' ? 'jour' : language === 'ar' ? 'يوم' : language === 'en' ? 'day' : 'día'}</p>
-                  </button>
-                ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                  {destinations[language].map((dest) => (
+                    <button
+                      key={dest.id}
+                      onClick={() => setFormData(prev => ({ ...prev, destination: dest.id }))}
+                      className={`p-3 sm:p-4 rounded-xl border-2 transition-all text-left ${
+                        formData.destination === dest.id
+                          ? 'border-morocco-gold bg-morocco-gold/10'
+                          : 'border-gray-200 hover:border-morocco-gold/50'
+                      }`}
+                    >
+                      <h4 className="font-semibold text-black text-sm sm:text-base">{dest.name}</h4>
+                      <p className="text-xs sm:text-sm text-black">{dest.price}€ / {language === 'fr' ? 'jour' : language === 'ar' ? 'يوم' : language === 'en' ? 'day' : 'día'}</p>
+                    </button>
+                  ))}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

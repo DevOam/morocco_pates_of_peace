@@ -18,6 +18,7 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
   const [repeatMode, setRepeatMode] = useState<'off' | 'one' | 'all'>('off');
   const [isExpanded, setIsExpanded] = useState(false);
   const [isNearFooter, setIsNearFooter] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const progressRef = useRef<HTMLDivElement | null>(null);
@@ -28,7 +29,7 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
       title: language === 'fr' ? 'Ambiance Jemaa el-Fna' : language === 'ar' ? 'أجواء ساحة جامع الفنا' : language === 'en' ? 'Jemaa el-Fna Ambiance' : 'Ambiente Jemaa el-Fna',
       artist: language === 'fr' ? 'Sons de Marrakech' : language === 'ar' ? 'أصوات مراكش' : language === 'en' ? 'Sounds of Marrakech' : 'Sonidos de Marrakech',
       duration: 0,
-      file: '/assets/audio/jamaa-el-fna-ambience.mp3',
+      file: '/assets/audio/The sounds of Jamaa el-Fna Square, Marrakech..mp3',
       cover: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=300&h=300&fit=crop&crop=center',
       description: language === 'fr' ? 'Immersion sonore au cœur de la place mythique' : language === 'ar' ? 'انغماس صوتي في قلب الساحة الأسطورية' : language === 'en' ? 'Sound immersion in the heart of the mythical square' : 'Inmersión sonora en el corazón de la plaza mítica'
     },
@@ -37,7 +38,7 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
       title: language === 'fr' ? 'Musique Touareg du Sahara' : language === 'ar' ? 'موسيقى الطوارق من الصحراء' : language === 'en' ? 'Touareg Music - Sahara' : 'Música Tuareg - Sáhara',
       artist: language === 'fr' ? 'Désert de Merzouga' : language === 'ar' ? 'صحراء مرزوقة' : language === 'en' ? 'Merzouga Desert' : 'Desierto de Merzouga',
       duration: 0,
-      file: '/assets/audio/sahara-touareg-music.mp3',
+      file: '/assets/audio/Touareg Music  Sahara desert Music.mp3',
       cover: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=300&h=300&fit=crop&crop=center',
       description: language === 'fr' ? 'Rythmes du désert et esprit nomade' : language === 'ar' ? 'إيقاعات الصحراء وروح البداوة' : language === 'en' ? 'Desert rhythms and nomadic spirit' : 'Ritmos del desierto y espíritu nómada'
     },
@@ -46,7 +47,7 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
       title: language === 'fr' ? 'Nek ligh ezzaman' : language === 'ar' ? 'نكّال nek ligh ezzaman' : language === 'en' ? 'Nek ligh ezzaman' : 'Nek ligh ezzaman',
       artist: language === 'fr' ? 'Chant traditionnel' : language === 'ar' ? 'غناء تقليدي' : language === 'en' ? 'Traditional song' : 'Canto tradicional',
       duration: 0,
-      file: '/assets/audio/nek-ligh-ezzaman.mp3',
+      file: '/assets/audio/nek ligh ezzaman.mp3',
       cover: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&crop=center',
       description: language === 'fr' ? 'Chant traditionnel et émotion' : language === 'ar' ? 'غناء تقليدي وإحساس' : language === 'en' ? 'Traditional vocals and emotion' : 'Voz tradicional y emoción'
     }
@@ -178,6 +179,14 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
     }
   };
 
+  const closePlayer = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    setIsPlaying(false);
+    setIsVisible(false);
+  };
+
   const toggleMute = () => {
     setIsMuted(!isMuted);
     if (audioRef.current) {
@@ -204,131 +213,175 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
     setCurrentTime(newTime);
   };
 
+  if (!isVisible) return null;
+
   return (
-    <div className={`fixed ${isNearFooter ? 'bottom-24 sm:bottom-28' : 'bottom-3 sm:bottom-6'} ${language === 'ar' ? 'left-3 sm:left-6' : 'right-3 sm:right-6'} z-40`}>
-      {/* Mini Player */}
+    <div className={`fixed ${isNearFooter ? 'bottom-24 sm:bottom-28' : 'bottom-3 sm:bottom-6'} ${language === 'ar' ? 'right-3 sm:left-6' : 'left-3 sm:right-6'} z-20 sm:z-40`}>
+      {/* Mini Player - Compact on Mobile */}
       <div className={`bg-white rounded-2xl shadow-2xl transition-all duration-500 ${
-        isExpanded ? 'w-80 sm:w-96 h-auto' : 'w-72 sm:w-80 h-auto'
+        isExpanded ? 'w-80 sm:w-96 h-auto' : 'w-64 sm:w-80 h-auto'
       } transform hover:scale-105`}>
         
-        {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-100">
+        {/* Header - Compact on Mobile */}
+        <div className="flex items-center justify-between p-2 sm:p-4 border-b border-gray-100">
           <div className="flex items-center">
-            <Music className="h-5 w-5 text-morocco-red mr-2" />
-            <span className="font-semibold text-gray-900">
-              {language === 'fr' ? 'Ambiances Maroc' : language === 'ar' ? 'أجواء المغرب' : language === 'en' ? 'Morocco Ambiances' : 'Ambientes de Marruecos'}
+            <Music className="h-4 w-4 sm:h-5 sm:w-5 text-morocco-red mr-1 sm:mr-2" />
+            <span className="font-semibold text-gray-900 text-xs sm:text-sm">
+              {language === 'fr' ? 'Ambiances' : language === 'ar' ? 'أجواء' : language === 'en' ? 'Ambiances' : 'Ambientes'}
             </span>
           </div>
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="text-gray-500 hover:text-morocco-red transition-colors"
-          >
-            <svg className={`h-4 w-4 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`} 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-gray-500 hover:text-morocco-red transition-colors p-1"
+            >
+              <svg className={`h-3 w-3 sm:h-4 sm:w-4 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`} 
+                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={closePlayer}
+              className="text-gray-500 hover:text-red-600 transition-colors p-1 ml-1"
+              title={language === 'fr' ? 'Fermer le lecteur' : language === 'ar' ? 'إغلاق المشغل' : language === 'en' ? 'Close player' : 'Cerrar reproductor'}
+            >
+              <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* Current Track Info */}
-        <div className="p-4">
-          <div className="flex items-center space-x-4">
+        {/* Current Track Info - Ultra Compact on Mobile */}
+        <div className="p-2 sm:p-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <div 
-              className="w-16 h-16 rounded-lg bg-cover bg-center shadow-md"
+              className="w-10 h-10 sm:w-16 sm:h-16 rounded-lg bg-cover bg-center shadow-md"
               style={{ backgroundImage: `url(${currentTrackData.cover})` }}
             />
             <div className="flex-1 min-w-0">
-              <h4 className="font-semibold text-gray-900 truncate text-sm">
+              <h4 className="font-semibold text-gray-900 truncate text-xs sm:text-sm">
                 {currentTrackData.title}
               </h4>
-              <p className="text-gray-600 truncate text-xs">
+              <p className="text-gray-600 truncate text-xs hidden sm:block">
                 {currentTrackData.artist}
               </p>
-              <p className="text-gray-500 text-xs mt-1">
+              <p className="text-gray-500 text-xs mt-1 hidden sm:block">
                 {currentTrackData.description}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="px-4 pb-2">
+        {/* Progress Bar - Hidden on Mobile when Collapsed */}
+        <div className={`px-2 sm:px-4 pb-1 sm:pb-2 ${!isExpanded ? 'hidden sm:block' : ''}`}>
           <div 
             ref={progressRef}
-            className="bg-gray-200 rounded-full h-2 cursor-pointer relative"
+            className="bg-gray-200 rounded-full h-1 sm:h-2 cursor-pointer relative"
             onClick={handleProgressClick}
           >
             <div 
-              className="bg-gradient-to-r from-morocco-red to-morocco-gold h-2 rounded-full transition-all duration-300"
+              className="bg-gradient-to-r from-morocco-red to-morocco-gold h-1 sm:h-2 rounded-full transition-all duration-300"
               style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
             />
           </div>
-          <div className="flex justify-between text-xs text-gray-500 mt-1">
+          <div className="flex justify-between text-xs text-gray-500 mt-1 hidden sm:flex">
             <span>{formatTime(currentTime)}</span>
             <span>{formatTime(duration || currentTrackData.duration)}</span>
           </div>
         </div>
 
-        {/* Main Controls */}
-        <div className="flex items-center justify-between px-4 pb-4">
-          <button
-            onClick={() => setIsShuffled(!isShuffled)}
-            className={`p-2 rounded-full transition-colors ${
-              isShuffled ? 'text-morocco-red bg-red-50' : 'text-gray-500 hover:text-morocco-red'
-            }`}
-          >
-            <Shuffle className="h-4 w-4" />
-          </button>
-
-          <div className="flex items-center space-x-2">
+        {/* Main Controls - Simplified on Mobile */}
+        <div className="flex items-center justify-center px-2 sm:px-4 pb-2 sm:pb-4">
+          {/* Mobile: Only essential controls */}
+          <div className="flex items-center space-x-1 sm:hidden">
             <button
               onClick={prevTrack}
-              className="p-2 text-gray-600 hover:text-morocco-red transition-colors"
+              className="p-1 text-gray-600 hover:text-morocco-red transition-colors"
             >
-              <SkipBack className="h-5 w-5" />
+              <SkipBack className="h-4 w-4" />
             </button>
 
             <button
               onClick={togglePlay}
-              className="bg-morocco-red text-white p-3 rounded-full hover:bg-red-700 transition-colors shadow-lg"
+              className="bg-morocco-red text-white p-2 rounded-full hover:bg-red-700 transition-colors shadow-lg mx-2"
             >
               {isPlaying ? (
-                <Pause className="h-6 w-6" />
+                <Pause className="h-4 w-4" />
               ) : (
-                <Play className="h-6 w-6 ml-0.5" />
+                <Play className="h-4 w-4 ml-0.5" />
               )}
             </button>
 
             <button
               onClick={nextTrack}
-              className="p-2 text-gray-600 hover:text-morocco-red transition-colors"
+              className="p-1 text-gray-600 hover:text-morocco-red transition-colors"
             >
-              <SkipForward className="h-5 w-5" />
+              <SkipForward className="h-4 w-4" />
             </button>
           </div>
 
-          <button
-            onClick={() => setRepeatMode(repeatMode === 'off' ? 'all' : repeatMode === 'all' ? 'one' : 'off')}
-            className={`p-2 rounded-full transition-colors ${
-              repeatMode !== 'off' ? 'text-morocco-red bg-red-50' : 'text-gray-500 hover:text-morocco-red'
-            }`}
-          >
-            <Repeat className="h-4 w-4" />
-            {repeatMode === 'one' && (
-              <span className="absolute -top-1 -right-1 bg-morocco-red text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                1
-              </span>
-            )}
-          </button>
+          {/* Desktop: Full controls */}
+          <div className="hidden sm:flex items-center justify-between w-full">
+            <button
+              onClick={() => setIsShuffled(!isShuffled)}
+              className={`p-2 rounded-full transition-colors ${
+                isShuffled ? 'text-morocco-red bg-red-50' : 'text-gray-500 hover:text-morocco-red'
+              }`}
+            >
+              <Shuffle className="h-4 w-4" />
+            </button>
+
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={prevTrack}
+                className="p-2 text-gray-600 hover:text-morocco-red transition-colors"
+              >
+                <SkipBack className="h-5 w-5" />
+              </button>
+
+              <button
+                onClick={togglePlay}
+                className="bg-morocco-red text-white p-3 rounded-full hover:bg-red-700 transition-colors shadow-lg"
+              >
+                {isPlaying ? (
+                  <Pause className="h-6 w-6" />
+                ) : (
+                  <Play className="h-6 w-6 ml-0.5" />
+                )}
+              </button>
+
+              <button
+                onClick={nextTrack}
+                className="p-2 text-gray-600 hover:text-morocco-red transition-colors"
+              >
+                <SkipForward className="h-5 w-5" />
+              </button>
+            </div>
+
+            <button
+              onClick={() => setRepeatMode(repeatMode === 'off' ? 'all' : repeatMode === 'all' ? 'one' : 'off')}
+              className={`p-2 rounded-full transition-colors relative ${
+                repeatMode !== 'off' ? 'text-morocco-red bg-red-50' : 'text-gray-500 hover:text-morocco-red'
+              }`}
+            >
+              <Repeat className="h-4 w-4" />
+              {repeatMode === 'one' && (
+                <span className="absolute -top-1 -right-1 bg-morocco-red text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  1
+                </span>
+              )}
+            </button>
+          </div>
         </div>
 
-        {/* Volume Control */}
-        <div className="flex items-center space-x-3 px-4 pb-4">
+        {/* Volume Control - Hidden on Mobile when Collapsed */}
+        <div className={`items-center space-x-3 px-2 sm:px-4 pb-2 sm:pb-4 ${!isExpanded ? 'hidden sm:flex' : 'flex'}`}>
           <button onClick={toggleMute} className="text-gray-500 hover:text-morocco-red">
             {isMuted || volume === 0 ? (
-              <VolumeX className="h-4 w-4" />
+              <VolumeX className="h-3 w-3 sm:h-4 sm:w-4" />
             ) : (
-              <Volume2 className="h-4 w-4" />
+              <Volume2 className="h-3 w-3 sm:h-4 sm:w-4" />
             )}
           </button>
           <input
@@ -340,7 +393,7 @@ export default function AdvancedAudioSystem({ language }: AdvancedAudioSystemPro
             onChange={(e) => changeVolume(parseFloat(e.target.value))}
             className="flex-1 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer"
           />
-          <span className="text-xs text-gray-500 w-8">
+          <span className="text-xs text-gray-500 w-8 hidden sm:inline">
             {Math.round((isMuted ? 0 : volume) * 100)}%
           </span>
         </div>

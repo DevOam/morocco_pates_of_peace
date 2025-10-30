@@ -611,7 +611,7 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
       {/* Super AI Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 ${language === 'ar' ? 'left-6' : 'right-6'} z-40 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:from-purple-700 hover:via-pink-700 hover:to-red-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 ${
+        className={`fixed bottom-4 ${language === 'ar' ? 'left-4' : 'right-4'} z-40 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:from-purple-700 hover:via-pink-700 hover:to-red-700 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 ${
           isOpen ? 'hidden' : 'block'
         }`}
       >
@@ -626,7 +626,7 @@ export default function SuperAIAssistant({ language }: SuperAIAssistantProps) {
 
       {/* Super AI Chat Window */}
       {isOpen && (
-        <div className={`ai-chat fixed bottom-6 ${language === 'ar' ? 'left-6' : 'right-6'} z-50 w-96 h-[650px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200`}>
+        <div className={`ai-chat fixed bottom-4 ${language === 'ar' ? 'left-4' : 'right-4'} z-50 w-80 sm:w-96 h-[500px] sm:h-[650px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200`}>
           {/* Header */}
           <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white p-4 flex items-center justify-between">
             <div className="flex items-center">

@@ -89,39 +89,15 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
       {/* Content */}
       <div className={`relative z-20 flex items-center justify-center h-full text-center text-white ${language === 'ar' ? 'rtl' : 'ltr'}`}>
         <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight text-shadow-xl">
-              {language === 'fr' ? (
-                <>
-                  Découvrez le <span className="text-morocco-gold">Maroc</span><br />
-                  Authentique
-                </>
-              ) : language === 'ar' ? (
-                <>
-                  اكتشف <span className="text-morocco-gold">المغرب</span><br />
-                  الأصيل
-                </>
-              ) : language === 'en' ? (
-                <>
-                  Discover <span className="text-morocco-gold">Morocco</span><br />
-                  Authentic
-                </>
-              ) : (
-                <>
-                  Descubre <span className="text-morocco-gold">Marruecos</span><br />
-                  Auténtico
-                </>
-              )}
-            </h1>
-            <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 leading-relaxed text-shadow-lg">
-              {language === 'fr'
-                ? 'Voyages sur mesure dans les villes impériales, le Sahara et l\'Atlas'
-                : language === 'ar'
-                  ? 'رحلات مخصصة في المدن الإمبراطورية والصحراء والأطلس'
-                  : language === 'en'
-                    ? 'Tailor-made trips to imperial cities, the Sahara and the Atlas'
-                    : 'Viajes a medida por las ciudades imperiales, el Sáhara y el Atlas'}
-            </p>
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div className="animate-fade-in-up">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                {slides[currentSlide].title}
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-200 mb-6 sm:mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
+                {slides[currentSlide].subtitle}
+              </p>
+            </div>
             
             {/* Advanced Search Engine */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 max-w-4xl mx-auto shadow-2xl">
@@ -206,15 +182,6 @@ export default function AnimatedHero({ language, onBookingClick }: AnimatedHeroP
               </button>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-              <button className="border-2 border-white text-white hover:bg-white hover:text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-all duration-300 flex items-center gap-2">
-                <Play className="h-5 w-5" />
-                {language === 'fr' ? 'Voir la vidéo' : 
-                 language === 'ar' ? 'شاهد الفيديو' :
-                 language === 'en' ? 'Watch video' : 
-                 'Ver video'}
-              </button>
-            </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <button 
